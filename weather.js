@@ -37,7 +37,7 @@ function createElement(data, days){
 
 	var mkUl = document.createElement("ul");
 	document.body.appendChild(mkUl);
-	
+	console.log(data);
 	for(var i = 0; i <= days; i++){
 		var mkLi = document.createElement("li");
 		mkLi.innerHTML = data[i].name + " " +  data[i].shortForecast + "" + " " + data[i].temperature + " " + data[i].temperatureUnit;
@@ -86,7 +86,8 @@ function getWeather(){
 		var dR =  data2.properties.periods;
 
 		createElement(dR, dR.length)
-		x.innerHTML = JSON.stringify(dR.detailedForecast + dR.name, null, 2);
+		console.log(data2);
+		x.innerHTML = JSON.stringify(dR.detailedForecast + dR, null, 2);
 	})
 
 	.catch(error=>{
