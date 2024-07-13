@@ -1,20 +1,28 @@
-var x = document.getElementById('response');
-var x1 = document.getElementById('response2');
-var latitude = 33.5194683
-var longitude = -84.6528242
-var dataLoad = null
+var x, x1, latitude, longitude, api, api2;
+
+
+latitude = null;
+longitude = null;
+api = "https://api.weather.gov/points/" + latitude + "," + longitude;
+api2 = "";
+
 
 window.addEventListener('load',() => {
+	x = document.getElementById('response');
+	x1 = document.getElementById('response2');
+});
 
-	if ("geolocation" in navigator && (latitude && longitude == 0)) {
+
+function getUsrLocation(){
+	if ("geolocation" in navigator){
 		navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
   		console.log("Geolocation is available.");
 	} else {
   		console.log("Geolocation is not supported by this browser.");
 	}
+}
 
-});
-
+// getUsrLocaion callback
 function successCallback(position){
 
 	latitude = position.coords.latitude;
@@ -22,15 +30,10 @@ function successCallback(position){
 	console.log("Latitude" + " " + latitude);
 	console.log("Longitude" + " " + longitude);
 }
-
+// getUsrLocation Callback Error
 function errorCallback(error){
 	console.log("Error occured" + error.message)
 }
-
-
-var api = "https://api.weather.gov/points/" + latitude + "," + longitude;
-
-var api2 = "";
 
 
 function createElement(data, days){
@@ -38,7 +41,7 @@ function createElement(data, days){
 	var mkUl = document.createElement("ul");
 	document.body.appendChild(mkUl);
 	console.log(data);
-	for(var i = 0; i <= days; i++){
+	for(var i = 0; i < days; i++){
 		var mkLi = document.createElement("li");
 		mkLi.innerHTML = data[i].name + " " +  data[i].shortForecast + "" + " " + data[i].temperature + " " + data[i].temperatureUnit;
 		mkUl.appendChild(mkLi);
@@ -46,6 +49,28 @@ function createElement(data, days){
 	}
 
 }
+
+
+function getDefLocations(){
+
+	fetch("./us_capitals.json", {
+		method: 'GET'
+	})
+	.then(response =>{
+		if(!response.ok){
+			throw new Error("Network response was not ok");
+		}
+		return response.json();
+	})
+	.then(data => {
+		console.log("U.S.capitals call");
+		console.log(data);
+	})
+	.catch(error=>{
+		console.log('Geo Location Error'+  " " + error.message);
+	});
+
+}//End geoLoaction
 
 
 
@@ -68,7 +93,8 @@ function getWeather(){
 	.then(data => {
 		api2 = data.properties.forecast
 		console.log("2nd API address" + " " + api2);
-		return fetch(api2)
+		console.log(data);
+		return fetch(api2);
 	})
 	.then(response => {
 
@@ -81,15 +107,13 @@ function getWeather(){
 		=== Definitions ===
 		dR = "Data returned"
 	*/
-
 	.then(data2 => {
 		var dR =  data2.properties.periods;
-
-		createElement(dR, dR.length)
+		createElement(dR, dR.length);
+		//x.innerHTML = JSON.stringify(dR, null, 2);
+		console.log("Dat2");
 		console.log(data2);
-		x.innerHTML = JSON.stringify(dR.detailedForecast + dR, null, 2);
 	})
-
 	.catch(error=>{
 		console.log('Error'+  " " + error.message);
 	});

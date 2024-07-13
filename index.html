@@ -6,14 +6,19 @@
 	<meta charset="UTF-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   	<link rel="stylesheet" type="text/css" href="style.css">
-	<title>chat</title>
+	<title>WeahterApi</title>
 </head>
 
 
 <body>
+
+	<nav>
+		<button onclick="getUsrLocation()">Get Location</button>
+	</nav>
 	
 	<div>
 		<h1>Chat</h1>
+		<button onclick="getDefLocations()">Get Locations</button>
 		<p id="response">Response</p><br/><br/>
 		<p id="response2">Response 2</p>
 		<button onclick="getWeather()">SUBMIT</button>
