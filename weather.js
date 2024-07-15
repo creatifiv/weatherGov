@@ -1,18 +1,11 @@
-var x, x1, latitude, longitude, api, api2;
+var x, x1, latitude, longitude, api, api2, createUlC, capBtns, box2;
 
 
 window.addEventListener('load',() => {
 	x = document.getElementById('response');
 	x1 = document.getElementById('response2');
+	box2 = document.getElementById('box2');
 });
-
-function createUsCapitalsButtons(){
-
-	var buttonsUl = document.createElement('ul');
-	var buttonsLi = document.createElement('li');
-
-
-}
 
 
 
@@ -38,7 +31,7 @@ function successCallback(position){
 }
 // getUsrLocation Callback Error
 function errorCallback(error){
-	console.log("Error occured" + error.message)
+	console.log("Error occured" + error.message);
 }
 
 
@@ -56,6 +49,19 @@ function createElement(data, days){
 
 }
 
+function createUsCapitalsButtons(capitals){
+	createUlC = document.createElement('ul');
+	box2.appendChild(createUlC);
+	console.log(capitals);
+
+	for(var i = 0; i < capitals.length; i++){
+
+		createUlC.appendChild(createUlC);
+		createUlC.innerHTML = "";
+
+	}
+}
+
 
 function getUsCap(){
 
@@ -69,6 +75,7 @@ function getUsCap(){
 		return response.json();
 	})
 	.then(data => {
+		createUsCapitalsButtons(data);
 		console.log("U.S.capitals call");
 		console.log(data);
 	})
@@ -76,7 +83,7 @@ function getUsCap(){
 		console.log('Geo Location Error'+  " " + error.message);
 	});
 
-}//End geoLoaction
+}//End getUsCap
 
 
 
