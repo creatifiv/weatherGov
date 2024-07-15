@@ -1,16 +1,19 @@
 var x, x1, latitude, longitude, api, api2;
 
 
-latitude = null;
-longitude = null;
-api = "https://api.weather.gov/points/" + latitude + "," + longitude;
-api2 = "";
-
-
 window.addEventListener('load',() => {
 	x = document.getElementById('response');
 	x1 = document.getElementById('response2');
 });
+
+function createUsCapitalsButtons(){
+
+	var buttonsUl = document.createElement('ul');
+	var buttonsLi = document.createElement('li');
+
+
+}
+
 
 
 function getUsrLocation(){
@@ -22,11 +25,14 @@ function getUsrLocation(){
 	}
 }
 
+
 // getUsrLocaion callback
 function successCallback(position){
 
 	latitude = position.coords.latitude;
 	longitude = position.coords.longitude;
+	api = "https://api.weather.gov/points/" + latitude + "," + longitude;
+
 	console.log("Latitude" + " " + latitude);
 	console.log("Longitude" + " " + longitude);
 }
@@ -51,7 +57,7 @@ function createElement(data, days){
 }
 
 
-function getDefLocations(){
+function getUsCap(){
 
 	fetch("./us_capitals.json", {
 		method: 'GET'
