@@ -1,12 +1,17 @@
 var x, x1, x2, x3, latitude, longitude, api, api2, createUlC, capBtns, box2, city, state;
 
 
+//DefaultLong & Lat: New York City
+longitude = 74.0060;
+latitude = 40.7128;
+
 window.addEventListener('load',() => {
 	x = document.getElementById('response');
 	x1 = document.getElementById('response2');
 	box2 = document.getElementById('box2');
 	x2 = document.getElementById('state');
 	x3 = document.getElementById('forecast');
+
 });
 
 
@@ -27,6 +32,8 @@ function successCallback(position){
 	latitude = position.coords.latitude;
 	longitude = position.coords.longitude;
 	api = "https://api.weather.gov/points/" + latitude + "," + longitude;
+
+	getWeather();
 
 	console.log("Latitude" + " " + latitude);
 	console.log("Longitude" + " " + longitude);
@@ -50,7 +57,7 @@ function createElement(data, days){
 	console.log(data);
 	for(var i = 0; i < days; i++){
 		var mkLi = document.createElement("li");
-		mkLi.innerHTML = data[i].name + " " +  data[i].shortForecast + "" + " " + data[i].temperature + " " + data[i].temperatureUnit;
+		mkLi.innerHTML = data[i].startTime + " " +  " - " + data[i].endTime + "<br/> " + data[i].name + " " +  data[i].shortForecast +  "<br/>" + data[i].temperature + " " + data[i].temperatureUnit + "<br/>";
 		x3.appendChild(mkLi);
 		console.log(days);
 	}

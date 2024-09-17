@@ -9,30 +9,35 @@
 " rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   	<link rel="stylesheet" type="text/css" href="style.css">
 
-    <title>WeahterApi</title>
+    <title>WeahterGov</title>
 </head>
 
 
 <body>
-	<div class="container">
 
-	<nav>
-		<button onclick="getUsrLocation()">Get Location</button>
+	<div class="container-fluid">
+	
+	<nav class="navbar navbar-expand-lg bg-body-tertiary">
+		<div class="container-fluid">
+			<button onclick="getUsrLocation()">Get Location</button>
+		</div>
 	</nav>
 
 
-	
+	<!--
 	<div class="row">
 		<div>
 			<h1>Weather</h1>
 			<button onclick="getUsCap()">Get Locations</button>
 			<h3 id="response">Locations</h3><br/><br/>
 		</div>
-	</div><!-- end Row -->
+	</div>--><!-- end Row -->
+
 
 	<div class="row">
 		<div id="box2">
-			<button onclick="getWeather()">Get Weather</button>
+			<!--
+			<button onclick="getWeather()">Get Weather</button>-->
 			<h3 id="state"></h3>
 			<ul id="forecast"></ul>
 		</div>
