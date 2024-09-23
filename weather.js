@@ -86,17 +86,14 @@ function createUsCapitalsButtons(capitals){
 }
 
 	window.onerror = function (message, source, lineno, colno, error) {
-							 
-								const errorMessage = `
-        <p><strong>Error:</strong> ${message}</p>
-        <p><strong>Source:</strong> ${source}</p>
-        <p><strong>Line:</strong> ${lineno}</p>
-        <p><strong>Column:</strong> ${colno}</p>
-        <p><strong>Stack Trace:</strong> ${error ? error.stack : 'N/A'}</p>
-						`;
-						errors.innerHTML = errorMessage;
-						return true;
-							
+				const errorMessage = `
+	    <p><strong>Error:</strong> ${message}</p>
+	    <p><strong>Source:</strong> ${source}</p>
+	    <p><strong>Line:</strong> ${lineno}</p>
+	    <p><strong>Column:</strong> ${colno}</p>
+	    <p><strong>Stack Trace:</strong> ${error ? error.stack : 'N/A'}</p> `;
+				errors.innerHTML = errorMessage;
+				return true;
 	} 
 
 
