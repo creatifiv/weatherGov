@@ -92,7 +92,7 @@ function createUsCapitalsButtons(capitals){
 	    <p><strong>Line:</strong> ${lineno}</p>
 	    <p><strong>Column:</strong> ${colno}</p>
 	    <p><strong>Stack Trace:</strong> ${error ? error.stack : 'N/A'}</p> `;
-				errors.innerHTML = errorMessage;
+				errors.innerHTML += errorMessage;
 				return true;
 	};
 	
