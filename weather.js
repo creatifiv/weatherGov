@@ -94,7 +94,12 @@ function createUsCapitalsButtons(capitals){
 	    <p><strong>Stack Trace:</strong> ${error ? error.stack : 'N/A'}</p> `;
 				errors.innerHTML = errorMessage;
 				return true;
-	} 
+	};
+	
+	window.onunhandledrejection = function(event) {
+  errors.innerHTML = `<p><strong>Unhandled Rejection:</strong> ${event.reason}</p>`;
+  console.log('Unhandled Rejection:', event.reason);
+};
 
 
 function getUsCap(){
