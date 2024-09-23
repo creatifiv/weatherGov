@@ -5,7 +5,7 @@ var x, x1, x2, x3, x4, errors, latitude, longitude, api, api2, createUlC, capBtn
 */
 
 
-glon();
+
 window.addEventListener('load',() => {
 	x = document.getElementById('response');
 	x1 = document.getElementById('response2');
