@@ -1,4 +1,4 @@
-var x, x1, x2, x3, x4, latitude, longitude, api, api2, createUlC, capBtns, box2, city, state;
+var x, x1, x2, x3, x4, errors, latitude, longitude, api, api2, createUlC, capBtns, box2, city, state;
 
 /*
   ===== xReq: Request count
@@ -13,6 +13,7 @@ window.addEventListener('load',() => {
 	x2 = document.getElementById('state');
 	x3 = document.getElementById('forecast');
 	x4 = document.getElementById('forecastRow');
+	errors = document.getElementById('errors');
 
 	loadDefaultWeather();
 
@@ -83,6 +84,20 @@ function createUsCapitalsButtons(capitals){
 		createUlC.innerHTML = "";
 	}
 }
+
+	window.onerror = function (message, source, lineno, colno, error) {
+							 
+								const errorMessage = `
+        <p><strong>Error:</strong> ${message}</p>
+        <p><strong>Source:</strong> ${source}</p>
+        <p><strong>Line:</strong> ${lineno}</p>
+        <p><strong>Column:</strong> ${colno}</p>
+        <p><strong>Stack Trace:</strong> ${error ? error.stack : 'N/A'}</p>
+						`;
+						errors.innerHTML = errorMessage;
+						return true;
+							
+	} 
 
 
 function getUsCap(){
