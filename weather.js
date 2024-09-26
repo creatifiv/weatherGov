@@ -15,13 +15,13 @@ window.addEventListener('load',() => {
 	x4 = document.getElementById('forecastRow');
 	errors = document.getElementById('errors');
 
-	loadDefaultWeather();
+	loadDefaultWeather(40.730610, -73.9352425);
 
 });
 
-function loadDefaultWeather(){
-		latitude = 40.730610;
-		longitude = -73.9352425;
+function loadDefaultWeather(lat, long){
+		latitude = lat;
+		longitude = long;
 		api = "https://api.weather.gov/points/" + latitude + "," + longitude;
 
 		getWeather();
@@ -41,7 +41,7 @@ function successCallback(position){
 	latitude = position.coords.latitude;
 	longitude = position.coords.longitude;
 	api = "https://api.weather.gov/points/" + latitude + "," + longitude;
-	getWeather();
+	loadDefaultWeather(latitude, longitude);
 	console.log("Latitude" + " " + latitude);
 	console.log("Longitude" + " " + longitude);
 }
