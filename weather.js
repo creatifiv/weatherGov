@@ -1,4 +1,4 @@
-var x, x1, x2, x3, x4, errors, latitude, longitude, api, api2, createUlC, capBtns, box2, city, state;
+var x, x1, x2, x3, x4, x5, errors, latitude, longitude, api, api2, createUlC, capBtns, box2, city, state;
 
 /*
   ===== xReq: Request count
@@ -9,11 +9,12 @@ var x, x1, x2, x3, x4, errors, latitude, longitude, api, api2, createUlC, capBtn
 window.addEventListener('load',() => {
 	x = document.getElementById('response');
 	x1 = document.getElementById('response2');
-	box2 = document.getElementById('box2');
 	x2 = document.getElementById('state');
 	x3 = document.getElementById('forecast');
 	x4 = document.getElementById('forecastRow');
+	x5 = document.getElementById('temp_console');
 	errors = document.getElementById('errors');
+	box2 = document.getElementById('box2');
 
 	loadDefaultWeather(40.730610, -73.9352425);
 
@@ -73,6 +74,14 @@ function createElement(data, days){
 		console.log(days);
 	}
 }
+
+function createTempConsole(data){
+	
+		var createElement = document.createElement('p');
+		createElement.innerHTML = data;
+		x5.appendChild(createElement);
+}
+
 
 /* ***** FIX: createUsCapitalsButtons Needs to go. Ul is in index.html, no need to create **** */
 
@@ -147,6 +156,7 @@ function getWeather(){
 		state = data.properties.relativeLocation.properties.state;
 		console.log("2nd API address" + " " + api2);
 		console.log(data);
+		createTempConsole(data);
 		return fetch(api2);
 	})
 	.then(response => {
