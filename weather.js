@@ -68,7 +68,7 @@ function createElement(data, days){
 	for(var i = 0; i < days; i++){
 		var createLi = document.createElement("li");
 		createLi.className = "col-sm-1";
-		createLi.innerHTML = "Day" + i + " " + data[i].name + " " +  data[i].shortForecast +  "<br/>" + data[i].temperature + " " + data[i].temperatureUnit + "<br/>";
+		createLi.innerHTML = data[i].name + " " +  data[i].shortForecast +  "<br/>" + data[i].temperature + " " + data[i].temperatureUnit + "<br/>";
 		x4.appendChild(createLi);
 		console.log(days);
 	}
