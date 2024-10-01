@@ -60,6 +60,7 @@ function reqCount(){
 	console.log(xReq);
 }
 
+// createLi class set to bootstrap col-sm-1
 
 function createElement(data, days){
 	fillData();
