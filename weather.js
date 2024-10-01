@@ -63,12 +63,12 @@ function reqCount(){
 
 function createElement(data, days){
 	fillData();
-	console.log(data);
+	console.log("func createElement" + data);
 	for(var i = 0; i < days; i++){
-		var mkLi = document.createElement("li");
-		mkLi.className = "col-sm-1";
-		mkLi.innerHTML = data[i].name + " " +  data[i].shortForecast +  "<br/>" + data[i].temperature + " " + data[i].temperatureUnit + "<br/>";
-		x4.appendChild(mkLi);
+		var createLi = document.createElement("li");
+		createLi.className = "col-sm-1";
+		createLi.innerHTML = "Day" + i " " + data[i].name + " " +  data[i].shortForecast +  "<br/>" + data[i].temperature + " " + data[i].temperatureUnit + "<br/>";
+		x4.appendChild(createLi);
 		console.log(days);
 	}
 }
