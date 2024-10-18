@@ -77,9 +77,9 @@ function createElement(data, days){
 
 function createTempConsole(data){
 	
-		var createElement = document.createElement('p');
-		createElement.innerHTML = data;
-		x5.appendChild(createElement);
+		var createConsoleElement = document.createElement('p');
+		createConsoleElement.innerHTML = data;
+		x5.appendChild(createConsoleElement);
 }
 
 
