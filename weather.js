@@ -64,7 +64,6 @@ function reqCount(){
 // Close comsole
 function closeConsole(){
 		x5.style.display = "none";
-		body.innerHTML = "Ouch!";
 }
 // Show console
 function showConsole(){
