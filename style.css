@@ -18,6 +18,13 @@ ul li{
     position: absolute;
     right: 0;
     top: 30px;
+    background-color: #333;
+    color: #0f0;
+    padding: 10px;
+    font-family: monospace;
+    height: 200px;
+    overflow-y: auto;
+    border: 1px solid #555;
 }
 
 
