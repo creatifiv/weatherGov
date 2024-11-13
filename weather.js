@@ -62,13 +62,13 @@ function reqCount(){
 }
 
 // Close comsole
-x5.addEventListener("click", () => {
+function closeConsole(){
 		x5.style.display = "none";
-});
+}
 // Show console
-x6.addEventListener("click", () => {
+function showConsole(){
 		x6.style.display = "block";
-});
+}
 
 function createElement(data, days){
 	fillData();
