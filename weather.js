@@ -67,7 +67,7 @@ x5.addEventListener("click", () => {
 });
 // Show console
 x6.addEventListener("click", () => {
-		x6.style.display = "block!";
+		x6.style.display = "block";
 });
 
 function createElement(data, days){
