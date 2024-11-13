@@ -64,10 +64,12 @@ function reqCount(){
 // Close comsole
 function closeConsole(){
 		x5.style.display = "none";
+		x5.style.color = "red";
 }
 // Show console
 function showConsole(){
 		x6.style.display = "block";
+		
 }
 
 function createElement(data, days){
