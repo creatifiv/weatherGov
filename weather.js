@@ -1,4 +1,4 @@
-var x, x1, x2, x3, x4, latitude, longitude, api, api2, createUlC, capBtns, box2, city, state;
+var x, x1, x2, x3, x4, x5, x6, latitude, longitude, api, api2, createUlC, capBtns, box2, city, state;
 
 /*
   ===== xReq: Request count
@@ -13,6 +13,8 @@ window.addEventListener('load',() => {
 	x2 = document.getElementById('state');
 	x3 = document.getElementById('forecast');
 	x4 = document.getElementById('forecastRow');
+	x5 = document.getElementById('close-console');
+	x6 = document.getElementById('show-console');
 
 	loadDefaultWeather();
 
@@ -59,6 +61,14 @@ function reqCount(){
 	console.log(xReq);
 }
 
+// Show console
+function showConsole(){
+		x6.style.display = "block";
+}
+// Close comsole
+function closeConsole(){
+		x5.style.display = "none";
+}
 
 function createElement(data, days){
 	fillData();
