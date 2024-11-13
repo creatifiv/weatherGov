@@ -15,9 +15,9 @@ ul li{
     
     height: 600px;
     width: 300px;
-    position: relative;
+    position: absolute;
     right: 0;
-    top: 0;
+    top: 30px;
 }
 
 
