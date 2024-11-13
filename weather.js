@@ -64,7 +64,7 @@ function reqCount(){
 // Close comsole
 function closeConsole(){
 		x5.style.display = "none";
-		x5.style.color = "red";
+		x5.innerHTML = "Ouch!";
 }
 // Show console
 function showConsole(){
