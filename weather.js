@@ -61,14 +61,14 @@ function reqCount(){
 	console.log(xReq);
 }
 
-// Show console
-function showConsole(){
-		x6.style.display = "block";
-}
 // Close comsole
-function closeConsole(){
+x5.addEventListener("click", () => {
 		x5.style.display = "none";
-}
+});
+// Show console
+x6.addEventListener("click", () => {
+		x6.style.display = "block";
+});
 
 function createElement(data, days){
 	fillData();
