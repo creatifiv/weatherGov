@@ -63,7 +63,11 @@ function reqCount(){
 
 // Close comsole
 function closeConsole(){
-		x5.style.display = "none";
+	try{
+			x5.style.display = "none";
+		l catch(error){
+				alert(error.message)
+	}//end catch
 }
 // Show console
 function showConsole(){
