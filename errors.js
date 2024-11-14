@@ -7,7 +7,7 @@ window.onerror = function(message, source, lineno, colno, error) {
   errorMessage += `Error object: ${error}`;
 
   try {
-    alert(errorMessage);  // Display error message in an alert
+    x5.innerHTML = errorMessage;  // Display error message in an alert
   } catch (error) {
     alert("Error occurred while trying to show the error message: " + error.message);
   }
