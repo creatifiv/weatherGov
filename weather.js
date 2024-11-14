@@ -61,7 +61,7 @@ function reqCount(){
 	console.log(xReq);
 }
 
-// Close comsole
+// Close console
 function closeConsole(){
 	try{
 			x5.style.display = "none";
