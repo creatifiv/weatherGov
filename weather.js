@@ -65,7 +65,7 @@ function reqCount(){
 function closeConsole(){
 	try{
 			x5.style.display = "none";
-		l catch(error){
+		} catch(error){
 				alert(error.message)
 	}//end catch
 }
