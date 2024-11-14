@@ -4,7 +4,6 @@ var x, x1, x2, x3, x4, x5, x6, latitude, longitude, api, api2, createUlC, capBtn
   ===== xReq: Request count
 */
 
-y
 
 window.addEventListener('load',() => {
 	x = document.getElementById('response');
