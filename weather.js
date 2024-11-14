@@ -58,7 +58,7 @@ function reqCount(){
 
 // Close console
 function closeConsole(){
-		x6.style.display = "none";
+		x5.style.display = "none";
 }
 // Show console
 function showConsole(){
