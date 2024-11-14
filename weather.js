@@ -14,16 +14,13 @@ window.addEventListener('load',() => {
 	x3 = document.getElementById('forecast');
 	x4 = document.getElementById('forecastRow');
 	x5 = document.getElementById('mock-console');
-
 	loadDefaultWeather();
-
 });
 
 function loadDefaultWeather(){
 		latitude = 40.730610;
 		longitude = -73.9352425;
 		api = "https://api.weather.gov/points/" + latitude + "," + longitude;
-
 		getWeather();
 }
 
@@ -62,11 +59,7 @@ function reqCount(){
 
 // Close console
 function closeConsole(){
-	try{
-			x5.style.display = "none";
-		} catch(error){
-				alert(error.message)
-	}//end catch
+		x5.style.display = "none";
 }
 // Show console
 function showConsole(){
