@@ -1,5 +1,3 @@
-
-
 window.onerror = function(message, source, lineno, colno, error) {
   var errorMessage = "Error caught in window.onerror: ";
   errorMessage += `Message: ${message} `;
