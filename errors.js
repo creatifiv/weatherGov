@@ -5,7 +5,7 @@ window.onerror = function(message, source, lineno, colno, error) {
   errorMessage += `Line: ${lineno}`;
   errorMessage += `Column: ${colno}`;
   errorMessage += `Error object: ${error}`:
-  x5.innerrHTML = errorMessage;
+  alert(errorMessage);
   return true; // Suppress the default error handling
 };
 
