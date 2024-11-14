@@ -13,8 +13,7 @@ window.addEventListener('load',() => {
 	x2 = document.getElementById('state');
 	x3 = document.getElementById('forecast');
 	x4 = document.getElementById('forecastRow');
-	x5 = document.getElementById('close-console');
-	x6 = document.getElementById('show-console');
+	x5 = document.getElementById('mock-console');
 
 	loadDefaultWeather();
 
@@ -71,8 +70,7 @@ function closeConsole(){
 }
 // Show console
 function showConsole(){
-		x6.style.display = "block";
-		
+		x5.style.display = "block";
 }
 
 function createElement(data, days){
