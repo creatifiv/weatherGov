@@ -1,5 +1,4 @@
-
-alert("hi gsng");
+/*
 
 window.onerror = function(message, source, lineno, colno, error) {
   var errorMessage = "Error caught in window.onerror: ";
@@ -17,3 +16,5 @@ window.onerror = function(message, source, lineno, colno, error) {
 
   return true;  // Suppress the default error handling
 };
+
+*/
