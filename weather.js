@@ -79,7 +79,7 @@ function createElement(data, days){
 		mkLi.className = "col-sm-1";
 		mkLi.innerHTML = data[i].name + " " +  data[i].shortForecast +  "<br/>" + data[i].temperature + " " + data[i].temperatureUnit + "<br/>";
 		x4.appendChild(mkLi);
-		x6.innerHTML = data[i].name;
+		x6.innerHTML = data;
 		console.log(days);
 	}
 }
