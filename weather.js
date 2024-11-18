@@ -56,11 +56,10 @@ function reqCount(){
 	console.log(xReq);
 }
 
-// Close console
+/* ==== MOCK CONSOLE CONTROLS ==== */
 function closeConsole(){
 		x5.style.display = "none";
 }
-// Show console
 function showConsole(){
 		x5.style.display = "block";
 }
