@@ -68,14 +68,15 @@ function showConsole(){
 		x5.style.display = "block";
 }
 
-// CREATE THE DATA ELEMENTS //
+// === CREATE THE DATA ELEMENTS === //
+
 function createElement(data, days){
 	fillData();
 	console.log(data);
 	for(var i = 0; i < days; i++){
 		var mkLi = document.createElement("li");
 		mkLi.className = "col-sm-1";
-		mkLi.innerHTML = i + "." + data[i].name + " " +  data[i].shortForecast +  "<br/>" + data[i].temperature + " " + data[i].temperatureUnit + "<br/>";
+		mkLi.innerHTML = i + "." + " " +  data[i].name + " " +  data[i].shortForecast +  "<br/>" + data[i].temperature + " " + data[i].temperatureUnit + "<br/>";
 		x4.appendChild(mkLi);
 		console.log(days);
 	}
