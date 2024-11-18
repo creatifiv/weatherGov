@@ -50,13 +50,17 @@ function errorCallback(error){
 function fillData(){
 	x2.innerHTML = city + "," + " "+ state;
 }
+
+// ==== TOOLS & HELPERS ==== //
+
 // Count request
 function reqCount(){
 	xReq += 1;
 	console.log(xReq);
 }
 
-/* ==== MOCK CONSOLE CONTROLS ==== */
+// === MOCK CONSOLE CONTROLS === //
+
 function closeConsole(){
 		x5.style.display = "none";
 }
