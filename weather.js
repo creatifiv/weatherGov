@@ -13,6 +13,7 @@ window.addEventListener('load',() => {
 	x3 = document.getElementById('forecast');
 	x4 = document.getElementById('forecastRow');
 	x5 = document.getElementById('mock-console');
+	x6 = document.getElementById('log');
 	loadDefaultWeather();
 });
 
@@ -78,6 +79,7 @@ function createElement(data, days){
 		mkLi.className = "col-sm-1";
 		mkLi.innerHTML = data[i].name + " " +  data[i].shortForecast +  "<br/>" + data[i].temperature + " " + data[i].temperatureUnit + "<br/>";
 		x4.appendChild(mkLi);
+		x6.innerHTML = data[i].name;
 		console.log(days);
 	}
 }
