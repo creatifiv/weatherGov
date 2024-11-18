@@ -77,7 +77,7 @@ function createElement(data, days){
 	for(var i = 0; i < days; i++){
 		var mkLi = document.createElement("li");
 		var createLi2 = document.createElement("li");
-		mkLi.className = "col-sm-1";
+		mkLi.className = "col-sm-1" + " " + "weater-${i}"; // ADDING A CLASS TO CREATE A CHECK TO GROUP THE DATA OF MORNING AND NIGHT FORECAST TOGETHER
 		mkLi.innerHTML = data[i].name + " " +  data[i].shortForecast +  "<br/>" + data[i].temperature + " " + data[i].temperatureUnit + "<br/>";
 		x4.appendChild(mkLi);
 		createLi2.innerHTML = data[i].name;
