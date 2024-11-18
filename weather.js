@@ -79,8 +79,8 @@ function createElement(data, days){
 		var createLi2 = document.createElement("li");
 		mkLi.className = "col-sm-1";
 		mkLi.innerHTML = data[i].name + " " +  data[i].shortForecast +  "<br/>" + data[i].temperature + " " + data[i].temperatureUnit + "<br/>";
-		createLi2 = data[i].name;
 		x4.appendChild(mkLi);
+		createLi2.innerHTML = data[i].name;
 		x6.appendChild(createLi2);
 		console.log(days);
 	}
