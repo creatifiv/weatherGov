@@ -28,7 +28,8 @@ ul li{
 }
 
 #log{
-    border: 1px top gray;
+    border-color: #333;
+    border-top: 1px solid;
 }
 
 
