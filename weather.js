@@ -88,7 +88,7 @@ function createElement(data, days){
 					x6.appendChild(createLi2);
 					++dayCount;
 					var createLogLi = document.createElement("li");
-					createLogLi.innerHTML = "day count:" + " " + dayCount;
+					createLogLi.innerHTML = "day count:" + " " + dayCount + "" + "O count:" + " " + o;
 					x7.appendChild(createLogLi);
 					o++;
 		}else {
