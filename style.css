@@ -9,6 +9,9 @@ ul li{
 
 	list-style-type: none;
 }
+#log-output{
+    display: inline-block;
+}
 
 
 #mock-console{
