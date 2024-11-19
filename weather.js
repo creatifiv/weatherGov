@@ -75,13 +75,20 @@ function createElement(data, days){
 	fillData();
 	console.log(data);
 	for(var i = 0; i < days; i++){
+		var o = 1;
+		var dayCount = 1;
 		var mkLi = document.createElement("li");
 		var createLi2 = document.createElement("li");
-		mkLi.className = "col-sm-1" + " " + "weater-${i}"; // ADDING A CLASS TO CREATE A CHECK TO GROUP THE DATA OF MORNING AND NIGHT FORECAST TOGETHER
+		mkLi.className = "col-sm-1" + " " + "weather-${dayCount}"; // ADDING A CLASS TO CREATE A CHECK TO GROUP THE DATA OF MORNING AND NIGHT FORECAST TOGETHER
 		mkLi.innerHTML = data[i].name + " " +  data[i].shortForecast +  "<br/>" + data[i].temperature + " " + data[i].temperatureUnit + "<br/>";
 		x4.appendChild(mkLi);
 		createLi2.innerHTML = data[i].name;
-		x6.appendChild(createLi2);
+		if(o < 3){
+					x6.appendChild(createLi2);
+					dayCount++;
+		}else {
+				o = 1;
+		}
 		console.log(days);
 	}
 }
