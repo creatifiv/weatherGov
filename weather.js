@@ -86,7 +86,7 @@ function createElement(data, days){
 		createLi2.innerHTML = data[i].name;
 		if(o < 3){
 					x6.appendChild(createLi2);
-					dayCount++;
+					++dayCount;
 					var createLogLi = document.createElement("li");
 					createLogLi.innerHTML = "day count:" + " " + dayCount;
 					x7.appendChild(createLogLi);
