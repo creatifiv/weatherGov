@@ -15,6 +15,7 @@ window.addEventListener('load',() => {
 	x5 = document.getElementById('mock-console');
 	x6 = document.getElementById('log');
 	x7 = document.getElementById('log-output');
+	x8 = document.getElementById('reponse-data');
 	loadDefaultWeather();
 });
 
@@ -90,6 +91,7 @@ function createElement(data, days){
 					var createLogLi = document.createElement("li");
 					createLogLi.innerHTML = "day count:" + " " + dayCount + " " + "O count:" + " " + o;
 					x7.appendChild(createLogLi);
+					x8.innerHTML = data[i];
 					o++;
 		}else {
 				o = 1;
