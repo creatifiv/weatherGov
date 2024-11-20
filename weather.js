@@ -156,7 +156,8 @@ function getWeather(){
 		city = data.properties.relativeLocation.properties.city;
 		state = data.properties.relativeLocation.properties.state;
 		console.log("2nd API address" + " " + api2);
-		console.log(data);
+		//console.log(data);
+		x8.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
 		return fetch(api2);
 	})
 	.then(response => {
@@ -175,7 +176,8 @@ function getWeather(){
 		createElement(dR, dR.length);
 		//x.innerHTML = JSON.stringify(dR, null, 2);
 		console.log("Dat2");
-		console.log(data2);
+		//console.log(data2);
+		x8.innerHTML = `<pre>${JSON.stringify(data2, null, 2)}</pre>`;
 	})
 	.catch(error=>{
 		console.log('Error'+  " " + error.message);
