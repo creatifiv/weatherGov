@@ -75,9 +75,9 @@ function showConsole(){
 function createElement(data, days){
 	fillData();
 	console.log(data);
+	var o = 1;
+	var dayCount = 1;
 	for(var i = 0; i < days; i++){
-		var o = 1;
-		var dayCount = 1;
 		var mkLi = document.createElement("li");
 		var createLi2 = document.createElement("li");
 		mkLi.className = "col-sm-1" + " " + "weather-${dayCount}"; // ADDING A CLASS TO CREATE A CHECK TO GROUP THE DATA OF MORNING AND NIGHT FORECAST TOGETHER
