@@ -15,7 +15,7 @@ window.addEventListener('load',() => {
 	x5 = document.getElementById('mock-console');
 	x6 = document.getElementById('log');
 	x7 = document.getElementById('log-output');
-	x8 = document.getElementById('reponse-data');
+	x8 = document.getElementById('response-data');
 	loadDefaultWeather();
 });
 
