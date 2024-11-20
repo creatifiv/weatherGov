@@ -9,6 +9,12 @@ ul li{
 
 	list-style-type: none;
 }
+
+.weather-box{
+    
+    border: 1px solid #333;
+}
+
 #log-output{
     display: inline-block;
 }
