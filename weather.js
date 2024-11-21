@@ -82,10 +82,9 @@ function showConsole(){
 // === CREATE THE DATA ELEMENTS === //
 
 function createWeatherBox(){
-			mkLi = document.createElement("li");
 			mkLi.className = "col-sm-1" + " " + "weather-${dayCount}" + " " + "weather-box";
 			mkLi.innerHTML = data[i].name + " " +  data[i].shortForecast +  "<br/>" + data[i].temperature + " " + data[i].temperatureUnit + "<br/>";
-			datCount++;
+			dayCount++;
 	}
 
 function createElement(data, days){
