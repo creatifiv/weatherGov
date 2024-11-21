@@ -1,4 +1,4 @@
-var x, x1, x2, x3, x4, x5, x6, latitude, longitude, api, api2, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7;
+var x, x1, x2, x3, x4, x5, x6, x9, latitude, longitude, api, api2, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7;
 
 /*
   ===== xReq: Request count
@@ -15,6 +15,7 @@ window.addEventListener('load',() => {
 	x6 = document.getElementById('log');
 	x7 = document.getElementById('log-output');
 	x8 = document.getElementById('response-data');
+	x9 = document.getElementById('test-log');
 	box2 = document.getElementById('box2');
 	day1 = document.getElementById('day-1');
 	day2 = document.getElementById('day-2');
@@ -23,6 +24,7 @@ window.addEventListener('load',() => {
 	day5 = document.getElementById('day-5');
 	day6 = document.getElementById('day-6');
 	day7 = document.getElementById('day-7');
+	
 	
 	loadDefaultWeather();
 });
@@ -92,7 +94,7 @@ function createElement(data, days){
 	var o = 1;
 	for(var i = 0; i < days; i++){
 		
-		x6.innerHTML = data[i].name + " " +  data[i].shortForecast +  "<br/>" + data[i].temperature + " " + data[i].temperatureUnit + "<br/>";
+		x9.innerHTML = data[i].name + " " +  data[i].shortForecast +  "<br/>" + data[i].temperature + " " + data[i].temperatureUnit + "<br/>";
 		var createLi2 = document.createElement("li");
 		createLi2.innerHTML = data[i].name;
 		if(o < 3){
