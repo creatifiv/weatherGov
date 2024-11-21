@@ -87,7 +87,7 @@ function createElement(data, days){
 		}
 		var createLi2 = document.createElement("li");
 
-		x4.appendChild(mkLi);
+		x3.appendChild(mkLi);
 		createLi2.innerHTML = data[i].name;
 		if(o < 3){
 					x6.appendChild(createLi2);
