@@ -1,4 +1,4 @@
-var x, x1, x2, x3, x4, x5, x6, latitude, longitude, api, api2, createUlC, capBtns, box2, city, state;
+var x, x1, x2, x3, x4, x5, x6, latitude, longitude, api, api2, createUlC, capBtns, box2, city, state, dayCount;
 
 /*
   ===== xReq: Request count
@@ -73,25 +73,30 @@ function showConsole(){
 
 // === CREATE THE DATA ELEMENTS === //
 
+function createWeatherBox(){
+			var mkLi = document.createElement("li");
+			mkLi.className = "col-sm-1" + " " + "weather-${dayCount}" + " " + "weather-box";
+			mkLi.innerHTML = data[i].name + " " +  data[i].shortForecast +  "<br/>" + data[i].temperature + " " + data[i].temperatureUnit + "<br/>";
+			datCount++;
+	}
+
 function createElement(data, days){
 	fillData();
 	console.log(data);
 	var o = 1;
-	var dayCount = 1;
+	dayCount = 1;
 	for(var i = 0; i < days; i++){
 		
 		if(o == 1){
-			var mkLi = document.createElement("li");
-			mkLi.className = "col-sm-1" + " " + "weather-${dayCount}" + " " + "weather-box"; // ADDING A CLASS TO CREATE A CHECK TO GROUP THE DATA OF MORNING AND NIGHT FORECAST TOGETHER
-			mkLi.innerHTML = data[i].name + " " +  data[i].shortForecast +  "<br/>" + data[i].temperature + " " + data[i].temperatureUnit + "<br/>";
+				createWeatherBox();
+		} else if(o == 2){ 
+				mkLi.innerHTML = data[i].name + " " +  data[i].shortForecast +  "<br/>" + data[i].temperature + " " + data[i].temperatureUnit + "<br/>";
 		}
 		var createLi2 = document.createElement("li");
-
 		x3.appendChild(mkLi);
 		createLi2.innerHTML = data[i].name;
 		if(o < 3){
 					x6.appendChild(createLi2);
-					++dayCount;
 					var createLogLi = document.createElement("li");
 					createLogLi.innerHTML = "day count:" + " " + dayCount + " " + "O count:" + " " + o;
 					x7.appendChild(createLogLi);
