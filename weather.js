@@ -80,25 +80,20 @@ function showConsole(){
 }
 
 // === CREATE THE DATA ELEMENTS === //
-
+// * Notes: delete dayCount var
+// * delete mkLi var
 function createWeatherBox(){
-			mkLi.className = "col-sm-1" + " " + "weather-${dayCount}" + " " + "weather-box";
+			mkLi.className = "col-sm-1" + " " + "weather-box";
 			mkLi.innerHTML = data[i].name + " " +  data[i].shortForecast +  "<br/>" + data[i].temperature + " " + data[i].temperatureUnit + "<br/>";
-			dayCount++;
 	}
 
 function createElement(data, days){
 	fillData();
 	console.log(data);
 	var o = 1;
-	dayCount = 1;
 	for(var i = 0; i < days; i++){
 		
-		if(o == 1){
-				createWeatherBox();
-		} else if(o == 2){ 
-				mkLi.innerHTML = data[i].name + " " +  data[i].shortForecast +  "<br/>" + data[i].temperature + " " + data[i].temperatureUnit + "<br/>";
-		}
+		
 		var createLi2 = document.createElement("li");
 		x3.appendChild(mkLi);
 		createLi2.innerHTML = data[i].name;
