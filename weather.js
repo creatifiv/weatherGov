@@ -83,7 +83,6 @@ function showConsole(){
 // * Notes: delete dayCount var
 // * delete mkLi var
 function createWeatherBox(){
-			mkLi.className = "col-sm-1" + " " + "weather-box";
 			mkLi.innerHTML = data[i].name + " " +  data[i].shortForecast +  "<br/>" + data[i].temperature + " " + data[i].temperatureUnit + "<br/>";
 	}
 
@@ -95,7 +94,6 @@ function createElement(data, days){
 		
 		
 		var createLi2 = document.createElement("li");
-		x3.appendChild(mkLi);
 		createLi2.innerHTML = data[i].name;
 		if(o < 3){
 					x6.appendChild(createLi2);
