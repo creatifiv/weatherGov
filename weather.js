@@ -1,4 +1,4 @@
-var x, x1, x2, x3, x4, x5, x6, latitude, longitude, api, api2, createUlC, capBtns, box2, city, state, dayCount, mkLi;
+var x, x1, x2, x3, x4, x5, x6, latitude, longitude, api, api2, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7;
 
 /*
   ===== xReq: Request count
@@ -8,7 +8,6 @@ var x, x1, x2, x3, x4, x5, x6, latitude, longitude, api, api2, createUlC, capBtn
 window.addEventListener('load',() => {
 	x = document.getElementById('response');
 	x1 = document.getElementById('response2');
-	box2 = document.getElementById('box2');
 	x2 = document.getElementById('state');
 	x3 = document.getElementById('forecast');
 	x4 = document.getElementById('forecastRow');
@@ -16,6 +15,15 @@ window.addEventListener('load',() => {
 	x6 = document.getElementById('log');
 	x7 = document.getElementById('log-output');
 	x8 = document.getElementById('response-data');
+	box2 = document.getElementById('box2');
+	day1 = document.getElementById('day-1');
+	day2 = document.getElementById('day-2');
+	day3 = document.getElementById('day-3');
+	day4 = document.getElementById('day-4');
+	day5 = document.getElementById('day-5');
+	day6 = document.getElementById('day-6');
+	day7 = document.getElementById('day-7');
+	
 	loadDefaultWeather();
 });
 
