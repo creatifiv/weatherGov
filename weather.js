@@ -65,7 +65,7 @@ function fillData(){
 }
 
 function fillForeCast(data){
-	day2.innerHTML = data;
+	day2.innerHTML = data[1].number;
 	try{
 		if(data.number >= 1){
 			day1.innerHTML = "Day" + " " + data.number;
