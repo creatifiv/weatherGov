@@ -64,7 +64,7 @@ function fillData(){
 	x2.innerHTML = city + "," + " "+ state;
 }
 
-function fillForeCast(i){
+function fillForeCast(data, i){
 	try{
 		switch(data[i].number){
 			case 1:
@@ -143,7 +143,7 @@ function createElement(data, days){
 		x9.innerHTML = data[i].number + "" + data[i].name + " " +  data[i].shortForecast +  "<br/>" + data[i].temperature + " " + data[i].temperatureUnit + "<br/>";
 		var createLi2 = document.createElement("li");
 		createLi2.innerHTML = data[i].name;
-		fillForeCast(i);
+		fillForeCast(data, i);
 		if(o < 3){
 					x6.appendChild(createLi2);
 					var createLogLi = document.createElement("li");
