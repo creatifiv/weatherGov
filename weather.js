@@ -64,17 +64,52 @@ function fillData(){
 	x2.innerHTML = city + "," + " "+ state;
 }
 
-function fillForeCast(data){
-	day2.innerHTML = data[1].number;
+function fillForeCast(i){
 	try{
-		if(data.number >= 1){
-			day1.innerHTML = "Day" + " " + data.number;
-		}
+		switch(data[i].number){
+			case 1:
+			case 2:
+							day1.innerHTML = "Day" + " " + data.number;
+			break;
+			
+			case 3:
+			case 4:
+							day2.innerHTML = "Day" + " " + data.number;
+			break;
+			 
+			case 5:
+			case 6:
+							day3.innerHTML = "Day" + " " + data.number;
+			break;
+			
+			case 7:
+			case 8:
+								day4.innerHTML = "Day" + " " + data.number;
+			break;
+			
+			case 9:
+			case 10:
+								day5.innerHTML = "Day" + " " + data.number;
+			break;
+			
+			case 11:
+			case 12:
+								day6.innerHTML = "Day" + " " + data.number;
+			break;
+			
+			case 13:
+			case 14:
+								day7.innerHTML = "Day" + " " + data.number;
+			break;
+			
+			default:
+				day7.innerHTML = "no weather";
+		}//End Switch
 	}//End try
 		catch(error){
 			day1.innerHTML = error ? error.message : "no error occured";
 		}
-}
+}//End fillForeCast
 
 // ==== TOOLS & HELPERS ==== //
 
@@ -102,13 +137,13 @@ function createWeatherBox(){
 
 function createElement(data, days){
 	fillData();
-	fillForeCast(data);
 	console.log(data);
 	var o = 1;
 	for(var i = 0; i < days; i++){
 		x9.innerHTML = data[i].number + "" + data[i].name + " " +  data[i].shortForecast +  "<br/>" + data[i].temperature + " " + data[i].temperatureUnit + "<br/>";
 		var createLi2 = document.createElement("li");
 		createLi2.innerHTML = data[i].name;
+		fillForeCast(i);
 		if(o < 3){
 					x6.appendChild(createLi2);
 					var createLogLi = document.createElement("li");
