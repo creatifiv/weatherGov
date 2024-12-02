@@ -64,6 +64,14 @@ function fillData(){
 	x2.innerHTML = city + "," + " "+ state;
 }
 
+function fillForeCast(data){
+	
+	if(data.properties.periods.number == 1){
+		var day = data.properties.periods.number;
+		day1.innerHTML = "Day" + " " + day;
+	}
+}
+
 // ==== TOOLS & HELPERS ==== //
 
 // Count request
@@ -90,10 +98,10 @@ function createWeatherBox(){
 
 function createElement(data, days){
 	fillData();
+	fillForeCast(data);
 	console.log(data);
 	var o = 1;
 	for(var i = 0; i < days; i++){
-		
 		x9.innerHTML = data[i].number + "" + data[i].name + " " +  data[i].shortForecast +  "<br/>" + data[i].temperature + " " + data[i].temperatureUnit + "<br/>";
 		var createLi2 = document.createElement("li");
 		createLi2.innerHTML = data[i].name;
