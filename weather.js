@@ -65,11 +65,15 @@ function fillData(){
 }
 
 function fillForeCast(data){
-	
-	if(data.properties.periods.number == 1){
-		var day = data.properties.periods.number;
-		day1.innerHTML = "Day" + " " + day;
-	}
+	try{
+		if(data.properties.periods.number == 1){
+			var day = data.properties.periods.number;
+			day1.innerHTML = "Day" + " " + day;
+		}
+	}//End try
+		catch(error){
+			day1.innerHTML = error ? error.message : "no error occured";
+		}
 }
 
 // ==== TOOLS & HELPERS ==== //
