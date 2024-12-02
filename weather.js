@@ -69,37 +69,37 @@ function fillForeCast(data, i){
 		switch(data[i].number){
 			case 1:
 			case 2:
-							day1.innerHTML = "Day" + " " + data.number;
+							day1.innerHTML = "Day" + " " + data[i].number;
 			break;
 			
 			case 3:
 			case 4:
-							day2.innerHTML = "Day" + " " + data.number;
+							day2.innerHTML = "Day" + " " + data[i].number;
 			break;
 			 
 			case 5:
 			case 6:
-							day3.innerHTML = "Day" + " " + data.number;
+							day3.innerHTML = "Day" + " " + data[i].number;
 			break;
 			
 			case 7:
 			case 8:
-								day4.innerHTML = "Day" + " " + data.number;
+								day4.innerHTML = "Day" + " " + data[i].number;
 			break;
 			
 			case 9:
 			case 10:
-								day5.innerHTML = "Day" + " " + data.number;
+								day5.innerHTML = "Day" + " " + data[i].number;
 			break;
 			
 			case 11:
 			case 12:
-								day6.innerHTML = "Day" + " " + data.number;
+								day6.innerHTML = "Day" + " " + data[i].number;
 			break;
 			
 			case 13:
 			case 14:
-								day7.innerHTML = "Day" + " " + data.number;
+								day7.innerHTML = "Day" + " " + data[i].number;
 			break;
 			
 			default:
