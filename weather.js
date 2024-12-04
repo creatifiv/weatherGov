@@ -42,8 +42,6 @@ window.addEventListener('load',() => {
 		document.getElementById('d7-pm')
 	];
 	
-	amPmBoxes[0].innerHTML = "test";
-	
 	loadDefaultWeather();
 });
 
@@ -87,6 +85,7 @@ function fillForeCast(data, i){
 		switch(data[i].number){
 			case 1:
 					amPmBoxes[0].innerHTML = data[i].numner;
+					break;
 			case 2:
 							day1.innerHTML = "Day" + " " + data[i].number;
 			break;
