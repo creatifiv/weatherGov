@@ -42,6 +42,8 @@ window.addEventListener('load',() => {
 		document.getElementById('d7-pm')
 	];
 	
+	amPmBoxes[0].innerHTML = "test";
+	
 	loadDefaultWeather();
 });
 
