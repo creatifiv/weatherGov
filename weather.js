@@ -91,40 +91,40 @@ function fillForeCast(data, i){
 			break;
 			
 			case 3:
-					amPmBoxes[2].innerHTML = data[i].number;
+					amPmBoxes[2].innerHTML = data[i].name + "" + data[i].temperature + data[i].temperatureUnit;
 					break;
 			case 4:
-							amPmBoxes[3].innerHTML = data[i].number;
+							amPmBoxes[3].innerHTML = data[i].name + "" + data[i].temperature + data[i].temperatureUnit;
 			break;
 			case 5:
-					amPmBoxes[4].innerHTML = data[i].number;
+					amPmBoxes[4].innerHTML = data[i].name + "" + data[i].temperature + data[i].temperatureUnit;
 					break;
 			case 6:
-							amPmBoxes[5].innerHTML = data[i].number;
+							amPmBoxes[5].innerHTML = data[i].name + "" + data[i].temperature + data[i].temperatureUnit;
 			break;
 			case 7:
-						amPmBoxes[6].innerHTML = data[i].number;
+						amPmBoxes[6].innerHTML = data[i].name + "" + data[i].temperature + data[i].temperatureUnit;
 						break;
 			case 8:
-								amPmBoxes[7].innerHTML = data[i].number;
+								amPmBoxes[7].innerHTML = data[i].name + "" + data[i].temperature + data[i].temperatureUnit;
 			break;
 			case 9:
-					amPmBoxes[8].innerHTML = data[i].number;
+					amPmBoxes[8].innerHTML = data[i].name + "" + data[i].temperature + data[i].temperatureUnit;
 					break;
 			case 10:
-					amPmBoxes[9].innerHTML = data[i].number;
+					amPmBoxes[9].innerHTML = data[i].name + "" + data[i].temperature + data[i].temperatureUnit;
 			break;
 			case 11:
-					amPmBoxes[10].innerHTML = data[i].number;
+					amPmBoxes[10].innerHTML = data[i].name + "" + data[i].temperature + data[i].temperatureUnit;
 					break;
 			case 12:
-								amPmBoxes[11].innerHTML = data[i].number;
+								amPmBoxes[11].innerHTML = data[i].name + "" + data[i].temperature + data[i].temperatureUnit;
 			break;
 			case 13:
-					amPmBoxes[12].innerHTML = data[i].number;
+					amPmBoxes[12].innerHTML = data[i].name + "" + data[i].temperature + data[i].temperatureUnit;
 					break;
 			case 14:
-								amPmBoxes[13].innerHTML = data[i].number;
+								amPmBoxes[13].innerHTML = data[i].name + "" + data[i].temperature + data[i].temperatureUnit;
 			break;
 			
 			default:
