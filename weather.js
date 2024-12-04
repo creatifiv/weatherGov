@@ -25,10 +25,22 @@ window.addEventListener('load',() => {
 	day6 = document.getElementById('day-6');
 	day7 = document.getElementById('day-7');
 	
-	amPmBoxes = [document.getElementById('d1-am')];
-	
-
-	
+	amPmBoxes = [
+		document.getElementById('d1-am'), 
+		document.getElementById('d1-pm'),
+		document.getElementById('d2-am'),
+		document.getElementById('d2-pm'),
+		document.getElementById('d3-am'),
+		document.getElementById('d3-pm'),
+		document.getElementById('d4-am'),
+		document.getElementById('d4-pm'),
+		document.getElementById('d5-am'),
+		document.getElementById('d5-pm'),
+		document.getElementById('d6-am'),
+		document.getElementById('d6-pm'),
+		document.getElementById('d7-am'),
+		document.getElementById('d7-pm')
+	];
 	
 	loadDefaultWeather();
 });
