@@ -86,6 +86,7 @@ function fillForeCast(data, i){
 	try{
 		switch(data[i].number){
 			case 1:
+					amPmBoxes[0].innerHTML = data[i].numner;
 			case 2:
 							day1.innerHTML = "Day" + " " + data[i].number;
 			break;
