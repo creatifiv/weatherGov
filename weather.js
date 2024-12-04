@@ -84,44 +84,51 @@ function fillForeCast(data, i){
 	try{
 		switch(data[i].number){
 			case 1:
-					amPmBoxes[0].innerHTML = data[i].number;
+					amPmBoxes[i].innerHTML = data[i].number;
 					break;
 			case 2:
-							amPmBoxes[1].innerHTML = data[i].number;
+					amPmBoxes[i].innerHTML = data[i].number;
 			break;
 			
 			case 3:
+					amPmBoxes[i].innerHTML = data[i].numner;
+					break;
 			case 4:
-							day2.innerHTML = "Day" + " " + data[i].number;
+							amPmBoxes[i].innerHTML = data[i].numner;
 			break;
-			 
 			case 5:
+					amPmBoxes[i].innerHTML = data[i].numner;
+					break;
 			case 6:
-							day3.innerHTML = "Day" + " " + data[i].number;
+							amPmBoxes[i].innerHTML = data[i].numner;
 			break;
-			
 			case 7:
+						amPmBoxes[i].innerHTML = data[i].numner;
+						break;
 			case 8:
-								day4.innerHTML = "Day" + " " + data[i].number;
+								amPmBoxes[i].innerHTML = data[i].numner;
 			break;
-			
 			case 9:
+					amPmBoxes[i].innerHTML = data[i].numner;
+					break;
 			case 10:
-								day5.innerHTML = "Day" + " " + data[i].number;
+					amPmBoxes[i].innerHTML = data[i].numner;
 			break;
-			
 			case 11:
+					amPmBoxes[i].innerHTML = data[i].numner;
+					break;
 			case 12:
-								day6.innerHTML = "Day" + " " + data[i].number;
+								amPmBoxes[i].innerHTML = data[i].numner;
 			break;
-			
 			case 13:
+					amPmBoxes[i].innerHTML = data[i].numner;
+					break;
 			case 14:
-								day7.innerHTML = "Day" + " " + data[i].number;
+								amPmBoxes[i].innerHTML = data[i].numner;
 			break;
 			
 			default:
-				day7.innerHTML = "no weather";
+				day7.innerHTML = "am-pm errorr";
 		}//End Switch
 	}//End try
 		catch(error){
