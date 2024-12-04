@@ -84,10 +84,10 @@ function fillForeCast(data, i){
 	try{
 		switch(data[i].number){
 			case 1:
-					amPmBoxes[0].innerHTML = data[i].number;
+					amPmBoxes[0].innerHTML = data[i].name + "" + data[i].temperature + data[i].temperatureUnit;
 					break;
 			case 2:
-					amPmBoxes[1].innerHTML = data[i].number;
+					amPmBoxes[1].innerHTML = data[i].name + "" + data[i].temperature + data[i].temperatureUnit;
 			break;
 			
 			case 3:
