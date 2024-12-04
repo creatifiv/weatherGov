@@ -84,47 +84,47 @@ function fillForeCast(data, i){
 	try{
 		switch(data[i].number){
 			case 1:
-					amPmBoxes[i].innerHTML = data[i].number;
+					amPmBoxes[0].innerHTML = data[i].number;
 					break;
 			case 2:
-					amPmBoxes[i].innerHTML = data[i].number;
+					amPmBoxes[1].innerHTML = data[i].number;
 			break;
 			
 			case 3:
-					amPmBoxes[i].innerHTML = data[i].numner;
+					amPmBoxes[2].innerHTML = data[i].numner;
 					break;
 			case 4:
-							amPmBoxes[i].innerHTML = data[i].numner;
+							amPmBoxes[3].innerHTML = data[i].numner;
 			break;
 			case 5:
-					amPmBoxes[i].innerHTML = data[i].numner;
+					amPmBoxes[4].innerHTML = data[i].numner;
 					break;
 			case 6:
-							amPmBoxes[i].innerHTML = data[i].numner;
+							amPmBoxes[5].innerHTML = data[i].numner;
 			break;
 			case 7:
-						amPmBoxes[i].innerHTML = data[i].numner;
+						amPmBoxes[6].innerHTML = data[i].numner;
 						break;
 			case 8:
-								amPmBoxes[i].innerHTML = data[i].numner;
+								amPmBoxes[7].innerHTML = data[i].numner;
 			break;
 			case 9:
-					amPmBoxes[i].innerHTML = data[i].numner;
+					amPmBoxes[8].innerHTML = data[i].numner;
 					break;
 			case 10:
-					amPmBoxes[i].innerHTML = data[i].numner;
+					amPmBoxes[9].innerHTML = data[i].numner;
 			break;
 			case 11:
-					amPmBoxes[i].innerHTML = data[i].numner;
+					amPmBoxes[10].innerHTML = data[i].numner;
 					break;
 			case 12:
-								amPmBoxes[i].innerHTML = data[i].numner;
+								amPmBoxes[11].innerHTML = data[i].numner;
 			break;
 			case 13:
-					amPmBoxes[i].innerHTML = data[i].numner;
+					amPmBoxes[12].innerHTML = data[i].numner;
 					break;
 			case 14:
-								amPmBoxes[i].innerHTML = data[i].numner;
+								amPmBoxes[13].innerHTML = data[i].numner;
 			break;
 			
 			default:
