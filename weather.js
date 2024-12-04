@@ -1,4 +1,4 @@
-var x, x1, x2, x3, x4, x5, x6, x9, latitude, longitude, api, api2, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7;
+var x, x1, x2, x3, x4, x5, x6, x9, amPmBoxes, latitude, longitude, api, api2, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7;
 
 /*
   ===== xReq: Request count
@@ -24,6 +24,8 @@ window.addEventListener('load',() => {
 	day5 = document.getElementById('day-5');
 	day6 = document.getElementById('day-6');
 	day7 = document.getElementById('day-7');
+	
+	amPmBoxes = []; 
 	
 	
 	loadDefaultWeather();
