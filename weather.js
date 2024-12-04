@@ -25,7 +25,9 @@ window.addEventListener('load',() => {
 	day6 = document.getElementById('day-6');
 	day7 = document.getElementById('day-7');
 	
-	amPmBoxes = []; 
+	amPmBoxes = [document.getElementById('d1-am')];
+	
+
 	
 	
 	loadDefaultWeather();
