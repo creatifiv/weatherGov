@@ -1,4 +1,4 @@
-var x, x1, x2, x3, x4, x5, x6, x9, amPmBoxes, latitude, longitude, api, api2, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7;
+var x, x1, x2, x3, x4, x5, x6, x9, cities, citiesLog, amPmBoxes, latitude, longitude, api, api2, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7;
 
 /*
   ===== xReq: Request count
@@ -195,6 +195,21 @@ function createUsCapitalsButtons(capitals){
 	}
 }
 
+function captureCityData(data, citiesLog){
+	
+	citiesLog = document.createElement('p');
+	document.appenChild(citiesLog);
+	
+	for(var i = 0; i < data.length; i++){
+			cities[i] = data[i]; 
+	}
+	
+	citiesLog();
+}
+
+var addCitiesToHTML = () => {
+		citiesLog.innerHTML = cities;
+};
 
 function getUsCap(){
 	fetch("./us_capitals.json", {
@@ -207,6 +222,7 @@ function getUsCap(){
 		return response.json();
 	})
 	.then(data => {
+		captureCityData(data, addCitiesToHTML);
 		createUsCapitalsButtons(data);
 		console.log("U.S.capitals call");
 		console.log(data);
