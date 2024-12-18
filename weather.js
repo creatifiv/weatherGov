@@ -208,7 +208,7 @@ function captureCityData(data, citiesLog){
 }
 
 var addCitiesToHTML = () => {
-		citiesLog.innerHTML = cities;
+		citiesLog.innerHTML = "Cities" + " " + cities;
 };
 
 function getUsCap(){
