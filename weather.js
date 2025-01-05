@@ -1,4 +1,4 @@
-var x, x1, x2, x3, x4, x5, x6, x9, amPmBoxes, dayOfWeek, latitude, longitude, api, api2, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7;
+var x, x1, x2, x3, x4, x5, x6, x9, amPmBoxes,weatherIcon, dayOfWeek, latitude, longitude, api, api2, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7;
 
 /*
   ===== xReq: Request count
@@ -25,6 +25,7 @@ window.addEventListener('load',() => {
 	day6 = document.getElementById('day-6');
 	day7 = document.getElementById('day-7');
 	dayOfWeek = document.getElementsByClassName("day-of-week");
+	weatherIcon = document.getElementsByClassName("weather-icon");
 	
 	amPmBoxes = [
 		document.getElementById('d1-am'), 
@@ -89,6 +90,7 @@ function fillForeCast(data, i){
 			case 1:
 					dayOfWeek[0].innerHTML = data[i].name;
 					amPmBoxes[0].textContent = data[i].temperature + " " +  data[i].temperatureUnit;
+					weatherIcon[0].src = data[i].icon;
 					break;
 			case 2:
 					amPmBoxes[1].innerHTML = data[i].temperature + " " + data[i].temperatureUnit;
@@ -97,6 +99,7 @@ function fillForeCast(data, i){
 			case 3:
 					dayOfWeek[1].innerHTML = data[i].name;
 					amPmBoxes[2].innerHTML = data[i].temperature + " " + data[i].temperatureUnit;
+					weatherIcon[1].src = data[i].icon;
 					break;
 			case 4:
 					amPmBoxes[3].innerHTML = data[i].temperature + " " + data[i].temperatureUnit;
@@ -104,6 +107,7 @@ function fillForeCast(data, i){
 			case 5:
 					dayOfWeek[2].innerHTML = data[i].name;
 					amPmBoxes[4].innerHTML = data[i].temperature + " " + data[i].temperatureUnit;
+					weatherIcon[2].src = data[i].icon;
 					break;
 			case 6:
 					amPmBoxes[5].innerHTML = data[i].temperature + " " + data[i].temperatureUnit;
@@ -111,6 +115,7 @@ function fillForeCast(data, i){
 			case 7:
 						dayOfWeek[3].innerHTML = data[i].name;
 						amPmBoxes[6].innerHTML = data[i].temperature + " " + data[i].temperatureUnit;
+						weatherIcon[3].src = data[i].icon;
 						break;
 			case 8:
 					amPmBoxes[7].innerHTML = data[i].temperature + " " + data[i].temperatureUnit;
@@ -118,6 +123,7 @@ function fillForeCast(data, i){
 			case 9:
 					dayOfWeek[4].innerHTML = data[i].name;
 					amPmBoxes[8].innerHTML = data[i].temperature + " " +  data[i].temperatureUnit;
+					weatherIcon[4].src = data[i].icon;
 					break;
 			case 10:
 					amPmBoxes[9].innerHTML = data[i].temperature + " " + data[i].temperatureUnit;
@@ -125,6 +131,7 @@ function fillForeCast(data, i){
 			case 11:
 					dayOfWeek[5].innerHTML = data[i].name;
 					amPmBoxes[10].innerHTML = data[i].temperature + " " + data[i].temperatureUnit;
+					weatherIcon[5].src = data[i].icon;
 					break;
 			case 12:
 					amPmBoxes[11].innerHTML = data[i].temperature + " " + data[i].temperatureUnit;
@@ -132,6 +139,7 @@ function fillForeCast(data, i){
 			case 13:
 					dayOfWeek[6].innerHTML = data[i].name;
 					amPmBoxes[12].innerHTML = data[i].temperature + " " + data[i].temperatureUnit;
+					weatherIcon[6].src = data[i].icon;
 					break;
 			case 14:
 					amPmBoxes[13].innerHTML = data[i].temperature + " " + data[i].temperatureUnit;
