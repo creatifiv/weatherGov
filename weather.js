@@ -80,51 +80,53 @@ function fillData(){
 	x2.innerHTML = city + "," + " "+ state;
 }
 
+// data[i].name   <=== temp day name
+
 function fillForeCast(data, i){
 	try{
 		switch(data[i].number){
 			case 1:
-					amPmBoxes[0].innerHTML = data[i].name + "" + data[i].temperature + data[i].temperatureUnit;
+					amPmBoxes[0].innerHTML = data[i].temperature + " " +  data[i].temperatureUnit;
 					break;
 			case 2:
-					amPmBoxes[1].innerHTML = data[i].name + "" + data[i].temperature + data[i].temperatureUnit;
+					amPmBoxes[1].innerHTML = data[i].temperature + " " + data[i].temperatureUnit;
 			break;
 			
 			case 3:
-					amPmBoxes[2].innerHTML = data[i].name + "" + data[i].temperature + data[i].temperatureUnit;
+					amPmBoxes[2].innerHTML = data[i].temperature + " " + data[i].temperatureUnit;
 					break;
 			case 4:
-							amPmBoxes[3].innerHTML = data[i].name + "" + data[i].temperature + data[i].temperatureUnit;
+					amPmBoxes[3].innerHTML = data[i].temperature + " " + data[i].temperatureUnit;
 			break;
 			case 5:
-					amPmBoxes[4].innerHTML = data[i].name + "" + data[i].temperature + data[i].temperatureUnit;
+					amPmBoxes[4].innerHTML = data[i].temperature + " " + data[i].temperatureUnit;
 					break;
 			case 6:
-							amPmBoxes[5].innerHTML = data[i].name + "" + data[i].temperature + data[i].temperatureUnit;
+					amPmBoxes[5].innerHTML = data[i].temperature + " " + data[i].temperatureUnit;
 			break;
 			case 7:
-						amPmBoxes[6].innerHTML = data[i].name + "" + data[i].temperature + data[i].temperatureUnit;
+						amPmBoxes[6].innerHTML = data[i].temperature + " " + data[i].temperatureUnit;
 						break;
 			case 8:
-								amPmBoxes[7].innerHTML = data[i].name + "" + data[i].temperature + data[i].temperatureUnit;
+					amPmBoxes[7].innerHTML = data[i].temperature + " " + data[i].temperatureUnit;
 			break;
 			case 9:
-					amPmBoxes[8].innerHTML = data[i].name + "" + data[i].temperature + data[i].temperatureUnit;
+					amPmBoxes[8].innerHTML = data[i].temperature + " " +  data[i].temperatureUnit;
 					break;
 			case 10:
-					amPmBoxes[9].innerHTML = data[i].name + "" + data[i].temperature + data[i].temperatureUnit;
+					amPmBoxes[9].innerHTML = data[i].temperature + " " + data[i].temperatureUnit;
 			break;
 			case 11:
-					amPmBoxes[10].innerHTML = data[i].name + "" + data[i].temperature + data[i].temperatureUnit;
+					amPmBoxes[10].innerHTML = data[i].temperature + " " + data[i].temperatureUnit;
 					break;
 			case 12:
-								amPmBoxes[11].innerHTML = data[i].name + "" + data[i].temperature + data[i].temperatureUnit;
+					amPmBoxes[11].innerHTML = data[i].temperature + " " + data[i].temperatureUnit;
 			break;
 			case 13:
-					amPmBoxes[12].innerHTML = data[i].name + "" + data[i].temperature + data[i].temperatureUnit;
+					amPmBoxes[12].innerHTML = data[i].temperature + " " + data[i].temperatureUnit;
 					break;
 			case 14:
-								amPmBoxes[13].innerHTML = data[i].name + "" + data[i].temperature + data[i].temperatureUnit;
+					amPmBoxes[13].innerHTML = data[i].temperature + " " + data[i].temperatureUnit;
 			break;
 			
 			default:
