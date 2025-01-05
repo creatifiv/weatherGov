@@ -11,13 +11,16 @@ ul li{
 }
 
 .weather-box{
-    
-    border: 1px solid #333;
+
     display: inline-block;
     margin: 0 25px;
     padding: 5px;
     float: left;
     text-align: center;
+}
+
+.temp-border{
+    border: 1px solid #333;
 }
 
 #log-output{
