@@ -85,7 +85,7 @@ function fillData(){
 }
 
 searchOutput.addEventListener("keypress", function(event){
-		search-output.innerHTML= event.target.value;
+		searchOutput.innerHTML= event.target.value;
 	
 });
 
