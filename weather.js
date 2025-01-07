@@ -1,4 +1,4 @@
-var x, x1, x2, x3, x4, x5, x6, x9, amPmBoxes,weatherIcon, dayOfWeek, latitude, longitude, api, api2, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7;
+var x, x1, x2, x3, x4, x5, x6, x9, amPmBoxes, search, weatherIcon, dayOfWeek, latitude, longitude, api, api2, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7;
 
 /*
   ===== xReq: Request count
@@ -26,6 +26,7 @@ window.addEventListener('load',() => {
 	day7 = document.getElementById('day-7');
 	dayOfWeek = document.getElementsByClassName("day-of-week");
 	weatherIcon = document.getElementsByClassName("weather-icon");
+	search = document.getElementById("main-search");
 	
 	amPmBoxes = [
 		document.getElementById('d1-am'), 
@@ -82,7 +83,14 @@ function fillData(){
 	x2.innerHTML = city + "," + " "+ state;
 }
 
-// data[i].name   <=== temp day name
+search.addEventListener("keypress", function(event){
+		var input = event.target.value;
+	
+});
+
+function search(){
+	
+}
 
 function fillForeCast(data, i){
 	try{
