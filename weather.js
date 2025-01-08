@@ -86,7 +86,7 @@ function fillData(){
 
 searchOutput.addEventListener("keypress", function(event){
 		var textNode = document.createTextNode(event.target.value);
-		searchOutput.appenChild(textNode);
+		searchOutput.appendChild(textNode);
 	
 });
 
