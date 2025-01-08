@@ -27,6 +27,11 @@ ul li{
     display: inline-block;
 }
 
+#output-x{
+    display: inline-block;
+    width: 10px;
+    height: auto;
+}
 
 #mock-console{
     
