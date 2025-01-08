@@ -84,7 +84,7 @@ function fillData(){
 	x2.innerHTML = city + "," + " "+ state;
 }
 
-searchOutput.addEventListener("keypress", function(event){
+search.addEventListener("keypress", function(event){
 		var textNode = document.createTextNode(event.target.value);
 		searchOutput.appendChild(textNode);
 	
