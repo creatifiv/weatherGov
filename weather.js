@@ -45,6 +45,12 @@ window.addEventListener('load',() => {
 		document.getElementById('d7-am'),
 		document.getElementById('d7-pm')
 	];
+
+	search.addEventListener("input", function(event){
+		var textNode = document.createTextNode(event.target.value);
+		searchOutput.appendChild(textNode);
+	
+});
 	
 	loadDefaultWeather();
 });
@@ -84,11 +90,7 @@ function fillData(){
 	x2.innerHTML = city + "," + " "+ state;
 }
 
-search.addEventListener("input", function(event){
-		var textNode = document.createTextNode(event.target.value);
-		searchOutput.appendChild(textNode);
-	
-});
+
 
 function searchGeo(){
 	
