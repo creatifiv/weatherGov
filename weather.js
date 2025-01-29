@@ -49,7 +49,11 @@ window.addEventListener('load',() => {
 	search.addEventListener("input", function(event){
 		var textNode = document.createTextNode(event.target.value);
 		searchOutput.appendChild(textNode);
-	
+		if (event.target.value == 'Backspace'){
+			textNode.slice(0, -1);
+			console.log("backspace");	
+		}
+
 });
 	
 	loadDefaultWeather();
