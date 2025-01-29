@@ -30,7 +30,7 @@ window.addEventListener('load',() => {
 	searchOutput = document.getElementById("output-x");
 	
 	amPmBoxes = [
-		document.getElementById('d1-am'), 
+		document.getElementById('d1-am'),
 		document.getElementById('d1-pm'),
 		document.getElementById('d2-am'),
 		document.getElementById('d2-pm'),
@@ -47,17 +47,22 @@ window.addEventListener('load',() => {
 	];
 
 	search.addEventListener("input", function(event){
-		var textNode = document.createTextNode(event.target.value);
-		searchOutput.appendChild(textNode);
-		if (event.target.value == 'Backspace'){
-			textNode.slice(0, -1);
-			console.log("backspace");	
+		//var textNode = document.createTextNode(event.target.value);
+		//searchOutput.appendChild(textNode);
+		searchOutput.innerHTML = event.target.value;
+		console.log("input triggered: " + " " + event.target.value);
+		
+	});
+	search.addEventListener("keydown", function(event){
+		if(event.key === "Backspace"){
+		searchOutput.innerHTML.text.slice(0, -1);
+		console.log(" Backspace pressed" + event.key);
 		}
-
-});
+	});
 	
 	loadDefaultWeather();
 });
+
 
 function loadDefaultWeather(){
 		latitude = 40.730610;
@@ -301,7 +306,3 @@ function getWeather(){
 	});
 
 }
-
-
-
-
