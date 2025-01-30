@@ -1,4 +1,4 @@
-var x, x1, x2, x3, x4, x5, x6, x9,jsonData,amPmBoxes, searchOutput, search, weatherIcon, dayOfWeek, latitude, longitude, api, api2, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7;
+var x, x1, x2, x3, x4, x5, x6, x9, amPmBoxes, searchOutput, search, weatherIcon, dayOfWeek, latitude, longitude, api, api2, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7;
 
 
 
@@ -56,8 +56,7 @@ window.addEventListener('load',() => {
 		}
 	});
 	search.addEventListener("focus", function(){
-		getUsCap();
-		console.log(jsonData);
+		getUsCap().then(result => {console.log("getUsCap call" + " " + result);});
 	}); 
 	loadDefaultWeather();
 
@@ -254,7 +253,6 @@ function getUsCap(){
 		return response.json();
 	})
 	.then(data => {
-		jsonData = data;
 		createUsCapitalsButtons(data);
 		console.log("U.S.capitals call");
 		console.log(data);
@@ -262,7 +260,7 @@ function getUsCap(){
 	.catch(error=>{
 		console.log('Geo Location Error'+  " " + error.message);
 	});
-	
+	return  data;
 }//End getUsCap
 
 
