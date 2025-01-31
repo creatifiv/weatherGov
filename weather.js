@@ -1,5 +1,6 @@
-var x, x1, x2, x3, x4, x5, x6, x9,jsonData,amPmBoxes, searchOutput, search, weatherIcon, dayOfWeek, latitude, longitude, api, api2, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7;
+var x, x1, x2, x3, x4, x5, x6, x9, searchClicked, amPmBoxes, searchOutput, search, weatherIcon, dayOfWeek, latitude, longitude, api, api2, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7;
 
+searchClicked = 0;
 
 
 window.addEventListener('load',() => {
@@ -55,14 +56,15 @@ window.addEventListener('load',() => {
 		console.log(" Backspace pressed" + event.key);
 		}
 	});
-	search.addEventListener("focus", function(){
-		getUsCap();
-		console.log(jsonData);
-	}); 
-	loadDefaultWeather();
-
-});//End window event
-
+	if(searchClicked != 1){
+		search.addEventListener("click", function(){
+			getUsCap();
+			searchClicked = 1
+		}); //End seach eventListener
+	}	
+     loadDefaultWeather();
+});
+	
 
 function loadDefaultWeather(){
 		latitude = 40.730610;
@@ -102,12 +104,9 @@ function fillData(){
 
 // === SEARCH === /
 
-function stateSearch(e){
-		
-
+function getStateData(city){
+	console.log(city[0].name);
 }
-
-
 
 function searchGeo(){
 	
@@ -230,20 +229,7 @@ function createElement(data, days){
 	}
 }
 
-/* ***** FIX: createUsCapitalsButtons Needs to go. Ul is in index.html, no need to create **** */
-
-function createUsCapitalsButtons(capitals){
-	createUlC = document.createElement('ul');
-	box2.appendChild(createUlC);
-	console.log(capitals);
-	for(var i = 0; i < capitals.length; i++){
-		createUlC.appendChild(createUlC);
-		createUlC.innerHTML = "";
-	}
-}
-
-
-function getUsCap(){
+	function getUsCap(){
 	fetch("./us_capitals.json", {
 		method: 'GET'
 	})
@@ -253,11 +239,10 @@ function getUsCap(){
 		}
 		return response.json();
 	})
-	.then(data => {
-		jsonData = data;
-		createUsCapitalsButtons(data);
+    .then(data => {
 		console.log("U.S.capitals call");
-		console.log(data);
+		getStateData(data);
+		console.log("getUsCap Data status:" + data[0].name);
 	})
 	.catch(error=>{
 		console.log('Geo Location Error'+  " " + error.message);
