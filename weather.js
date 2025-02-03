@@ -47,7 +47,7 @@ window.addEventListener('load',() => {
 	search.addEventListener("input", function(event){
 		//var textNode = document.createTextNode(event.target.value);
 		//searchOutput.appendChild(textNode);
-		searchOutput.innerHTML = event.target.value;
+		//searchOutput.innerHTML = event.target.value;
 		console.log("input triggered: " + " " + event.target.value);
 		regex = /[a-z]+/i;
 		text = event.target.value;
