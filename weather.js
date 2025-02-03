@@ -55,7 +55,7 @@ window.addEventListener('load',() => {
 	});
 	search.addEventListener("keydown", function(event){
 		if(event.key === "Backspace"){
-		searchOutput.innerHTML.text.slice(0, -1);
+		searchOutput.innerHTML.slice(0, -1);
 		console.log(" Backspace pressed" + event.key);
 		}
 	});
