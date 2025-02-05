@@ -51,7 +51,8 @@ window.addEventListener('load',() => {
 		console.log("input triggered: " + " " + event.target.value);
 		regex = /[a-z]+/i;
 		text = event.target.value;
-		searchOuput.innerHTML = text.match(regex);
+		searchOuput.innerHTML = text.match(regex) ?? "Aw Naur";
+	
 	});
 	search.addEventListener("keydown", function(event){
 		if(event.key === "Backspace"){
