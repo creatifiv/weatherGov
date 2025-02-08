@@ -105,7 +105,7 @@ function fillData(){
 // === SEARCH === /
 
 function getStateData(city){
-	console.log(city[0].name);
+	console.log("Get Us Data func:" + " " + city[0].name);
 }
 
 function searchGeo(){
