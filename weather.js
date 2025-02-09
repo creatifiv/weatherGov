@@ -1,4 +1,4 @@
-var x, x1, x2, x3, x4, x5, x6, x9, regex, text, searchClicked, amPmBoxes, searchOutput, search, weatherIcon, dayOfWeek, latitude, longitude, api, api2, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7;
+var x, x1, x2, x3, x4, x5, x6, x9, regex, jsonData, text, searchClicked, amPmBoxes, searchOutput, search, weatherIcon, dayOfWeek, latitude, longitude, api, api2, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7;
 
 searchClicked = 0;
 
@@ -49,7 +49,7 @@ window.addEventListener('load',() => {
 		searchOutput.appendChild(textNode);
 		searchOutput.innerHTML = event.target.value;
 		//console.log("input triggered: " + " " + event.target.value);
-		regex = /[a-z]+/i;
+		//regex = /[a-z]+/i;
 		text = event.target.value;
 		console.log(text.match(regex) ?? "Aw Naur");
 	
@@ -247,12 +247,20 @@ function createElement(data, days){
 		console.log("U.S.capitals call");
 		getStateData(data);
 		console.log("getUsCap Data status:" + data[0].name);
+		jsonData = data;
+		getJsonData(data);
 	})
 	.catch(error=>{
 		console.log('Geo Location Error'+  " " + error.message);
 	});
 	
 }//End getUsCap
+
+	function getJsonData(data){
+		for(var i = 0; i < data.length; i++ ){
+			console.log(data[i]);
+		}
+	}
 
 
 // ***** GOV API ***** //
