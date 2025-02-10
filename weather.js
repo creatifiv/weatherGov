@@ -90,7 +90,30 @@ window.addEventListener('load',() => {
     }
     node.isEndOfWord = true; // Mark the end of a valid word
 	}
-	
+	// Search for a word in the trie
+  search(word) {
+    let node = this.root;
+    for (let char of word) {
+      if (!node.children[char]) {
+        return false; // Word not found
+      }
+      node = node.children[char];
+    }
+    return node.isEndOfWord; // Returns true if it's a complete word
+  }
+
+  // Check if a prefix exists in the trie
+  startsWith(prefix) {
+    let node = this.root;
+    for (let char of prefix) {
+      if (!node.children[char]) {
+        return false;
+      }
+      node = node.children[char];
+    }
+    return true; // Prefix exists
+  }
+}
 	
 	
 	
