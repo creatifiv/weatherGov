@@ -253,7 +253,6 @@ function createElement(data, days){
 	.catch(error=>{
 		console.log('Geo Location Error'+  " " + error.message);
 	});
-	
 }//End getUsCap
 
 	function getJsonData(data){
