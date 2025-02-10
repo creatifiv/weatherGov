@@ -69,6 +69,33 @@ window.addEventListener('load',() => {
      loadDefaultWeather();
 });
 	
+	class TrieNode {
+			constructor(){
+					this.children = {};
+					this.isEndOfWord = false;
+			}
+	}
+	class Trie {
+			constructor(){
+				this.root = new TroeNode();
+			}
+			insert(word){
+				let node = this.root;
+			}
+			for (let char of word) {
+      if (!node.children[char]) {
+        node.children[char] = new TrieNode(); // Create a new node if char not found
+      }
+      node = node.children[char]; // Move to the next node
+    }
+    node.isEndOfWord = true; // Mark the end of a valid word
+	}
+	
+	
+	
+	
+	
+	
 
 function loadDefaultWeather(){
 		latitude = 40.730610;
