@@ -77,7 +77,7 @@ window.addEventListener('load',() => {
 	}
 	class Trie {
 			constructor(){
-				this.root = new TroeNode();
+				this.root = new TrieNode();
 			}
 			insert(word){
 				let node = this.root;
