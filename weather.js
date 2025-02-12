@@ -52,12 +52,12 @@ window.addEventListener('load',() => {
 		//regex = /[a-z]+/i;
 		text = event.target.value;
 		newTrie.insert(text);
-		console.log(text.match(regex) ?? "Aw Naur");
+		//console.log(text.match(regex) ?? "Aw Naur");
 	
 	});
 	search.addEventListener("keydown", function(event){
 		if(event.key === "Backspace"){
-		//searchOutput.innerHTML.slice(0, -1);
+		searchOutput.innerHTML.slice(0, -1);
 		console.log(" Backspace pressed" + event.key);
 		}
 	});
