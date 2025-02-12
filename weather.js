@@ -49,7 +49,6 @@ window.addEventListener('load',() => {
 		var textNode = document.createTextNode(event.target.value);
 		searchOutput.appendChild(textNode);
 		searchOutput.innerHTML = event.target.value;
-		dropDownBox[0].innerHTML = "test";
 		//console.log("input triggered: " + " " + event.target.value);
 		//regex = /[a-z]+/i;
 		text = event.target.value;
@@ -92,6 +91,7 @@ window.addEventListener('load',() => {
         node.children[char] = new TrieNode(); // Create a new node if char not found
       }
       node = node.children[char]; // Move to the next node
+						dropDownBox[0].innerHTML = node.children;
     }
     node.isEndOfWord = true; // Mark the end of a valid word
 				console.log(node.children);
