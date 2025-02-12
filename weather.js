@@ -51,6 +51,7 @@ window.addEventListener('load',() => {
 		//console.log("input triggered: " + " " + event.target.value);
 		//regex = /[a-z]+/i;
 		text = event.target.value;
+		newTrie.insert(text);
 		console.log(text.match(regex) ?? "Aw Naur");
 	
 	});
@@ -68,6 +69,8 @@ window.addEventListener('load',() => {
 	}	
      loadDefaultWeather();
 });
+
+	var newTrie = new Trie();
 	
 	class TrieNode {
 			constructor(){
@@ -89,6 +92,7 @@ window.addEventListener('load',() => {
       node = node.children[char]; // Move to the next node
     }
     node.isEndOfWord = true; // Mark the end of a valid word
+				console.log(node.children);
 	}
 	// Search for a word in the trie
   search(word) {
