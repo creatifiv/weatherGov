@@ -1,4 +1,4 @@
-var x, x1, x2, x3, x4, x5, x6, x9, regex, jsonData, text, searchClicked, amPmBoxes, searchOutput, search, weatherIcon, dayOfWeek, latitude, longitude, api, api2, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7;
+var x, x1, x2, x3, x4, x5, x6, x9, regex, dropDownBox, jsonData, text, searchClicked, amPmBoxes, searchOutput, search, weatherIcon, dayOfWeek, latitude, longitude, api, api2, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7;
 
 searchClicked = 0;
 
@@ -26,6 +26,7 @@ window.addEventListener('load',() => {
 	weatherIcon = document.getElementsByClassName("weather-icon");
 	search = document.getElementById("main-search");
 	searchOutput = document.getElementById("output-x");
+	dropDownBox = document.getElementsByClassName("dropdown-item");
 
 	amPmBoxes = [
 		document.getElementById('d1-am'),
@@ -48,6 +49,7 @@ window.addEventListener('load',() => {
 		var textNode = document.createTextNode(event.target.value);
 		searchOutput.appendChild(textNode);
 		searchOutput.innerHTML = event.target.value;
+		dropDownBox[0].innerHTML = "test";
 		//console.log("input triggered: " + " " + event.target.value);
 		//regex = /[a-z]+/i;
 		text = event.target.value;
