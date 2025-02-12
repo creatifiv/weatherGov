@@ -57,7 +57,7 @@ window.addEventListener('load',() => {
 	});
 	search.addEventListener("keydown", function(event){
 		if(event.key === "Backspace"){
-		searchOutput.innerHTML.slice(0, -1);
+		//searchOutput.innerHTML.slice(0, -1);
 		console.log(" Backspace pressed" + event.key);
 		}
 	});
@@ -93,6 +93,7 @@ window.addEventListener('load',() => {
     }
     node.isEndOfWord = true; // Mark the end of a valid word
 				console.log(node.children);
+				searchOutput.innerHTML = node.children;
 	}
 	// Search for a word in the trie
   search(word) {
