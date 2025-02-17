@@ -26,7 +26,7 @@
 			<button onclick="getUsrLocation()">Get Location</button>
 			<p id="output-x"></p>
 
-		<form class="d-flex" role="search">
+		<form class="d-flex" id="searchForm" role="search">
 		<div class="dropdown">
         	<input id="main-search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" data-bs-toggle="dropdown">
 	        <ul class="dropdown-menu">
@@ -34,7 +34,7 @@
 			    <!--<a class="dropdown-item"></a>-->
 		  	</ul>
         </div><!-- end dropdown -->
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <button class="btn btn-outline-success" id="searchBtn" type="submit">Search</button>
       </form>
 			<button onclick="showConsole()">console</button>
 		</div>

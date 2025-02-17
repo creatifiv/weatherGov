@@ -1,4 +1,4 @@
-var x, x1, x2, x3, x4, x5, x6, x9, regex, dropDownBox, jsonData, text, searchClicked, amPmBoxes, searchOutput, search, weatherIcon, dayOfWeek, latitude, longitude, api, api2, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7;
+var x, x1, x2, x3, x4, x5, x6, x9, regex, dropDownBox, jsonData, text, searchForm, searchClicked, amPmBoxes, searchOutput, searchBtn, search, weatherIcon, dayOfWeek, latitude, longitude, api, api2, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7;
 
 searchClicked = 0;
 
@@ -27,6 +27,8 @@ window.addEventListener('load',() => {
 	search = document.getElementById("main-search");
 	searchOutput = document.getElementById("output-x");
 	dropDownBox = document.getElementsByClassName("dropdown-item");
+	searchBtn = document.getElementById("searchBtn");
+	searchForm = document.getElementById("searchForm");
 
 	amPmBoxes = [
 		document.getElementById('d1-am'),
@@ -52,77 +54,41 @@ window.addEventListener('load',() => {
 		//console.log("input triggered: " + " " + event.target.value);
 		//regex = /[a-z]+/i;
 		text = event.target.value;
-		newTrie.insert(text);
+		console.log("text var:" + " " +  text);
 		//console.log(text.match(regex) ?? "Aw Naur");
-	
 	});
+	searchForm.addEventListener("submit", function(event){
+		event.preventDefault(); // Prevent page refresh
+		console.log("refresh prevented");
+	});
+
 	search.addEventListener("keydown", function(event){
 		if(event.key === "Backspace"){
 		searchOutput.innerHTML.slice(0, -1);
 		console.log(" Backspace pressed" + event.key);
 		}
 	});
+
 	if(searchClicked != 1){
 		search.addEventListener("click", function(){
 			getUsCap();
 			searchClicked = 1
 		}); //End seach eventListener
-	}	
-     loadDefaultWeather();
-});
+	}	// End if serach CLiecked
 
-	var newTrie = new Trie();
-	
-	class TrieNode {
-			constructor(){
-					this.children = {};
-					this.isEndOfWord = false;
-			}
-	}
-	class Trie {
-			constructor(){
-				this.root = new TrieNode();
-			}
-			insert(word){
-				let node = this.root;
-				
-			for (let char of word) {
-      if (!node.children[char]) {
-        node.children[char] = new TrieNode(); // Create a new node if char not found
-      }
-      node = node.children[char]; // Move to the next node
-						dropDownBox[0].innerHTML = node.children;
-    }
-    node.isEndOfWord = true; // Mark the end of a valid word
-				console.log(node.children);
-				searchOutput.innerHTML = node.children;
-	}
-	// Search for a word in the trie
-  search(word) {
-    let node = this.root;
-    for (let char of word) {
-      if (!node.children[char]) {
-        return false; // Word not found
-      }
-      node = node.children[char];
-    }
-    return node.isEndOfWord; // Returns true if it's a complete word
-  }
 
-  // Check if a prefix exists in the trie
-  startsWith(prefix) {
-    let node = this.root;
-    for (let char of prefix) {
-      if (!node.children[char]) {
-        return false;
-      }
-      node = node.children[char];
-    }
-    return true; // Prefix exists
-  }
-}
-	
-	
+	searchBtn.addEventListener("click", function(event){
+
+			newTrie.search(text);
+
+	});//End searchBTn
+
+
+
+
+   loadDefaultWeather();
+});//End Windows Event Listener
+
 	
 	
 	
@@ -163,15 +129,7 @@ function fillData(){
 }
 
 
-// === SEARCH === /
 
-function getStateData(city){
-	console.log("Get Us Data func:" + " " + city[0].name);
-}
-
-function searchGeo(){
-	
-}
 
 function fillForeCast(data, i){
 	try{
@@ -290,6 +248,63 @@ function createElement(data, days){
 	}
 }
 
+
+// ========= SERACH ========= //
+
+class TrieNode {
+			constructor(){
+					this.children = {};
+					this.isEndOfWord = false;
+			}
+	}
+	class Trie {
+			constructor(){
+				this.root = new TrieNode();
+				console.log("New Trie planted");
+			}
+			insert(word){
+				let node = this.root;
+			for (let char of word) {
+      if (!node.children[char]) {
+        node.children[char] = new TrieNode(); // Create a new node if char not found
+      }//end if
+      node = node.children[char]; // Move to the next node
+      //dropDownBox[0].innerHTML = node;
+      console.log("char" + "" + char);
+    }//end for
+    node.isEndOfWord = true; // Mark the end of a valid word
+	}//end insert
+
+	// Search for a word in the trie
+  search(word) {
+    let node = this.root;
+    for (let char of word) {
+      if (!node.children[char]) {
+      	console.log(word + " " + "Not found");
+      	dropDownBox.innerHTML = word + "" + "not found";
+        return false; // Word not found
+      }
+      node = node.children[char];
+    }
+    console.log(node.isEndOfWord);
+    return node.isEndOfWord; // Returns true if it's a complete word
+  }
+
+  // Check if a prefix exists in the trie
+  startsWith(prefix) {
+    let node = this.root;
+    for (let char of prefix) {
+      if (!node.children[char]) {
+        return false;
+      }
+      node = node.children[char];
+    }
+    return true; // Prefix exists
+  }
+}
+
+var newTrie = new Trie();
+
 	function getUsCap(){
 	fetch("./us_capitals.json", {
 		method: 'GET'
@@ -303,7 +318,7 @@ function createElement(data, days){
     .then(data => {
 		console.log("U.S.capitals call");
 		getStateData(data);
-		console.log("getUsCap Data status:" + data[0].name);
+		//console.log("getUsCap Data status:" + data[0].name);
 		jsonData = data;
 		getJsonData(data);
 	})
@@ -314,9 +329,22 @@ function createElement(data, days){
 
 	function getJsonData(data){
 		for(var i = 0; i < data.length; i++ ){
-			console.log(data[i]);
+			if(data){
+				newTrie.insert(data[i].name);
+				console.log("getJsonData data has landed" + "" + newTrie);
+			}
 		}
 	}
+
+
+
+function getStateData(city){
+	console.log("Get Us Data func:" + " " + city[0].name);
+}
+
+function searchGeo(){
+	
+}
 
 
 // ***** GOV API ***** //
