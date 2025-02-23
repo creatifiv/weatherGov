@@ -55,12 +55,16 @@ window.addEventListener('load',() => {
 		//regex = /[a-z]+/i;
 		text = event.target.value;
 		console.log("text var:" + " " +  text);
+		newTrie.startsWith(text);
 		//console.log(text.match(regex) ?? "Aw Naur");
 	});
 	searchForm.addEventListener("submit", function(event){
 		event.preventDefault(); // Prevent page refresh
-		console.log("refresh prevented");
+		var inputValue = search.value;
+		newTrie.startsWith(text);
+		console.log("Submit:" + " " + "Form value" + " " + inputValue);
 	});
+
 
 	search.addEventListener("keydown", function(event){
 		if(event.key === "Backspace"){
@@ -69,21 +73,18 @@ window.addEventListener('load',() => {
 		}
 	});
 
-	if(searchClicked != 1){
-		search.addEventListener("click", function(){
+	search.addEventListener("click", function(){
+		if(searchClicked < 1){
 			getUsCap();
-			searchClicked = 1
+		}
+		searchClicked = 1;
 		}); //End seach eventListener
-	}	// End if serach CLiecked
-
-
+/*
 	searchBtn.addEventListener("click", function(event){
-
 			newTrie.search(text);
-
 	});//End searchBTn
 
-
+*/
 
 
    loadDefaultWeather();
@@ -281,7 +282,7 @@ class TrieNode {
     for (let char of word) {
       if (!node.children[char]) {
       	console.log(word + " " + "Not found");
-      	dropDownBox.innerHTML = word + "" + "not found";
+      	dropDownBox.innerHTML = word + " " + "not found";
         return false; // Word not found
       }
       node = node.children[char];
@@ -295,16 +296,20 @@ class TrieNode {
     let node = this.root;
     for (let char of prefix) {
       if (!node.children[char]) {
+      	 console.log("Prefix:" + " " + prefix + " " + "does not exist");
         return false;
       }
       node = node.children[char];
+      console.log(prefix + " " + "exist");
     }
     return true; // Prefix exists
   }
 }
-
 var newTrie = new Trie();
 
+
+
+// ====== API Calls ====== //
 	function getUsCap(){
 	fetch("./us_capitals.json", {
 		method: 'GET'
@@ -331,7 +336,7 @@ var newTrie = new Trie();
 		for(var i = 0; i < data.length; i++ ){
 			if(data){
 				newTrie.insert(data[i].name);
-				console.log("getJsonData data has landed" + "" + newTrie);
+				console.log("getJsonData data has landed" + "" + newTrie.root.children);
 			}
 		}
 	}
