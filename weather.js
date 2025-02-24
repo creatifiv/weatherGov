@@ -340,7 +340,7 @@ var newTrie = new Trie();
 				newTrie.insert(data[i].name);
 				usCapArray[i] = data[i];
 				if(data[i].name.test(regex) == true){
-						x9.innerHTML += usCapArray[i].name;
+						x9.innerHTML += usCapArray[i].name ?? "nooooo";
 				}else{x9.innerHTML = "no can do";}
 				//x9.innerHTML += usCapArray[i].name;
 				console.log(usCapArray);
