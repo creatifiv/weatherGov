@@ -334,14 +334,13 @@ var newTrie = new Trie();
 }//End getUsCap
 
 	function getJsonData(data){
-		
 		for(var i = 0; i < data.length; i++ ){
 			var regex = "/^a/i";
 			if(data){
 				newTrie.insert(data[i].name);
 				usCapArray[i] = data[i];
 				if(data[i].name.test(regex) == true){
-						x9.innerHTML += usCapArray[i];
+						x9.innerHTML += usCapArray[i].name;
 				}else{x9.innerHTML = "no can do";}
 				//x9.innerHTML += usCapArray[i].name;
 				console.log(usCapArray);
