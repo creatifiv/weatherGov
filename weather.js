@@ -1,6 +1,7 @@
-var x, x1, x2, x3, x4, x5, x6, x9, regex, dropDownBox, jsonData, text, searchForm, searchClicked, amPmBoxes, searchOutput, searchBtn, search, weatherIcon, dayOfWeek, latitude, longitude, api, api2, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7;
+var x, x1, x2, x3, x4, x5, x6, x9, regex, usCapArray, dropDownBox, jsonData, text, searchForm, searchClicked, amPmBoxes, searchOutput, searchBtn, search, weatherIcon, dayOfWeek, latitude, longitude, api, api2, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7;
 
 searchClicked = 0;
+usCapArray = [];
 
 
 window.addEventListener('load',() => {
@@ -336,6 +337,8 @@ var newTrie = new Trie();
 		for(var i = 0; i < data.length; i++ ){
 			if(data){
 				newTrie.insert(data[i].name);
+				usCapArray[i] = data;
+				console.log(usCapArray);
 				console.log("getJsonData data has landed" + "" + newTrie.root.children);
 			}
 		}
