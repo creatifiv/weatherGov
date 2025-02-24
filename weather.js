@@ -338,7 +338,7 @@ var newTrie = new Trie();
 			if(data){
 				newTrie.insert(data[i].name);
 				usCapArray[i] = data;
-				x9.innerHTML += usCapArray[i];
+				x9.innerHTML += usCapArray[i].name;
 				console.log(usCapArray);
 				console.log("getJsonData data has landed" + "" + newTrie.root.children);
 			}
