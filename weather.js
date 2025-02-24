@@ -342,7 +342,7 @@ var newTrie = new Trie();
 				usCapArray[i] = data[i];
 				if(data[i].name.test(regex) == true){
 						x9.innerHTML += usCapArray[i];
-				}
+				}else{x9.innerHTML = "no can do";}
 				//x9.innerHTML += usCapArray[i].name;
 				console.log(usCapArray);
 				console.log("getJsonData data has landed" + "" + newTrie.root.children);
