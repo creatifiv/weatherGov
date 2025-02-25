@@ -53,4 +53,3 @@ export class TrieNode {
     return true; // Prefix exists
   }
 }
-var newTrie = new Trie();
