@@ -1,7 +1,62 @@
 var x, x1, x2, x3, x4, x5, x6, x9, regex, usCapArray, dropDownBox, jsonData, text, searchForm, searchClicked, amPmBoxes, searchOutput, searchBtn, search, weatherIcon, dayOfWeek, latitude, longitude, api, api2, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7;
 
+// ========= SERACH ========= //
 
+class TrieNode {
+			constructor(){
+					this.children = {};
+					this.isEndOfWord = false;
+			}
+	}
+	class Trie {
+			constructor(){
+				this.root = new TrieNode();
+				console.log("New Trie planted");
+			}
+			insert(word){
+				let node = this.root;
+			for (let char of word) {
+      if (!node.children[char]) {
+        node.children[char] = new TrieNode(); // Create a new node if char not found
+      }//end if
+      node = node.children[char]; // Move to the next node
+      //dropDownBox[0].innerHTML = node;
+      console.log("char" + "" + char);
+    }//end for
+    node.isEndOfWord = true; // Mark the end of a valid word
+	}//end insert
+
+	// Search for a word in the trie
+  search(word) {
+    let node = this.root;
+    for (let char of word) {
+      if (!node.children[char]) {
+      	console.log(word + " " + "Not found");
+      	dropDownBox.innerHTML = word + " " + "not found";
+        return false; // Word not found
+      }
+      node = node.children[char];
+    }
+    console.log(node.isEndOfWord);
+    return node.isEndOfWord; // Returns true if it's a complete word
+  }
+
+  // Check if a prefix exists in the trie
+  startsWith(prefix) {
+    let node = this.root;
+    for (let char of prefix) {
+      if (!node.children[char]) {
+      	 console.log("Prefix:" + " " + prefix + " " + "does not exist");
+        return false;
+      }
+      node = node.children[char];
+      console.log(prefix + " " + "exist");
+    }
+    return true; // Prefix exists
+  }
+}
 var newTrie = new Trie();
+
 searchClicked = 0;
 usCapArray = [];
 
