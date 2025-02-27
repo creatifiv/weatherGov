@@ -1,7 +1,6 @@
 var x, x1, x2, x3, x4, x5, x6, x9, regex, usCapArray, dropDownBox, jsonData, text, searchForm, searchClicked, amPmBoxes, searchOutput, searchBtn, search, weatherIcon, dayOfWeek, latitude, longitude, api, api2, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7;
 
-import {TrieNode, Trie} from './search-class.js';
-var newTrieNode = new TrieNode();
+
 var newTrie = new Trie();
 searchClicked = 0;
 usCapArray = [];
