@@ -19,7 +19,7 @@ export class TrieNode {
       }//end if
       node = node.children[char]; // Move to the next node
       //dropDownBox[0].innerHTML = node;
-      console.log("char" + "" + char);
+      console.log("char:" + " " + char);
     }//end for
     node.isEndOfWord = true; // Mark the end of a valid word
 	}//end insert

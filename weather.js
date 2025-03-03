@@ -1,4 +1,4 @@
-var x, x1, x2, x3, x4, x5, x6, x9, regex, usCapArray, dropDownBox, jsonData, text, searchForm, searchClicked, amPmBoxes, searchOutput, searchBtn, search, weatherIcon, dayOfWeek, latitude, longitude, api, api2, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7;
+var x, x1, x2, x3, x4, x5, x6, x7, x8, x9, regex, usCapArray, dropDownBox, jsonData, text, searchForm, searchClicked, amPmBoxes, searchOutput, searchBtn, search, weatherIcon, dayOfWeek, latitude, longitude, api, api2, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7;
 
 import {TrieNode, Trie} from './search-class.js';
 
@@ -52,14 +52,25 @@ window.addEventListener('load',() => {
 		document.getElementById('d7-am'),
 		document.getElementById('d7-pm')
 	];
+	
+/*
+	function parseWords(input){
+		const regex = new RegExp(input, i);
+		for(var i = 0; i < usCapArray.length; i++){
+			if(regex.test(char) == true){
+				console.log(usCapArray[i]);
+			}
+		}
+		
+	}
+	*/
 
 	search.addEventListener("input", function(event){
 		var textNode = document.createTextNode(event.target.value);
 		searchOutput.appendChild(textNode);
 		searchOutput.innerHTML = event.target.value;
-		//console.log("input triggered: " + " " + event.target.value);
-		//regex = /[a-z]+/i;
 		text = event.target.value;
+		parseWords(text);
 		console.log("text var:" + " " +  text);
 		newTrie.startsWith(text);
 		//console.log(text.match(regex) ?? "Aw Naur");
@@ -256,10 +267,6 @@ function createElement(data, days){
 }
 
 
-
-
-
-
 // ====== API Calls ====== //
 	function getUsCap(){
 	fetch("./us_capitals.json", {
@@ -276,30 +283,24 @@ function createElement(data, days){
 		getStateData(data);
 		//console.log("getUsCap Data status:" + data[0].name);
 		jsonData = data;
-		getJsonData(data);
+		getJsonData(data);// data for the array
 	})
 	.catch(error=>{
 		console.log('Geo Location Error'+  " " + error.message);
 	});
 }//End getUsCap
 
-	function getJsonData(data){
-		for(var i = 0; i < data.length; i++ ){
-			var regex = "/^a/i";
-			if(data){
-				newTrie.insert(data[i].name);
-				usCapArray[i] = data[i];
-				if(regex.test(data[i].name)){
-						x9.innerHTML += usCapArray[i].name;
-				}else{x9.innerHTML = "no can do";}
-				//x9.innerHTML += usCapArray[i].name;
-				console.log(usCapArray);
-				console.log("getJsonData data has landed" + "" + newTrie.root.children);
-			}
+function getJsonData(data){
+	for(var i = 0; i < data.length; i++ ){
+		var regex = /^a/i;
+		if(data){
+			newTrie.insert(data[i].name);// store u.s. capitals in Trie
+			usCapArray[i] = data[i];// store u.s. capitals in array
+			x9.innerHTML += usCapArray[i].name + ", ";
+			console.log("getJsonData data has landed" + " " + newTrie.root.children + " " + "&&" + " " + usCapArray);
 		}
 	}
-
-
+}
 
 function getStateData(city){
 	console.log("Get Us Data func:" + " " + city[0].name);
