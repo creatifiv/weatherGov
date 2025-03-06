@@ -285,20 +285,21 @@ function createElement(data, days){
 
 	function getJsonData(data, usrInput){
 		for(var i = 0; i < data.length; i++ ){
-   var regex = new RegExp(usrInput, 'gi'); // 'i' flag for case-insensitive search
 			if(data){
-				newTrie.insert(data[i].name);
-				usCapArray[i] = data[i];
-				if(regex.test(data[i].name) == true){
-						x9.innerHTML += usCapArray[i].name;
-				}else{x9.innerHTML += "no can do";}
-				//x9.innerHTML += usCapArray[i].name;
-				console.log(usCapArray);
-				console.log("getJsonData data has landed" + "" + newTrie.root.children);
+				usCapArray[i] = data[i];// store data(city names) in an array
+				newTrie.insert(data[i].name);// insert words into Trie
+				console.log("getJsonData data has landed" + "" + newTrie.root.children + " " + "u.s.capital array" + " " + usCapArray);
 			}
 		}
 	}
 
+function parseInput(input){
+		var pattern = '\\b${usrInput}\\}';
+  regex = new RegExp(usrInput, 'gi'); // 'i' flag for case-insensitive search
+		if(regex.test(data[i].name) == true){
+						x9.innerHTML += usCapArray[i].name;
+				}else{x9.innerHTML += "no can do";}
+}
 
 
 function getStateData(city){
