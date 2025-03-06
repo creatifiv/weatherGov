@@ -289,7 +289,7 @@ function createElement(data, days){
 			if(data){
 				newTrie.insert(data[i].name);
 				usCapArray[i] = data[i];
-				if(regex.test(data[i].name)){
+				if(regex.test(data[i].name) == true){
 						x9.innerHTML += usCapArray[i].name;
 				}else{x9.innerHTML = "no can do";}
 				//x9.innerHTML += usCapArray[i].name;
