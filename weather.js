@@ -285,7 +285,7 @@ function createElement(data, days){
 
 	function getJsonData(data){
 		for(var i = 0; i < data.length; i++ ){
-			var regex = "/^a/i";
+			var regex = /^a/i;
 			if(data){
 				newTrie.insert(data[i].name);
 				usCapArray[i] = data[i];
