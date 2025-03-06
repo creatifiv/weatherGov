@@ -291,7 +291,7 @@ function createElement(data, days){
 				usCapArray[i] = data[i];
 				if(regex.test(data[i].name) == true){
 						x9.innerHTML += usCapArray[i].name;
-				}else{x9.innerHTML = "no can do";}
+				}else{x9.innerHTML += "no can do";}
 				//x9.innerHTML += usCapArray[i].name;
 				console.log(usCapArray);
 				console.log("getJsonData data has landed" + "" + newTrie.root.children);
