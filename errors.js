@@ -1,4 +1,4 @@
-window.onerror = function(message, source, lineno, colno, error) {
+/*window.onerror = function(message, source, lineno, colno, error) {
   var errorMessage = "Error caught in window.onerror: ";
   errorMessage += `Message: ${message} `;
   errorMessage += `Source: ${source} `;
@@ -15,3 +15,5 @@ window.onerror = function(message, source, lineno, colno, error) {
   return true;  // Suppress the default error handling
 };
 
+
+8/
