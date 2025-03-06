@@ -60,6 +60,7 @@ window.addEventListener('load',() => {
 		//console.log("input triggered: " + " " + event.target.value);
 		//regex = /[a-z]+/i;
 		text = event.target.value;
+		parseInput(text);
 		console.log("text var:" + " " +  text);
 		newTrie.startsWith(text);
 		//console.log(text.match(regex) ?? "Aw Naur");
@@ -283,7 +284,7 @@ function createElement(data, days){
 	});
 }//End getUsCap
 
-	function getJsonData(data, usrInput){
+	function getJsonData(data){
 		for(var i = 0; i < data.length; i++ ){
 			if(data){
 				usCapArray[i] = data[i];// store data(city names) in an array
@@ -294,8 +295,12 @@ function createElement(data, days){
 	}
 
 function parseInput(input){
-		var pattern = '\\b${usrInput}\\}';
-  regex = new RegExp(usrInput, 'gi'); // 'i' flag for case-insensitive search
+		var pattern = '\\b${input}\\}';
+  regex = new RegExp(input, 'gi'); // 'i' flag for case-insensitive search
+// 1. pars inout from input
+// 2. input set as dynamic regex
+// 3. 
+
 		if(regex.test(data[i].name) == true){
 						x9.innerHTML += usCapArray[i].name;
 				}else{x9.innerHTML += "no can do";}
