@@ -283,9 +283,9 @@ function createElement(data, days){
 	});
 }//End getUsCap
 
-	function getJsonData(data){
+	function getJsonData(data, usrInput){
 		for(var i = 0; i < data.length; i++ ){
-			var regex = /^a/i;
+   var regex = new RegExp(usrInput, 'gi'); // 'i' flag for case-insensitive search
 			if(data){
 				newTrie.insert(data[i].name);
 				usCapArray[i] = data[i];
