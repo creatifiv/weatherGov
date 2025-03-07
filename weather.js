@@ -60,7 +60,7 @@ window.addEventListener('load',() => {
 		//console.log("input triggered: " + " " + event.target.value);
 		//regex = /[a-z]+/i;
 		text = event.target.value;
-		parseInput(text);
+		parseInput(usCapArray, text);
 		console.log("text var:" + " " +  text);
 		newTrie.startsWith(text);
 		//console.log(text.match(regex) ?? "Aw Naur");
@@ -294,16 +294,14 @@ function createElement(data, days){
 		}
 	}
 
-function parseInput(input){
+function parseInput(array, input){
 		var pattern = '\\b${input}\\}';
-  regex = new RegExp(input, 'gi'); // 'i' flag for case-insensitive search
-// 1. pars inout from input
-// 2. input set as dynamic regex
-// 3. 
-
-		if(regex.test(data[i].name) == true){
-						x9.innerHTML += usCapArray[i].name;
-				}else{x9.innerHTML += "no can do";}
+  regex = new RegExp(pattern, 'gi'); // 'i' flag for case-insensitive search
+		for(var i = 0; i < usCapArray.length; i++){
+					if(regex.test(usCapArray[i].name) == true){
+							x9.innerHTML += usCapArray[i].name;
+					}else{x9.innerHTML += "no can do";}
+			}
 }
 
 
