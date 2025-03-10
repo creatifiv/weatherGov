@@ -20,6 +20,7 @@ window.addEventListener('load',() => {
 	x7 = document.getElementById('log-output');
 	x8 = document.getElementById('response-data');
 	x9 = document.getElementById('test-log');
+	x10 = document.getElementById('test-log2');
 	box2 = document.getElementById('box2');
 	day1 = document.getElementById('day-1');
 	day2 = document.getElementById('day-2');
@@ -297,7 +298,7 @@ function createElement(data, days){
 function parseInput(array, input){
 		var pattern = `\\b${input}\\}`;
   regex = new RegExp(pattern, 'gi'); // 'i' flag for case-insensitive search
-		x9.innerHTML += regex.test(usCapArray[i].name);
+		x10.innerHTML = regex.test(usCapArray[i].name);
 		for(var i = 0; i < usCapArray.length; i++){
 					if(regex.test(usCapArray[i].name) == true){
 							x9.innerHTML += usCapArray[i].name;
