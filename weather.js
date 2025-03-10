@@ -296,12 +296,11 @@ function createElement(data, days){
 
 function parseInput(array, input){
 		var pattern = `\\b${input}\\}`;
-		x9.innerHTML = usCapArray[0].name;
   regex = new RegExp(pattern, 'gi'); // 'i' flag for case-insensitive search
 		for(var i = 0; i < usCapArray.length; i++){
 					if(regex.test(usCapArray[i].name) == true){
 							x9.innerHTML += usCapArray[i].name;
-					}else{x9.innerHTML += "no can do";}
+					}else{x9.innerHTML += "no can do"; x9.innerHTML = input;}
 			}
 }
 
