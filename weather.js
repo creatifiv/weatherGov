@@ -1,4 +1,4 @@
-var x, x1, x2, x3, x4, x5, x6, x7, x8, x9, regex, usCapArray, dropDownBox, jsonData, text, searchForm, searchClicked, amPmBoxes, searchOutput, searchBtn, search, weatherIcon, dayOfWeek, latitude, longitude, api, api2, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7;
+var x, x1, x2, x3, x4, x5, x6, x7, x8, x9, regex, usCapArray, dropDownBox, jsonData, text, searchForm, searchClicked, amPmBoxes, searchOutput, searchBtn, search, weatherIcon, dayOfWeek, latitude, longitude, api, api2, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7;//backtick stash `````````
 
 import {TrieNode, Trie} from './search-class.js';
 
@@ -297,6 +297,7 @@ function createElement(data, days){
 function parseInput(array, input){
 		var pattern = `\\b${input}\\}`;
   regex = new RegExp(pattern, 'gi'); // 'i' flag for case-insensitive search
+		x9.innerHTML = regex.test(usCapArray[0].name);
 		for(var i = 0; i < usCapArray.length; i++){
 					if(regex.test(usCapArray[i].name) == true){
 							x9.innerHTML += usCapArray[i].name;
