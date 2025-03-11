@@ -300,7 +300,7 @@ function parseInput(array, input){
 	try{
 		var pattern = `\\b${input}\\}`;
   regex = new RegExp(pattern, 'gi'); // 'i' flag for case-insensitive search
-		x10.innerHTML = regex.test(/* usCapArray[0].name */ "a") + " " + "qaundo"n;
+		x10.innerHTML = regex.test(/* usCapArray[0].name */ "a") + " " + "qaundo";
 		for(var i = 0; i < usCapArray.length; i++){
 					if(regex.test(usCapArray[i].name) == true){
 							x9.innerHTML += usCapArray[i].name;
