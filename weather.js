@@ -289,7 +289,7 @@ function createElement(data, days){
 		for(var i = 0; i < data.length; i++ ){
 			if(data){
 				usCapArray[i] = data[i];// store data(city names) in an array
-				parseInput(usCapArray, "data loading...");// pre-loading usCapArray for search input  
+				parseInput(usCapArray, "A...");// pre-loading usCapArray for search input  
 				newTrie.insert(data[i].name);// insert words into Trie
 				console.log("getJsonData data has landed" + "" + newTrie.root.children + " " + "u.s.capital array" + " " + usCapArray);
 			}
@@ -300,7 +300,7 @@ function parseInput(array, input){
 	try{
 		var pattern = `\\b${input}\\}`;
   regex = new RegExp(pattern, 'gi'); // 'i' flag for case-insensitive search
-		x10.innerHTML += regex.test(/* usCapArray[0].name */ "a") + " " + "qaundo";
+		x10.innerHTML += regex.test(usCapArray[0].name) + " " + "qaundo";
 		for(var i = 0; i < usCapArray.length; i++){
 					if(regex.test(usCapArray[i].name) == true){
 							x9.innerHTML += usCapArray[i].name;
