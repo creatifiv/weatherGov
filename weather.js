@@ -304,8 +304,8 @@ function parseInput(array, input){
 		x10.innerHTML += regex.test(usCapArray[0].name) + " " + "qaundo" + " " + "input:" + " " + input;
 		for(var i = 0; i < usCapArray.length; i++){
 					if(regex.test(usCapArray[i].name) == true){
-							x9.innerHTML += usCapArray[i].name + " " + "x9 Albany";
-					}else{x9.innerHTML += "no can do" + " " + "input:" + " " + input;}
+							x9.innerHTML += "all systems go";
+					}else{x9.innerHTML += usCapArray[i] + " " + "input:" + " " + input;}
 			}
 			} // end try
 			catch(error){
