@@ -305,7 +305,7 @@ function parseInput(array, input){
 		for(var i = 0; i < usCapArray.length; i++){
 					if(regex.test(usCapArray[i].name) == true){
 							x9.innerHTML += "all systems go";
-					}else{x9.innerHTML += usCapArray[i] + " " + "input:" + " " + input;}
+					}else{x9.innerHTML += usCapArray[i].name + " " + "input:" + " " + input;}
 			}
 			} // end try
 			catch(error){
