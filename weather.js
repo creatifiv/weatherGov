@@ -301,10 +301,11 @@ function parseInput(array, input){
 		var textp = input
 		var pattern = `\\b${textp}\\b`;
   regex = new RegExp(pattern, 'gi'); // 'i' flag for case-insensitive search
-		x10.innerHTML += regex.test(usCapArray[0].name) + " " + "qaundo" + " " + "input:" + " " + input;
+		x10.innerHTML += regex.match(usCapArray[0].name) + " " + "qaundo" + " " + "input:" + " " + input;
 		for(var i = 0; i < usCapArray.length; i++){
-					if(regex.test(usCapArray[i].name) == true){
+					if(regex.match(usCapArray[i].name) == true){
 							x9.innerHTML += "all systems go";
+							return true;
 					}else{x9.innerHTML += "usCapName:" + " " + usCapArray[i].name + " " + "input:" + " " + input;}
 			}
 			} // end try
