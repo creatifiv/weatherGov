@@ -298,7 +298,7 @@ function createElement(data, days){
 
 function parseInput(array, input){
 	try{
-		var textp = "Albany"
+		var textp = input
 		var pattern = `\\b${textp}\\b`;
   regex = new RegExp(pattern, 'gi'); // 'i' flag for case-insensitive search
 		x10.innerHTML += regex.test(usCapArray[0].name) + " " + "qaundo" + " " + "input:" + " " + input;
