@@ -305,7 +305,7 @@ function parseInput(array, input){
 		for(var i = 0; i < usCapArray.length; i++){
 					if(regex.test(usCapArray[i].name) == true){
 							x9.innerHTML += usCapArray[i].name + " " + "x9 Albany";
-					}else{x9.innerHTML += "no can do"; x9.innerHTML = input;}
+					}else{x9.innerHTML += "no can do" + " " + x9.innerHTML = input;}
 			}
 			} // end try
 			catch(error){
