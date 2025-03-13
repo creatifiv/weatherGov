@@ -303,7 +303,7 @@ function parseInput(input){
   regex = new RegExp(pattern, 'gi'); // 'i' flag for case-insensitive search
 		//x10.innerHTML += usCapArray[i].name.match(regex) + " " + "qaundo" + " " + "input:" + " " + input;
 		for(var i = 0; i < usCapArray.length; i++){
-					if(usCapArray[i].name.match(regex) == true){
+					if(usCapArray[i].name.match(regex) != null){
 							x9.innerHTML += "all systems go";
 							return true;
 					}else{x9.innerHTML += "usCapName:" + " " + usCapArray[i].name + " " + "input:" + " " + input;}
