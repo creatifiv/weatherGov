@@ -297,9 +297,9 @@ function createElement(data, days){
 	}
 
 function parseInput(input){
+			x9.innerHTML += `usCapArray[i].name}`;
 	try{
 		var textp = input
-		x9.innerHTML += `x9: ${usCapArray[i].name}`;
 		var pattern = `\\b${textp}\\b`;
   regex = new RegExp(pattern, 'gi'); // 'i' flag for case-insensitive search
 		x10.innerHTML += usCapArray[i].name.match(regex) + " " + "qaundo" + " " + "input:" + " " + input;
@@ -311,7 +311,7 @@ function parseInput(input){
 			}
 			} // end try
 			catch(error){
-				x10.innerHTML = "error occurred" + " " + error;
+				x10.innerHTML = "catch error occurred" + " " + error;
 			}
 }
 
