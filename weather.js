@@ -287,7 +287,6 @@ function createElement(data, days){
 
 	function getJsonData(data){
 			if(data){
-				parseInput(" ");// pre-loading usCapArray for search input  
 				for(var i = 0; i < data.length; i++ ){
 						usCapArray[i] = data[i];// store data(city names) in an array
 						newTrie.insert(data[i].name);// insert words into Trie
