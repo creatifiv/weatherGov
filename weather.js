@@ -302,7 +302,7 @@ function parseInput(input){
 		var textp = input
 		var pattern = `\\b${textp}\\b`;
   regex = new RegExp(pattern, 'gi'); // 'i' flag for case-insensitive search
-		x10.innerHTML += usCapArray[i].name.match(regex) + " " + "qaundo" + " " + "input:" + " " + input;
+		//x10.innerHTML += usCapArray[i].name.match(regex) + " " + "qaundo" + " " + "input:" + " " + input;
 		for(var i = 0; i < usCapArray.length; i++){
 					if(usCapArray[i].name.match(regex) == true){
 							x9.innerHTML += "all systems go";
