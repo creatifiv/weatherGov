@@ -20,7 +20,7 @@ export class TrieNode {
       }//end if
       node = node.children[char]; // Move to the next node
       //dropDownBox[0].innerHTML = node;
-      console.log("char" + "" + char);
+      console.log("char" + " " + char);
     }//end for
     node.isEndOfWord = true; // Mark the end of a valid word
 	}//end insert
@@ -29,13 +29,13 @@ export class TrieNode {
   search(word) {
     let node = this.root;
     for (let char of word) {
-      if (!node.children[char]) 
+      if (!node.children[char]){
       	console.log(word + " " + "Not found");
       	 this.trieAlert = word + " " + "not found";
         return false; // Word not found
       }
       node = node.children[char];
-						this.trieAlert = node.children[char];
+						this.trieAlert += node.children[char];
     }
     console.log(node.isEndOfWord);
     return node.isEndOfWord; // Returns true if it's a complete word
