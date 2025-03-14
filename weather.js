@@ -307,7 +307,7 @@ function parseInput(input){
 							return true;
 					}
 					else{
-						x9.innerHTML += "usCapName:" + " " + usCapArray.length + " " + i + " " + "input:" + " " + input;
+						x9.innerHTML += "Line 318: usCapName:" + " " + usCapArray.length + " " + i + " " + "input:" + " " + input;
 					}
 				}
 			} // end try
