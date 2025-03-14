@@ -14,7 +14,6 @@ export class TrieNode {
 			}
 			insert(word){
 				let node = this.root;
-				var alert = this.trieAlert;
 			for (let char of word) {
       if (!node.children[char]) {
         node.children[char] = new TrieNode(); // Create a new node if char not found
