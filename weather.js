@@ -94,7 +94,7 @@ window.addEventListener('load',() => {
 
 */
 
-
+		 try{ x10.innerHTML = newTrie.trieAlert;}catch(error){x10.innerHTML = `theres been an error ${error}`;
    loadDefaultWeather();
 });//End Windows Event Listener
 
