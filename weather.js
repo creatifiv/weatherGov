@@ -61,9 +61,9 @@ window.addEventListener('load',() => {
 		//console.log("input triggered: " + " " + event.target.value);
 		//regex = /[a-z]+/i;
 		text = event.target.value;
-		parseInput(text);
+		//parseInput(text);
 		console.log("text var:" + " " +  text);
-		newTrie.startsWith(text);
+		newTrieNode.search(text);
 		//console.log(text.match(regex) ?? "Aw Naur");
 	});
 	searchForm.addEventListener("submit", function(event){
