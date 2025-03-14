@@ -63,7 +63,7 @@ window.addEventListener('load',() => {
 		text = event.target.value;
 		//parseInput(text);
 		console.log("text var:" + " " +  text);
-		newTrieNode.search(text);
+		newTrie.search(text);
 		//console.log(text.match(regex) ?? "Aw Naur");
 	});
 	searchForm.addEventListener("submit", function(event){
