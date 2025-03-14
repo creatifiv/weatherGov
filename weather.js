@@ -61,7 +61,7 @@ window.addEventListener('load',() => {
 		//console.log("input triggered: " + " " + event.target.value);
 		//regex = /[a-z]+/i;
 		text = event.target.value;
-		parseInput(usCapArray, text);
+		parseInput(text);
 		console.log("text var:" + " " +  text);
 		newTrie.startsWith(text);
 		//console.log(text.match(regex) ?? "Aw Naur");
