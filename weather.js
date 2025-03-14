@@ -296,7 +296,6 @@ function createElement(data, days){
 	}
 
 function parseInput(input){
-			x9.innerHTML += `Log 1: ${usCapArray[0].name}`;
 	try{
 		var textp = input
 		var pattern = `\\b${textp}\\b`;
