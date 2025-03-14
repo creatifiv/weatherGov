@@ -10,7 +10,7 @@ export class TrieNode {
 			constructor(){
 				this.root = new TrieNode();
 				console.log("New Trie planted");
-				x10.innerHTML = "new tree planted";
+				this.trieAlert = "new tree planted";
 			}
 			insert(word){
 				let node = this.root;
