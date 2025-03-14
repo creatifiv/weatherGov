@@ -14,6 +14,7 @@ export class TrieNode {
 			}
 			insert(word){
 				let node = this.root;
+				var alert = this.trieAlert;
 			for (let char of word) {
       if (!node.children[char]) {
         node.children[char] = new TrieNode(); // Create a new node if char not found
@@ -29,13 +30,13 @@ export class TrieNode {
   search(word) {
     let node = this.root;
     for (let char of word) {
-      if (!node.children[char]) {
+      if (!node.children[char]) 
       	console.log(word + " " + "Not found");
-      	/*dropDownBox.innerHTML */ x10.innerHTML = word + " " + "not found";
+      	/*dropDownBox.innerHTML */ this.trieAlert = word + " " + "not found";
         return false; // Word not found
       }
       node = node.children[char];
-						x10 += node.children[char];
+						this.trieAlert += node.children[char];
     }
     console.log(node.isEndOfWord);
     return node.isEndOfWord; // Returns true if it's a complete word
