@@ -53,7 +53,7 @@ window.addEventListener('load',() => {
 		document.getElementById('d7-am'),
 		document.getElementById('d7-pm')
 	];
-
+	x10.innerHTML = newTrie.alertTrie;
 	search.addEventListener("input", function(event){
 		var textNode = document.createTextNode(event.target.value);
 		searchOutput.appendChild(textNode);
