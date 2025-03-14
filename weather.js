@@ -64,6 +64,7 @@ window.addEventListener('load',() => {
 		//parseInput(text);
 		console.log("text var:" + " " +  text);
 		newTrie.search(text);
+		x10.innerHTML = newTrie.trieAlert;
 		//console.log(text.match(regex) ?? "Aw Naur");
 	});
 	searchForm.addEventListener("submit", function(event){
