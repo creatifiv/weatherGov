@@ -31,11 +31,11 @@ export class TrieNode {
     for (let char of word) {
       if (!node.children[char]) 
       	console.log(word + " " + "Not found");
-      	 this.trieAlert = word + " " + "not found";
+      	 //this.trieAlert = word + " " + "not found";
         return false; // Word not found
       }
       node = node.children[char];
-						this.trieAlert = node.children[char];
+						//this.trieAlert = node.children[char];
     }
     console.log(node.isEndOfWord);
     return node.isEndOfWord; // Returns true if it's a complete word
