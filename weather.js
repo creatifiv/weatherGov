@@ -305,12 +305,15 @@ function parseInput(input){
 					if(usCapArray[i].name.match(regex) != null){
 							x9.innerHTML += "all systems go";
 							return true;
-					}else{x9.innerHTML += "usCapName:" + " " + usCapArray[i] + " " + "input:" + " " + input;}
-			}
+					}
+					else{
+						x9.innerHTML += "usCapName:" + " " + usCapArray.length + " " + "input:" + " " + input;
+					}
+				}
 			} // end try
-			catch(error){
+		catch(error){
 				x10.innerHTML = "catch error occurred" + " " + error;
-			}
+		}
 }
 
 
