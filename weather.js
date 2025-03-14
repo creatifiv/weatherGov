@@ -303,7 +303,7 @@ function parseInput(input){
 		//x10.innerHTML += usCapArray[i].name.match(regex) + " " + "qaundo" + " " + "input:" + " " + input;
 		for(var i = 0; i < usCapArray.length; i++){
 					if(usCapArray[i].name.match(regex) != null){
-							x9.innerHTML += "all systems go";
+							x9.innerHTML = "all systems go";
 							return true;
 					}
 					else{
