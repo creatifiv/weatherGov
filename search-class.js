@@ -30,10 +30,11 @@ export class TrieNode {
     for (let char of word) {
       if (!node.children[char]) {
       	console.log(word + " " + "Not found");
-      	dropDownBox.innerHTML = word + " " + "not found";
+      	/*dropDownBox.innerHTML */ x10.innerHTML = word + " " + "not found";
         return false; // Word not found
       }
       node = node.children[char];
+						x10 += node.children[char];
     }
     console.log(node.isEndOfWord);
     return node.isEndOfWord; // Returns true if it's a complete word
