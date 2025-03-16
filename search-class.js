@@ -10,7 +10,8 @@ export class TrieNode {
 			constructor(){
 				this.root = new TrieNode();
 				console.log("New Trie planted");
-				this.trieAlert = "new tree planted";
+				this.trieAlert = "Enter city, stae, or zip";
+        this.indexLog = "new Tree planted";
 			}
 			insert(word){
 				let node = this.root;
@@ -45,9 +46,11 @@ export class TrieNode {
   // Check if a prefix exists in the trie
   startsWith(prefix) {
     let node = this.root;
+    prefix = prefix.toLowerCase();
     for (let char of prefix) {
       if (!node.children[char]) {
       	 console.log("Prefix:" + " " + prefix + " " + "does not exist");
+         this.trieAlert = "not found";
         return false;
       }
       node = node.children[char];

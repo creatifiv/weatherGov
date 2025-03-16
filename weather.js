@@ -1,3 +1,4 @@
+
 var x, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, regex, usCapArray, dropDownBox, jsonData, text, searchForm, searchClicked, amPmBoxes, searchOutput, searchBtn, search, weatherIcon, dayOfWeek, latitude, longitude, api, api2, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7;//backtick stash `````````
 
 import {TrieNode, Trie} from './search-class.js';
@@ -9,62 +10,28 @@ searchClicked = 0;
 usCapArray = [];
 
 
-window.addEventListener('load',() => {
-	x = document.getElementById('response');
-	x1 = document.getElementById('response2');
-	x2 = document.getElementById('state');
-	x3 = document.getElementById('forecast');
-	x4 = document.getElementById('forecastRow');
-	x5 = document.getElementById('mock-console');
-	x6 = document.getElementById('log');
-	x7 = document.getElementById('log-output');
-	x8 = document.getElementById('response-data');
-	x9 = document.getElementById('test-log');
-	x10 = document.getElementById('test-log2');
-	box2 = document.getElementById('box2');
-	day1 = document.getElementById('day-1');
-	day2 = document.getElementById('day-2');
-	day3 = document.getElementById('day-3');
-	day4 = document.getElementById('day-4');
-	day5 = document.getElementById('day-5');
-	day6 = document.getElementById('day-6');
-	day7 = document.getElementById('day-7');
-	dayOfWeek = document.getElementsByClassName("day-of-week");
-	weatherIcon = document.getElementsByClassName("weather-icon");
-	search = document.getElementById("main-search");
-	searchOutput = document.getElementById("output-x");
-	dropDownBox = document.getElementsByClassName("dropdown-item");
-	searchBtn = document.getElementById("searchBtn");
-	searchForm = document.getElementById("searchForm");
+window.addEventListener('load',() => { x = document.getElementById('response'), x1 = document.getElementById('response2'), x2 = document.getElementById('state'), x3 = document.getElementById('forecast'), x4 = document.getElementById('forecastRow'), x5 = document.getElementById('mock-console'), x6 = document.getElementById('log'), x7 = document.getElementById('log-output'), x8 = document.getElementById('response-data'), x9 = document.getElementById('test-log'), x10 = document.getElementById('test-log2'), box2 = document.getElementById('box2'), day1 = document.getElementById('day-1'), day2 = document.getElementById('day-2'), day3 = document.getElementById('day-3'), day4 = document.getElementById('day-4'), day5 = document.getElementById('day-5'), day6 = document.getElementById('day-6'), day7 = document.getElementById('day-7'), dayOfWeek = document.getElementsByClassName("day-of-week"), weatherIcon = document.getElementsByClassName("weather-icon"), search = document.getElementById("main-search"), searchOutput = document.getElementById("output-x"), dropDownBox = document.getElementsByClassName("dropdown-item"), searchBtn = document.getElementById("searchBtn"), searchForm = document.getElementById("searchForm");
+amPmBoxes = [document.getElementById('d1-am'), document.getElementById('d1-pm'), document.getElementById('d2-am'), document.getElementById('d2-pm'), document.getElementById('d3-am'), document.getElementById('d3-pm'), document.getElementById('d4-am'), document.getElementById('d4-pm'), document.getElementById('d5-am'), document.getElementById('d5-pm'), document.getElementById('d6-am'), document.getElementById('d6-pm'), document.getElementById('d7-am'), document.getElementById('d7-pm')];
 
-	amPmBoxes = [
-		document.getElementById('d1-am'),
-		document.getElementById('d1-pm'),
-		document.getElementById('d2-am'),
-		document.getElementById('d2-pm'),
-		document.getElementById('d3-am'),
-		document.getElementById('d3-pm'),
-		document.getElementById('d4-am'),
-		document.getElementById('d4-pm'),
-		document.getElementById('d5-am'),
-		document.getElementById('d5-pm'),
-		document.getElementById('d6-am'),
-		document.getElementById('d6-pm'),
-		document.getElementById('d7-am'),
-		document.getElementById('d7-pm')
-	];
+
+	
 	x10.innerHTML = newTrie.trieAlert;
 	search.addEventListener("input", function(event){
 		var textNode = document.createTextNode(event.target.value);
 		searchOutput.appendChild(textNode);
 		searchOutput.innerHTML = event.target.value;
-		//console.log("input triggered: " + " " + event.target.value);
-		//regex = /[a-z]+/i;
 		text = event.target.value;
+		newTrie.trieAlert = text;
+		dropDownBox[0].innerHTML = newTrie.trieAlert;
 		//parseInput(text);
 		console.log("text var:" + " " +  text);
-		newTrie.search(text);
-		x10.innerHTML = newTrie.trieAlert;
+		if(text.length <= 2){
+			newTrie.startsWith(text);
+		}
+		else{
+			newTrie.search(text);
+		}
+		x10.innerHTML = newTrie.indexLog;
 		//console.log(text.match(regex) ?? "Aw Naur");
 	});
 	searchForm.addEventListener("submit", function(event){
@@ -78,7 +45,9 @@ window.addEventListener('load',() => {
 	search.addEventListener("keydown", function(event){
 		if(event.key === "Backspace"){
 		searchOutput.innerHTML.slice(0, -1);
-		console.log(" Backspace pressed" + event.key);
+		text.slice(text.length);
+		dropDownBox[0].innerHTML = newTrie.trieAlert.slice(newTrie.trieAlert.length);
+		console.log(" Backspace pressed" + event.key + " " + text.length);
 		}
 	});
 
