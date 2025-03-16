@@ -25,8 +25,9 @@ amPmBoxes = [document.getElementById('d1-am'), document.getElementById('d1-pm'),
 		dropDownBox[0].innerHTML = newTrie.trieAlert;
 		//parseInput(text);
 		console.log("text var:" + " " +  text);
-		if(text.length <= 2){
+		if(text.length <= 3){
 			newTrie.startsWith(text);
+			console.log(`text length: ${text.length}`);
 		}
 		else{
 			newTrie.search(text);

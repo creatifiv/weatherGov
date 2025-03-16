@@ -58,5 +58,20 @@ export class TrieNode {
     }
     return true; // Prefix exists
   }
+
+  collectWords(node, prefix, words) {
+    if (node.isEndOfWord) words.push(prefix); // If it's the end of a word, add it to the result
+
+    for (let char in node.children) {
+      collectWords(node.children[char], prefix + char, words); // Recurse and build the word
+    }
+  }
+
+  getAllWords() {
+    let words = [];
+    collectWords(root, "", words); // Start from root and an empty prefix
+    return words;
+  }
+
 }
 var newTrie = new Trie();
