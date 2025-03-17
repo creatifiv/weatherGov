@@ -71,6 +71,7 @@ export class Trie {
   getAllWords() {
     let words = [];
     this.collectWords(this.root, "", words); // Start from root and an empty prefix
+    this.trieAlert = words;
     return words;
   }
 }
