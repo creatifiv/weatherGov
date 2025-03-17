@@ -11,6 +11,7 @@ export class Trie {
     this.root = new TrieNode();
     console.log("New Trie planted");
     this.trieAlert = "Enter city, state, or zip";
+    this.wordAlert = this.getAllWords();
     this.indexLog = "new Tree planted";
   }
 
@@ -71,7 +72,6 @@ export class Trie {
   getAllWords() {
     let words = [];
     this.collectWords(this.root, "", words); // Start from root and an empty prefix
-    this.trieAlert = words;
     return words;
   }
 }
