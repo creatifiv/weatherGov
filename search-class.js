@@ -38,12 +38,10 @@ export class Trie {
         return false; // Word not found
       }
       node = node.children[char];
+      collectWords(node," ",word);
     }
     console.log(node.isEndOfWord);
     return node.isEndOfWord; // Returns true if it's a complete word
-    if(node.isEndOfWord == true ){
-      collectWords(node," ",word);
-    }
   }
 
   // Check if a prefix exists in the trie
