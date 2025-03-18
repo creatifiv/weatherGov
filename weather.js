@@ -34,6 +34,7 @@ amPmBoxes = [document.getElementById('d1-am'), document.getElementById('d1-pm'),
 			newTrie.search(text);
 		}
 		x10.innerHTML = newTrie.indexLog;
+		newTrie.getAllWords();
 		//console.log(text.match(regex) ?? "Aw Naur");
 	});
 	searchForm.addEventListener("submit", function(event){
