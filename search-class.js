@@ -38,7 +38,6 @@ export class Trie {
         return false; // Word not found
       }
       node = node.children[char];
-      collectWords(node," ",word);
     }
     console.log(node.isEndOfWord);
     return node.isEndOfWord; // Returns true if it's a complete word
@@ -55,7 +54,6 @@ export class Trie {
         return false;
       }
       node = node.children[char];
-      //collectWords(node," ",prefix);
       console.log(prefix + " " + "exists");
     }
     return true; // Prefix exists
@@ -68,7 +66,6 @@ export class Trie {
     for (let char in node.children) {
       this.collectWords(node.children[char], prefix + char, words); // Recurse and build the word
     }
-    this.wordAlert = words;
   }
 
   // Get all words in the trie
