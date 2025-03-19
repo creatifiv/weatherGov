@@ -55,7 +55,7 @@ export class Trie {
         return false;
       }
       node = node.children[char];
-      collectWords(node," ",prefix);
+      //collectWords(node," ",prefix);
       console.log(prefix + " " + "exists");
     }
     return true; // Prefix exists
