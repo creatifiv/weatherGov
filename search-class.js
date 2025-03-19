@@ -67,13 +67,13 @@ export class Trie {
     for (let char in node.children) {
       this.collectWords(node.children[char], prefix + char, words); // Recurse and build the word
     }
-    this.wordAlert = "test";
   }
 
   // Get all words in the trie
   getAllWords() {
     let words = [];
     this.collectWords(this.root, "", words); // Start from root and an empty prefix
+    this.wordAlert = words;
     return words;
   }
 }
