@@ -28,7 +28,6 @@ amPmBoxes = [document.getElementById('d1-am'), document.getElementById('d1-pm'),
 		console.log("text var:" + " " +  text);
 		if(text.length <= 3){
 			newTrie.startsWith(text);
-			newTrie.collectAllWords( text);
 			console.log(`text length: ${text.length}`);
 		}
 		else{
