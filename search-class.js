@@ -71,9 +71,10 @@ export class Trie {
   // Get all words in the trie
   getAllWords() {
     let words = [];
-    this.collectWords(this.root, "", words); // Start from root and an empty prefix
+    this.collectWords(node," ", words); // Start from root and an empty prefix
     return words;
   }
+  this.getAllWords();
 }
 
 
