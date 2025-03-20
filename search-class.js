@@ -74,7 +74,6 @@ export class Trie {
     this.collectWords(node," ", words); // Start from root and an empty prefix
     return words;
   }
-  this.getAllWords();
 }
 
 
