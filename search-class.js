@@ -11,7 +11,6 @@ export class Trie {
     this.root = new TrieNode();
     console.log("New Trie planted");
     this.trieAlert = "Enter city, state, or zip";
-    this.wordAlert = this.getAllWords();
     this.indexLog = "new Tree planted";
   }
 
