@@ -22,8 +22,8 @@ amPmBoxes = [document.getElementById('d1-am'), document.getElementById('d1-pm'),
 		searchOutput.innerHTML = event.target.value;
 		text = event.target.value;
 		newTrie.trieAlert = text;
-		newTrie.getAllWords();
-		//dropDownBox[0].innerHTML += 
+		var gotWords = newTrie.getAllWords();
+		dropDownBox[0].innerHTML += gotWords;
 		//dropDownBox[0].innerHTML = newTrie.trieAlert;
 		//parseInput(text);
 		console.log("text var:" + " " +  text);
