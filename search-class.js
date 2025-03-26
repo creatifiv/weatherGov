@@ -9,9 +9,10 @@ export class TrieNode {
 export class Trie {
   constructor() {
     this.root = new TrieNode();
-    console.log("New Trie planted");
+    this.wordsFound = [];
     this.trieAlert = "Enter city, state, or zip";
     this.indexLog = "new Tree planted";
+    console.log("New Trie planted");
   }
 
   // Insert a word into the Trie
