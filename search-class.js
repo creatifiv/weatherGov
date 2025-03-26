@@ -60,7 +60,7 @@ export class Trie {
 
   // Collect words starting from a given node
   collectWords(node, prefix, words) {
-    if (node.isEndOfWord && node.children["a"]) words.push(prefix); // If it's the end of a word, add it to the result
+    if (node.isEndOfWord) words.push(prefix); // If it's the end of a word, add it to the result
 
     for (let char in node.children) {
       this.collectWords(node.children[char], prefix + char, words); // Recurse and build the word
