@@ -63,6 +63,7 @@ export class Trie {
     for(var char in this.root.children){
       words += char;
     }
+    alert(words):
     return words;
   }
   // Collect words starting from a given node
