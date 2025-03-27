@@ -61,9 +61,9 @@ export class Trie {
   wordStartsWith(letter){
     var words = " ";
     for(var char in this.root.children){
-      if(char == "a"){words += this.root.children[char];}
+      if(char == "a"){words += this.root.children[char].toString();}
     }
-    alert(words.toString());
+    alert(words);
     return words;
   }
   // Collect words starting from a given node
