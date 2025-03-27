@@ -60,8 +60,9 @@ export class Trie {
   }
   wordStartsWith(letter){
     for(var char in this.root.children){
-      return char;
+      letter += char;
     }
+    return letter
   }
   // Collect words starting from a given node
   collectWords(node, prefix, words) {
