@@ -58,7 +58,14 @@ export class Trie {
     }
     return true; // Prefix exists
   }
-
+  wordsStartWith(letter){
+    
+    for(var char of this.root){
+      this.trieAlert += char;
+    }
+    
+  }
+  wordsStartWith();
   // Collect words starting from a given node
   collectWords(node, prefix, words) {
     if (node.isEndOfWord) words.push(prefix); // If it's the end of a word, add it to the result
