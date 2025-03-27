@@ -4,6 +4,9 @@ export class TrieNode {
     this.children = {};
     this.isEndOfWord = false;
   }
+  toString(){
+    return this.children;
+  } 
 }
 
 export class Trie {
