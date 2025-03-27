@@ -58,34 +58,7 @@ export class Trie {
     }
     return true; // Prefix exists
   }
-  wordStartsWith(letter){
-    var words = " ";
-    for(var char in this.root.children){
-      if(char == "a"){
-        function pushWords(){
-          for(var char2 in this.root.children[char])
-          words += this.root.children[char].toString();
-        }
-      }
-    }
-    alert(words);
-    return words;
-  }
-  // Collect words starting from a given node
-  collectWords(node, prefix, words) {
-    if (node.isEndOfWord) words.push(prefix); // If it's the end of a word, add it to the result
-
-    for (let char in node.children) {
-      this.collectWords(node.children[char], prefix + char, words); // Recurse and build the word
-    }
-  }
-
-  // Get all words in the trie
-  getAllWords() {
-    let words = [];
-    this.collectWords(this.root,"", words); // Start from root and an empty prefix
-    return words;
-  }
+  
 }
 
 
