@@ -59,10 +59,11 @@ export class Trie {
     return true; // Prefix exists
   }
   wordStartsWith(letter){
+    var words = " ";
     for(var char in this.root.children){
-      letter += char;
+      words += char;
     }
-    return letter
+    return words;
   }
   // Collect words starting from a given node
   collectWords(node, prefix, words) {
