@@ -61,7 +61,7 @@ export class Trie {
   wordStartsWith(letter){
     var words = " ";
     for(var char in this.root.children){
-      words += this.root.children[char];
+      words += this.root.children[char].toString();
     }
     alert(words);
     return words;
