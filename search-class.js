@@ -59,7 +59,7 @@ export class Trie {
     return true; // Prefix exists
   }
   wordStartsWith(letter){
-    for(var char of this.root.children){
+    for(var char in this.root.children){
       return char;
     }
   }
