@@ -65,9 +65,9 @@ export class Trie {
     for(var char in node.children){
       if(char.toLowerCase() == "a"){
         words += node.children[char];
-        alert(words); 
       }
     }
+    alert(words); 
   }
 
 }// end trie
