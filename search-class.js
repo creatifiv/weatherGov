@@ -62,12 +62,13 @@ export class Trie {
   collectWords(){
     var node = this.root;
     var words = " ";
-    if(node.isEndOfWord == true){ alert(words); return; }
+    if(node.isEndOfWord == true){  return; }
     for(var char in node.children){
         words += char;
         collectWords();
     }
     node.children[char];
+    alert(words);
   }
 
 }// end trie
