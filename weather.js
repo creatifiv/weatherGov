@@ -22,12 +22,10 @@ amPmBoxes = [document.getElementById('d1-am'), document.getElementById('d1-pm'),
 		searchOutput.innerHTML = event.target.value;
 		text = event.target.value;
 		newTrie.trieAlert = text;
-		x10.innerHTML += newTrie.wordStartsWith();
 		//dropDownBox[0].innerHTML = newTrie.trieAlert;
 		//parseInput(text);
 		console.log("text var:" + " " +  text);
 		if(text.length <= 3){
-			newTrie.startsWith(text);
 			console.log(`text length: ${text.length}`);
 		}
 		else{
@@ -40,7 +38,6 @@ amPmBoxes = [document.getElementById('d1-am'), document.getElementById('d1-pm'),
 	searchForm.addEventListener("submit", function(event){
 		event.preventDefault(); // Prevent page refresh
 		var inputValue = search.value;
-		newTrie.startsWith(text);
 		console.log("Submit:" + " " + "Form value" + " " + inputValue);
 	});
 
