@@ -59,7 +59,18 @@ export class Trie {
     return true; // Prefix exists
   }
   
-}
+  collectWords(word){
+    var node = this.root;
+    var words = " ";
+    for(var char in node.children){
+      if(char.toLowerCase() == "a"){
+        words += node.children[char];
+        alert(words); 
+      }
+    }
+  }
+
+}// end trie
 
 
 
