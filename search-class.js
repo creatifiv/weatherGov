@@ -65,7 +65,7 @@ export class Trie {
     for(var char in node.children){
         words += char; 
     }
-    alert(words, node.children[char]);
+    alert(words);
   }
 
 }// end trie
