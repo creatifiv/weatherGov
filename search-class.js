@@ -59,13 +59,15 @@ export class Trie {
     return true; // Prefix exists
   }
   
-  collectWords(word){
+  collectWords(){
     var node = this.root;
     var words = " ";
+    if(node.isEndOfWord == true){ alert(words); return; }
     for(var char in node.children){
-      if(char == "A" || "a") {words += char;}
+        words += char;
+        collectWords();
     }
-    alert(words); 
+    node.children[char];
   }
 
 }// end trie
