@@ -63,8 +63,7 @@ export class Trie {
     var node = this.root;
     var words = " ";
     for(var char in node.children){
-      words += char;
-      char = node.children[char];
+      if(char == "A") words += char;
     }
     alert(words); 
   }
