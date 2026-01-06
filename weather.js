@@ -119,6 +119,8 @@ function loadDefaultWeather(){
 		getWeather();
 }
 
+// *** GET USER LOCATION  *** //
+
 function getUsrLocation(){
 	if ("geolocation" in navigator){
 		navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
@@ -140,6 +142,7 @@ function successCallback(position){
 
 // getUsrLocation Callback Error
 function errorCallback(error){
+	locationOutput.innerHTML = error.message
 	console.log("Error occured" + error.message);
 }
 //Add data to page
