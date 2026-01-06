@@ -121,7 +121,7 @@ function loadDefaultWeather(){
 
 // *** GET USER LOCATION  *** //
 
-function getUsrLocation(){
+function getUserLocation(){
 	if ("geolocation" in navigator){
 		navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
   		console.log("Geolocation is available.");
