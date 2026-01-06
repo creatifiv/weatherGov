@@ -3,7 +3,7 @@ var x, x1, x2, x3, x4, x5, x6, x7, x8, x9, regex, usCapArray, dropDownBox, locat
 import {TrieNode, Trie} from './search-class.js';
 
 var newTrieNode = new TrieNode();
-var newTrie = new Trie();
+var newTrie = new Trie();  
 
 searchClicked = 0;
 usCapArray = [];
