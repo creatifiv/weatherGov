@@ -54,7 +54,7 @@ ul li{
     border-top: 1px solid;
 }
 
-#weather-icon{
+.weather-icon{
     width: 100%;
 }
 
