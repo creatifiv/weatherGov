@@ -55,7 +55,6 @@ window.addEventListener('load',() => {
 		document.getElementById('d7-pm')
 	];
 
-});
 
 
 /* ====== Event Listeners ==== */
@@ -107,9 +106,7 @@ window.addEventListener('load',() => {
    loadDefaultWeather();
 });//End Windows Event Listener
 
-	
-	
-	
+
 
 function loadDefaultWeather(){
 		latitude = 40.730610;
