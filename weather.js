@@ -36,7 +36,7 @@ window.addEventListener('load',() => {
 	searchBtn = document.getElementById("searchBtn");
 	searchForm = document.getElementById("searchForm");
 	locationOutput = document.getElementById("locationOutput");
-	getUserLocaBtn = document.getElementById("getUserLocation");
+	getUserLoBtn = document.getElementById("getUserLocation");
 
 	amPmBoxes = [
 		document.getElementById('d1-am'),
