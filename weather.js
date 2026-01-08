@@ -54,18 +54,16 @@ window.addEventListener('load',() => {
 		document.getElementById('d7-am'),
 		document.getElementById('d7-pm')
 	];
-	
-/*
-	function parseWords(input){
-		const regex = new RegExp(input, i);
-		for(var i = 0; i < usCapArray.length; i++){
-			if(regex.test(char) == true){
-				console.log(usCapArray[i]);
-			}
-		}
-		
-	}
-	*/
+
+});
+
+
+/* ====== Event Listeners ==== */
+
+	getUserLoBtn.addEventListener("click", function(event){
+
+		getUserLocation();
+	});
 
 	search.addEventListener("input", function(event){
 		var textNode = document.createTextNode(event.target.value);
