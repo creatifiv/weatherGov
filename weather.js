@@ -115,7 +115,7 @@ function loadDefaultWeather(){
 		getWeather();
 }
 
-// *** GET USER LOCATION  *** //
+// ==== GET USER LOCATION  ==== //
 
 function getUserLocation(){
 	if ("geolocation" in navigator){
@@ -141,13 +141,14 @@ function errorCallback(error){
 	locationOutput.innerHTML = error.message
 	console.log("Error occured" + error.message);
 }
-//Add data to page
+
+
+
+// ==== Add data to page ==== //
+
 function fillData(){
 	x2.innerHTML = city + "," + " "+ state;
 }
-
-
-
 
 function fillForeCast(data, i){
 	try{
