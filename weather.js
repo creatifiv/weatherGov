@@ -228,14 +228,6 @@ function reqCount(){
 	console.log(xReq);
 }
 
-// === MOCK CONSOLE CONTROLS === //
-
-function closeConsole(){
-		x5.style.display = "none";
-}
-function showConsole(){
-		x5.style.display = "block";
-}
 
 // === CREATE THE DATA ELEMENTS === //
 // * Notes: delete dayCount var
@@ -319,20 +311,18 @@ function getWeather(){
 		}
 	})
 	.then(response => {
-
-		if(!response.ok){
-			throw new Error("Network response 1 was not ok");
-		}
-
+			if(!response.ok){
+				throw new Error("Network response 1 was not ok");
+			}
 		return response.json()
 	})
 	.then(data => {
-		api2 = data.properties.forecast;
-		city = data.properties.relativeLocation.properties.city;
-		state = data.properties.relativeLocation.properties.state;
-		console.log("2nd API address" + " " + api2);
-		x8.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
-		return fetch(api2);
+			api2 = data.properties.forecast;
+			city = data.properties.relativeLocation.properties.city;
+			state = data.properties.relativeLocation.properties.state;
+			console.log("2nd API address" + " " + api2);
+			x8.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>` + api2;
+			return fetch(api2);
 	})
 	.then(response => {
 
