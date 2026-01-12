@@ -307,12 +307,10 @@ function getStateData(city){
 	console.log("Get Us Data func:" + " " + city[0].name);
 }
 
-function searchGeo(){
-	
-}
 
 
-// ***** GOV API ***** //
+// ===== GET WEATHER ===== //
+
 function getWeather(){
 	fetch(api, {
 		method:'GET',
@@ -344,10 +342,9 @@ function getWeather(){
 		}
 		return response.json();
 	})
-	/*	
-		=== Definitions ===
-		dR = "Data returned"
-	*/
+	// ===== Definitions ===== //
+		//dR = "Data returned"
+	
 	.then(data2 => {
 		var dR =  data2.properties.periods;
 		createElement(dR, dR.length);
