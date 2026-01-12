@@ -1,4 +1,4 @@
-var x, x1, x2, x3, x4, x5, x6, x7, x8, x9, regex, usCapArray,getUserLoBtn, dropDownBox, locationOutput, jsonData, text, searchForm, searchClicked, amPmBoxes, searchOutput, searchBtn, search, weatherIcon, dayOfWeek, latitude, longitude, api, api2, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7;
+var x, x1, x2, x3, x4, x5, x6, x7, x8, x9, api3, regex, shortForecast, usCapArray,getUserLoBtn, dropDownBox, locationOutput, jsonData, text, searchForm, searchClicked, amPmBoxes, searchOutput, searchBtn, search, weatherIcon, dayOfWeek, latitude, longitude, api, api2, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7;
 
 import {TrieNode, Trie} from './search-class.js';
 
@@ -327,11 +327,10 @@ function getWeather(){
 		return response.json()
 	})
 	.then(data => {
-		api2 = data.properties.forecast
+		api2 = data.properties.forecast;
 		city = data.properties.relativeLocation.properties.city;
 		state = data.properties.relativeLocation.properties.state;
 		console.log("2nd API address" + " " + api2);
-		//console.log(data);
 		x8.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
 		return fetch(api2);
 	})
@@ -343,15 +342,14 @@ function getWeather(){
 		return response.json();
 	})
 	// ===== Definitions ===== //
-		//dR = "Data returned"
+	// dR = "Data returned"
 	
-	.then(data2 => {
-		var dR =  data2.properties.periods;
+	.then(data => {
+		var dR = data.properties.periods.shortForecast;
 		createElement(dR, dR.length);
-		//x.innerHTML = JSON.stringify(dR, null, 2);
-		console.log("Dat2");
-		//console.log(data2);
-		x8.innerHTML = `<pre>${JSON.stringify(data2, null, 2)}</pre>`;
+		x += JSON.stringify(dR, null, 2);
+		
+		x8.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
 	})
 	.catch(error=>{
 		console.log('Error'+  " " + error.message);
