@@ -337,7 +337,8 @@ function getWeather(){
 	.then(data => {
 		//var dR = data.properties.periods.shortForecast;
 		//x += JSON.stringify(dR, null, 2);
-		console.log(data.properties);
+x8.innerHTML += data
+	
 		x8.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
 	})
 	.catch(error=>{
