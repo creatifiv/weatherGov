@@ -335,7 +335,7 @@ function getWeather(){
 	// dR = "Data returned"
 	
 	.then(data => {
-		var dR = data.properties.forecast;
+		var dR = data.properties.periods;
 		createElement(dR, dR.length);
 		x += JSON.stringify(dR, null, 2);
 		x7.innerHTML += dR;
