@@ -334,7 +334,7 @@ function getWeather(){
 	
 	
 	.then(data => {
-		var data = self.data.properties.periods;
+		var data = this.data.properties.periods;
 		createElement(data, data.length);
 		x += JSON.stringify(data, null, 2);
 	
