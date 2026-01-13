@@ -331,16 +331,14 @@ function getWeather(){
 		}
 		return response.json();
 	})
-	// ===== Definitions ===== //
-	// dR = "Data returned"
+	
 	
 	.then(data => {
-		var dR = data.properties.periods;
-		createElement(dR, dR.length);
-		x += JSON.stringify(dR, null, 2);
-		x7.innerHTML += dR;
+		var data = self.data.properties.periods;
+		createElement(data, data.length);
+		x += JSON.stringify(data, null, 2);
 	
-		x8.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+		x8.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>` + "HELLOOOOOOOOOOOO";
 	})
 	.catch(error=>{
 		console.log('Error'+  " " + error.message);
