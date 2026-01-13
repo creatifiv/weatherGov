@@ -334,11 +334,11 @@ function getWeather(){
 	
 	
 	.then(data => {
-		var data = this.data.properties.periods;
-		createElement(data, data.length);
-		x += JSON.stringify(data, null, 2);
+		var ndwData = data.properties.periods;
+		createElement(newData, newData.length);
+		x += JSON.stringify(newData, null, 2);
 	
-		x8.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>` + "HELLOOOOOOOOOOOO";
+		x8.innerHTML = `<pre>${JSON.stringify(newData, null, 2)}</pre>`;
 	})
 	.catch(error=>{
 		console.log('Error'+  " " + error.message);
