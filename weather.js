@@ -260,7 +260,8 @@ function createElement(data, days){
 }
 
 
-// ====== API Calls ====== //
+// ====== GET US CAPITALS ====== //
+
 	function getUsCap(){
 	fetch("./us_capitals.json", {
 		method: 'GET'
@@ -325,14 +326,11 @@ function getWeather(){
 			return fetch(api2);
 	})
 	.then(response => {
-
 		if (!response.ok){
 			throw new Error("Network response 2 was not ok");
 		}
 		return response.json();
 	})
-	
-	
 	.then(data => {
 		var newData = data.properties.periods;
 		createElement(newData, newData.length);
