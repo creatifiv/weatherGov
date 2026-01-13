@@ -323,7 +323,7 @@ function getWeather(){
 			state = data.properties.relativeLocation.properties.state;
 			shortForeCast = data.properties.shortForecast;
 			console.log("2nd API address" + " " + api2);
-			x6.innerHTML = shortForecast;
+			x6.innerHTML = shortForecast + "12344567789900";
 			x8.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>` + api2;
 			return fetch(api2);
 	})
