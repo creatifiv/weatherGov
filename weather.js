@@ -336,7 +336,8 @@ function getWeather(){
 	
 	.then(data => {
 		var dR = data.properties.forecast;
-		//x += JSON.stringify(dR, null, 2);
+		createElement(dR, dR.length);
+		x += JSON.stringify(dR, null, 2);
 		x7.innerHTML += dR;
 	
 		x8.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
