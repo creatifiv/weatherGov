@@ -321,7 +321,6 @@ function getWeather(){
 			api2 = data.properties.forecast;
 			city = data.properties.relativeLocation.properties.city;
 			state = data.properties.relativeLocation.properties.state;
-			newShortForecast = data.properties;
 			console.log("2nd API address" + " " + api2);
 			x6.innerHTML = newShortForecast;
 			x8.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
@@ -335,6 +334,7 @@ function getWeather(){
 	})
 	.then(data => {
 		var newData = data.properties.periods;
+		newShortForecast = data.properties;
 		createElement(newData, newData.length);
 		x += JSON.stringify(newData, null, 2);
 		x8.innerHTML = `<pre>${JSON.stringify(newData, null, 2)}</pre>` + "last";
