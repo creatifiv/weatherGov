@@ -338,7 +338,7 @@ function getWeather(){
 		createElement(newData, newData.length);
  	x += JSON.stringify(newData, null, 2);
 		x8.innerHTML += `<pre>${JSON.stringify(newData, null, 2)}</pre>` + "API 2t";
-  x11.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>` + " " +  "number";
+  x11.innerHTML = `<pre>${JSON.stringify(data.properties.periods.shortForecast, null, 2)}</pre>` + " " +  "number";
 		
 	})
 	.catch(error=>{
