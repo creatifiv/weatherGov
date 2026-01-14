@@ -324,7 +324,7 @@ function getWeather(){
 			state = data.properties.relativeLocation.properties.state;
 			console.log("2nd API address" + " " + forecastApi);
 		 x10.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>` +  "API 1";
-			return fetchforecastApi);
+			return fetch(forecastApi);
 	})
 	.then(response => {
 		if (!response.ok){
