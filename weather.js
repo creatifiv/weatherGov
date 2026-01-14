@@ -322,7 +322,7 @@ function getWeather(){
 			city = data.properties.relativeLocation.properties.city;
 			state = data.properties.relativeLocation.properties.state;
 			console.log("2nd API address" + " " + api2);
-			x8.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+			//x8.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
 			return fetch(api2);
 	})
 	.then(response => {
