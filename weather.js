@@ -1,4 +1,4 @@
-var x, x1, x2, x3, x4, x5, x6, x7, x8, x9, regex, newShortForecast, usCapArray,getUserLoBtn, dropDownBox, locationOutput, jsonData, text, searchForm, searchClicked, amPmBoxes, searchOutput, searchBtn, search, weatherIcon, dayOfWeek, latitude, longitude, api, api2, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7;
+var x, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, regex, newShortForecast, usCapArray,getUserLoBtn, dropDownBox, locationOutput, jsonData, text, searchForm, searchClicked, amPmBoxes, searchOutput, searchBtn, search, weatherIcon, dayOfWeek, latitude, longitude, api, api2, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7;
 
 import {TrieNode, Trie} from './search-class.js';
 
@@ -20,6 +20,7 @@ window.addEventListener('load',() => {
 	x7 = document.getElementById('log-output');
 	x8 = document.getElementById('response-data');
 	x9 = document.getElementById('test-log');
+	x10 = document.getElementById('data1');
 	box2 = document.getElementById('box2');
 	day1 = document.getElementById('day-1');
 	day2 = document.getElementById('day-2');
@@ -322,7 +323,7 @@ function getWeather(){
 			city = data.properties.relativeLocation.properties.city;
 			state = data.properties.relativeLocation.properties.state;
 			console.log("2nd API address" + " " + api2);
-		 x9.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>` +  "API 1";
+		 x10.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>` +  "API 1";
 			return fetch(api2);
 	})
 	.then(response => {
