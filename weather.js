@@ -333,7 +333,7 @@ function getWeather(){
 	})
 	.then(data => {
 		var newData = data.properties.periods;
-		newShortForecast = data.properties.shortForecast;
+		newShortForecast = data;
 					x6.innerHTML = newShortForecast;
 		createElement(newData, newData.length);
 		x += JSON.stringify(newData, null, 2);
