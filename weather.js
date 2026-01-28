@@ -59,12 +59,15 @@ window.addEventListener('load',() => {
 
 
 
-/* ====== Event Listeners ==== */
+// ====== Get User Location Btn ====== //
 
 	getUserLoBtn.addEventListener("click", function(event){
-
-		getUserLocation();
+				getUserLocation();
 	});
+
+
+
+/* ====== SEARCH Events ==== */
 
 	search.addEventListener("input", function(event){
 		var textNode = document.createTextNode(event.target.value);
@@ -222,6 +225,8 @@ function fillForeCast(data, i){
 		}
 }//End fillForeCast
 
+
+
 // ==== TOOLS & HELPERS ==== //
 
 // Count request
@@ -229,6 +234,7 @@ function reqCount(){
 	xReq += 1;
 	console.log(xReq);
 }
+
 
 
 // === CREATE THE DATA ELEMENTS === //
