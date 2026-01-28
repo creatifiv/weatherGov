@@ -58,12 +58,22 @@ window.addEventListener('load',() => {
 	];
 
 
+// ======= Loadd Defualt Weather ======= //
+
+function loadDefaultWeather(){
+		latitude = 40.730610;
+		longitude = -73.9352425;
+		api = "https://api.weather.gov/points/" + latitude + "," + longitude;
+		getWeather();
+}
+
+
 
 // ====== Get User Location Btn ====== //
 
 	getUserLoBtn.addEventListener("click", function(event){
 				getUserLocation();
-	});
+	});o
 
 
 
@@ -96,7 +106,7 @@ window.addEventListener('load',() => {
 
 	search.addEventListener("click", function(){
 		if(searchClicked < 1){
-			getUsCap();
+			getUsCapitals();
 		}
 		searchClicked = 1;
 		}); //End seach eventListener
@@ -113,12 +123,7 @@ window.addEventListener('load',() => {
 
 
 
-function loadDefaultWeather(){
-		latitude = 40.730610;
-		longitude = -73.9352425;
-		api = "https://api.weather.gov/points/" + latitude + "," + longitude;
-		getWeather();
-}
+
 
 // ==== GET USER LOCATION  ==== //
 
@@ -146,6 +151,53 @@ function errorCallback(error){
 	locationOutput.innerHTML = error.message
 	console.log("Error occured" + error.message);
 }
+
+
+
+// ====== GET JSON DATA (US CAPITALS) ====== //
+
+	function getUsCapitals(){
+		fetch("./us_capitals.json", {
+		method: 'GET'
+		})
+	.then(response =>{
+		if(!response.ok){
+			throw new Error("Network response was not ok");
+		}
+		return response.json();
+		})
+  .then(data => {
+			console.log("U.S.capitals call");
+			getStateData(data);
+		//console.log("getUsCapitals Data status:" + data[0].name);
+			jsonData = data;
+			getJsonData(data);// data for the array
+		})
+	.catch(error=>{
+			console.log('Geo Location Error'+  " " + error.message);
+		});
+	}//End getUsCap
+
+
+
+ function getStateData(city){
+	 console.log("Get Us Data func:" + " " + city[0].name);
+ }
+
+
+
+function getJsonData(data){
+	for(var i = 0; i < data.length; i++ ){
+		var regex = /^a/i;
+		if(data){
+			newTrie.insert(data[i].name);// store u.s. capitals in Trie
+			usCapArray[i] = data[i];// store u.s. capitals in array
+			x9.innerHTML += usCapArray[i].name + ", ";
+			console.log("getJsonData data has landed" + " " + newTrie.root.children + " " + "&&" + " " + usCapArray);
+		}
+	}
+}
+
 
 
 
@@ -268,49 +320,13 @@ function createElement(data, days){
 }
 
 
-// ====== GET US CAPITALS ====== //
-
-	function getUsCap(){
-	fetch("./us_capitals.json", {
-		method: 'GET'
-	})
-	.then(response =>{
-		if(!response.ok){
-			throw new Error("Network response was not ok");
-		}
-		return response.json();
-	})
-    .then(data => {
-		console.log("U.S.capitals call");
-		getStateData(data);
-		//console.log("getUsCap Data status:" + data[0].name);
-		jsonData = data;
-		getJsonData(data);// data for the array
-	})
-	.catch(error=>{
-		console.log('Geo Location Error'+  " " + error.message);
-	});
-}//End getUsCap
-
-function getJsonData(data){
-	for(var i = 0; i < data.length; i++ ){
-		var regex = /^a/i;
-		if(data){
-			newTrie.insert(data[i].name);// store u.s. capitals in Trie
-			usCapArray[i] = data[i];// store u.s. capitals in array
-			x9.innerHTML += usCapArray[i].name + ", ";
-			console.log("getJsonData data has landed" + " " + newTrie.root.children + " " + "&&" + " " + usCapArray);
-		}
-	}
-}
-
-function getStateData(city){
-	console.log("Get Us Data func:" + " " + city[0].name);
-}
 
 
 
-// ===== GET WEATHER ===== //
+
+
+
+// ===== WEATHER API ===== //
 
 function getWeather(){
 	fetch(api, {
