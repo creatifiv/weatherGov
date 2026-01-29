@@ -80,11 +80,11 @@ function loadDefaultWeather(){
 /* ====== SEARCH Events ==== */
 
 
-// Get user input 
+// Get User Input 
 	search.addEventListener("input", function(event){
 		var textNode = document.createTextNode(event.target.value);
 		searchOutput.appendChild(textNode);
-		//searchOutput.innerHTML = event.target.value;
+		searchOutput.innerHTML = event.target.value;
 		
 		
 		// TRIE Store
