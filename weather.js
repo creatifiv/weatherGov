@@ -79,16 +79,23 @@ function loadDefaultWeather(){
 
 /* ====== SEARCH Events ==== */
 
+
+// Get user input 
 	search.addEventListener("input", function(event){
 		var textNode = document.createTextNode(event.target.value);
 		searchOutput.appendChild(textNode);
-		searchOutput.innerHTML = event.target.value;
+		//searchOutput.innerHTML = event.target.value;
+		
+		
+		// TRIE Store
 		text = event.target.value;
 		parseWords(text);
 		console.log("text var:" + " " +  text);
 		newTrie.startsWith(text);
 		//console.log(text.match(regex) ?? "Aw Naur");
 	});
+	
+	
 	searchForm.addEventListener("submit", function(event){
 		event.preventDefault(); // Prevent page refresh
 		var inputValue = search.value;
