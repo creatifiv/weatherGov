@@ -1,4 +1,4 @@
-var x, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, regex, shortForecast, usCapArray,getUserLoBtn, dropDownBox, locationOutput, jsonData, text, searchForm, searchClicked, amPmBoxes, searchOutput, searchSubmit, search, weatherIcon, dayOfWeek, latitude, longitude, api, forecastApi, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7;
+var x, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, regex, shortForecast, usCapArray,getUserLoBtn, dropDownBox, locationOutput, jsonData, text, searchForm, searchClicked, amPmBoxes, searchOutput, searchSubmit, search, weatherIcon, dayOfWeek, latitude, longitude, api, forecastApi, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7, cityData; 
 
 import {TrieNode, Trie} from './search-class.js';
 
@@ -7,6 +7,7 @@ var newTrie = new Trie();
 
 searchClicked = 0;
 usCapArray = [];
+cityData = [];
 
 
 window.addEventListener('load',() => {
@@ -191,7 +192,7 @@ function errorCallback(error){
 
 
  function getStateData(city){
-	 console.log("Get Us Data func:" + " " + city[0].name);
+	 searchOutput.innerHTML = city[0].name;
  }
 
 
