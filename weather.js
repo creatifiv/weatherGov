@@ -190,7 +190,7 @@ function errorCallback(error){
 	}//End getUsCap
 
 
-
+// US Capital data output to search drop down box (test)
  function getStateData(city){
 	 searchOutput.innerHTML = city[0].name;
  }
