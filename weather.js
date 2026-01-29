@@ -87,12 +87,15 @@ function loadDefaultWeather(){
 		searchOutput.innerHTML = event.target.value;
 		
 		
+		
+		/*
 		// TRIE Store
 		text = event.target.value;
 		parseWords(text);
 		console.log("text var:" + " " +  text);
 		newTrie.startsWith(text);
 		//console.log(text.match(regex) ?? "Aw Naur");
+		*/
 	});
 	
 	
