@@ -73,7 +73,7 @@ function loadDefaultWeather(){
 
 	getUserLoBtn.addEventListener("click", function(event){
 				getUserLocation();
-	});o
+	});
 
 
 
