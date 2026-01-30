@@ -190,10 +190,10 @@ function errorCallback(error){
 
 
 // US Capital data output to search drop down box (test)
-	function storeUsCapials(data){
+	function storeUsCapitals(data){
 		var i = 0;
-				while cityData.length < data.length{
-							cityData.append(data[i]);
+				while (cityData.length < data.length){
+							cityData.push(data[i]);
 							searchOutput.innerHTML = cityData[i];
 							i++;
 				}
@@ -376,7 +376,7 @@ function getWeather(){
 	.then(data => {
 		var newData = data.properties.periods;
 		createElement(newData, newData.length);
- 	x += JSON.stringify(newData, null, 2);
+ 	x.innerHTML += JSON.stringify(newData, null, 2);
 		x8.innerHTML += `<pre>${JSON.stringify(newData, null, 2)}</pre>` + "API 2t";
   x11.innerHTML = `<pre>${JSON.stringify(data.properties.periods[3].shortForecast, null, 2)}</pre>` + " " +  "number";
 		
