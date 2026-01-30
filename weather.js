@@ -5,9 +5,8 @@ import {TrieNode, Trie} from './search-class.js';
 var newTrieNode = new TrieNode();
 var newTrie = new Trie();  
 
-searchClicked = 0;
-usCapArray = [];
 cityData = [];
+searchClicked = false;
 
 
 window.addEventListener('load',() => {
@@ -116,10 +115,10 @@ function loadDefaultWeather(){
 	});
 
 	search.addEventListener("click", function(){
-		if(searchClicked < 1){
+		if(searchClicked == false){
 			getUsCapitals();
 		}
-		searchClicked = 1;
+		searchClicked = true;
 		}); //End seach eventListener
 /*
 	searchBtn.addEventListener("click", function(event){
@@ -179,10 +178,10 @@ function errorCallback(error){
 		})
   .then(data => {
 			console.log("U.S.capitals call");
-			getStateData(data);
+			storeUsCapitals(data);
 		//console.log("getUsCapitals Data status:" + data[0].name);
 			jsonData = data;
-			getJsonData(data);// data for the array
+		//	getJsonData(data);// data for the array //function below
 		})
 	.catch(error=>{
 			console.log('Geo Location Error'+  " " + error.message);
@@ -191,24 +190,32 @@ function errorCallback(error){
 
 
 // US Capital data output to search drop down box (test)
- function getStateData(city){
+	function storeUsCapials(data){
+		var i = 0;
+				while cityData.length <= data.length{
+							cityData.append(data[i]);
+							searchOutput.innerHTML = cityData[i];
+							i++;
+				}
+	}
+ function printUsCityCapitals(city){
 	 searchOutput.innerHTML = city[0].name;
  }
 
 
-
+/*
 function getJsonData(data){
 	for(var i = 0; i < data.length; i++ ){
 		var regex = /^a/i;
 		if(data){
 			newTrie.insert(data[i].name);// store u.s. capitals in Trie
-			usCapArray[i] = data[i];// store u.s. capitals in array
+			usCapArray[i].append(data[i]);// store u.s. capitals in array
 			x9.innerHTML += usCapArray[i].name + ", ";
 			console.log("getJsonData data has landed" + " " + newTrie.root.children + " " + "&&" + " " + usCapArray);
 		}
 	}
 }
-
+*/
 
 
 
