@@ -194,7 +194,7 @@ function errorCallback(error){
 		var i = 0;
 				while (cityData.length < data.length){
 							cityData.push(data[i]);
-							searchOutput.innerHTML = `<pre>${JSON.stringify(cityData[i][0].name, null, 2)}</pre>`;
+							searchOutput.innerHTML = `<pre>${JSON.stringify(cityData, null, 2)}</pre>`;
 							i++;
 				}
 	}
