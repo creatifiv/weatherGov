@@ -192,7 +192,7 @@ function errorCallback(error){
 // US Capital data output to search drop down box (test)
 	function storeUsCapials(data){
 		var i = 0;
-				while cityData.length <= data.length{
+				while cityData.length < data.length{
 							cityData.append(data[i]);
 							searchOutput.innerHTML = cityData[i];
 							i++;
