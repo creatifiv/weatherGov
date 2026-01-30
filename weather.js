@@ -194,7 +194,7 @@ function errorCallback(error){
 		var i = 0;
 				while (cityData.length < data.length){
 							cityData.push(data[i]);
-							searchOutput.innerHTML = cityData[i];
+							searchOutput.innerHTML = cityData;
 							i++;
 				}
 	}
