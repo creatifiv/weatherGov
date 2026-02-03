@@ -13,3 +13,4 @@ export class Trie {
     }
     
     export default Trie
+    export default TrieNode
