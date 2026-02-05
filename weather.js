@@ -10,8 +10,9 @@ var newTrie = new Trie();
 cityData = [];
 searchClicked = false;
 function showTrie(){ 
-		this.newTrie.root = {"a": newTrie}
-		x10.innerHTML += newTrie
+		var node = newTrie.root;
+		node.children['a'] = newTrieNode;
+		x10.innerHTML += `<pre> newTrie </pre>`;
 		}
 		showTrie();
 
