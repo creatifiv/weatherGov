@@ -13,6 +13,7 @@ function showTrie(){
 		this.newTrie.root = {"a": newTrie}
 		x10.innerHTML += newTrie
 		}
+		showTrie();
 
 window.addEventListener('load',() => {
 	x = document.getElementById('response');
