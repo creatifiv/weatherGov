@@ -5,9 +5,14 @@ import {TrieNode, Trie} from './trie.js';
 var newTrieNode = new TrieNode();
 var newTrie = new Trie();  
 
+
+
 cityData = [];
 searchClicked = false;
-
+function showTrie(){ 
+		this.newTrie.root = {"a": newTrie}
+		x10.innerHTML += newTrie
+		}
 
 window.addEventListener('load',() => {
 	x = document.getElementById('response');
