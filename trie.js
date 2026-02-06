@@ -10,6 +10,17 @@ export class Trie {
         this.root = new TrieNode();
         console.log("New Trie planted");
         }
+      inser(word){
+         let node = this.root;
+         
+         for (const ch of word){
+            if(!node.children[ch]){
+               node.children[ch] = new TrieNode();
+            }
+            node = node.children[ch];
+         }
+         node.isEndOfWord = true;
+      }
     }
     
     
