@@ -139,7 +139,6 @@ function loadDefaultWeather(){
 
 
 	function showTrie(){ 
-			trie.insert("Encyclopedia");
 			trie.insert("Tyrannosaurus");
 		 dataOutput.innerHTML = `<pre>${JSON.stringify(trie, null, 2)}</pre>` + "HELLLO";
 		}
