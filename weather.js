@@ -13,7 +13,7 @@ searchClicked = false;
 function showTrie(){ 
 		var node = trie.root;
 		node.children['a'] = new TrieNode();
-		x10.innerHTML += `<pre>${JSON.stringify(newTrie, null, 2)}</pre>`;
+		x10.innerHTML += `<pre>${JSON.stringify(newTrie, null, 2)}</pre>` + "HELLLO";
 		}
 		showTrie();
 
