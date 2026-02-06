@@ -8,9 +8,10 @@ var newTrie = new Trie();
 
 cityData = [];
 searchClicked = false;
+
 function showTrie(){ 
 		var node = newTrie.root;
-		node.children['a'] = new TrieNode();
+		//node.children['a'] = new TrieNode();
 		//x10.innerHTML += `<pre>${JSON.stringify(newTrie, null, 2)}</pre>`;
 		}
 		showTrie();
