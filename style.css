@@ -58,7 +58,11 @@ ul li{
     width: 100%;
 }
 
-
+#data-output{
+    border-top: solid;
+    border-bottom: solid:
+    border-color: black;
+}
 
 
 
