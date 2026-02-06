@@ -12,8 +12,8 @@ searchClicked = false;
 
 function showTrie(){ 
 		var node = trie.root;
-		//node.children['a'] = new TrieNode();
-		//x10.innerHTML += `<pre>${JSON.stringify(newTrie, null, 2)}</pre>`;
+		node.children['a'] = new TrieNode();
+		x10.innerHTML += `<pre>${JSON.stringify(newTrie, null, 2)}</pre>`;
 		}
 		showTrie();
 
