@@ -10,7 +10,7 @@ export class Trie {
         this.root = new TrieNode();
         console.log("New Trie planted");
         }
-      inser(word){
+      insert(word){
          let node = this.root;
          
          for (const ch of word){
