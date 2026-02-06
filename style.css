@@ -59,9 +59,9 @@ ul li{
 }
 
 #data-output{
-    border-top: solid;
-    border-bottom: solid:
-    border-color: black;
+    border-top: 1px, solid, black;
+    border-bottom: 1px, solid, black:
+
 }
 
 
