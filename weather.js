@@ -62,6 +62,8 @@ window.addEventListener('load',() => {
 		document.getElementById('d7-pm')
 	];
 	
+	});
+	
 	function showTrie(){ 
 		var node = trie.root;
 		node.children['a'] = new TrieNode();
