@@ -1,4 +1,4 @@
-var x, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, regex, shortForecast, usCapArray,getUserLoBtn, dropDownBox, locationOutput, jsonData, text, searchForm, searchClicked, amPmBoxes, searchOutput, searchSubmit, search, weatherIcon, dayOfWeek, latitude, longitude, api, forecastApi, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7, cityData; 
+var x, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, regex, shortForecast, usCapArray,getUserLoBtn, dropDownBox, locationOutput, jsonData, text, searchForm, searchClicked, amPmBoxes, searchOutput, searchSubmit, search, weatherIcon, dayOfWeek, latitude, longitude, api, forecastApi, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7, cityData, dataOutput;
 
 import {TrieNode, Trie} from './trie.js';
 
@@ -13,7 +13,7 @@ searchClicked = false;
 function showTrie(){ 
 		var node = trie.root;
 		node.children['a'] = new TrieNode();
-		x10.innerHTML += `<pre>${JSON.stringify(newTrie, null, 2)}</pre>` + "HELLLO";
+		dataOutput.innerHTML = `<pre>${JSON.stringify(newTrie, null, 2)}</pre>` + "HELLLO";
 		}
 		showTrie();
 
@@ -47,6 +47,7 @@ window.addEventListener('load',() => {
 	dropDownBox = document.getElementsByClassName("dropdown-item");
 	locationOutput = document.getElementById("locationOutput");
 	getUserLoBtn = document.getElementById("getUserLocation");
+	dataOutput = document.getElementById("data-output");
 
 	amPmBoxes = [
 		document.getElementById('d1-am'),
