@@ -10,11 +10,7 @@ var trie = new Trie();
 cityData = [];
 searchClicked = false;
 
-function showTrie(){ 
-		var node = trie.root;
-		node.children['a'] = new TrieNode();
-		dataOutput.innerHTML = `<pre>${JSON.stringify(newTrie, null, 2)}</pre>` + "HELLLO";
-		}
+
 
 
 window.addEventListener('load',() => {
@@ -65,6 +61,12 @@ window.addEventListener('load',() => {
 		document.getElementById('d7-am'),
 		document.getElementById('d7-pm')
 	];
+	
+	function showTrie(){ 
+		var node = trie.root;
+		node.children['a'] = new TrieNode();
+		dataOutput.innerHTML = `<pre>${JSON.stringify(newTrie, null, 2)}</pre>` + "HELLLO";
+		}
 	
 			showTrie();
 
