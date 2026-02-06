@@ -132,14 +132,13 @@ function loadDefaultWeather(){
 	});//End searchBTn
 
 */
-			showTrie();
 
    loadDefaultWeather();
 });//End Windows Event Listener
 
-
-	function showTrie(){ 
-			trie.insert("Tyrannosaurus");
+	// Store Trie Nodes
+	function stoTrieNo(word){ 
+			trie.insert(word);
 		 dataOutput.innerHTML = `<pre>${JSON.stringify(trie, null, 2)}</pre>` + "HELLLO";
 		}
 	
@@ -175,7 +174,7 @@ function errorCallback(error){
 
 
 
-// ====== GET JSON DATA (US CAPITALS) ====== //
+// ====== GET CUSTOM JSON DATA (US CAPITALS) ====== //
 
 	function getUsCapitals(){
 		fetch("./us_capitals.json", {
