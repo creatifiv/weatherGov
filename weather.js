@@ -204,7 +204,8 @@ function errorCallback(error){
 		var i = 0;
 				while (cityData.length < data.length){
 							cityData.push(data[i]);
-														searchOutput.innerHTML += cityData[i].name + "<br>";
+							searchOutput.innerHTML += cityData[i].name + "<br>";
+							stoTrieNo(cityData[i].name);//Store city names in TrieNodes
 							i++;
 				}
 	}
