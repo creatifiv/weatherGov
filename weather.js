@@ -140,7 +140,7 @@ function loadDefaultWeather(){
 
 	function showTrie(){ 
 		var node = trie.root;
-		node.children['a'] = new TrieNode();
+		node.insert("Encyclopedia");
 	 dataOutput.innerHTML = `<pre>${JSON.stringify(trie, null, 2)}</pre>` + "HELLLO";
 		}
 	
