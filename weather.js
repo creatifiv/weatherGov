@@ -67,7 +67,7 @@ window.addEventListener('load',() => {
 	function showTrie(){ 
 		var node = trie.root;
 		node.children['a'] = new TrieNode();
-		dataOutput.innerHTML = `<pre>${JSON.stringify(newTrie, null, 2)}</pre>` + "HELLLO";
+		dataOutput.innerHTML = `<pre>${JSON.stringify(trie, null, 2)}</pre>` + "HELLLO";
 		}
 	
 			showTrie();
