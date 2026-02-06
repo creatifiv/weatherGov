@@ -15,7 +15,7 @@ function showTrie(){
 		node.children['a'] = new TrieNode();
 		dataOutput.innerHTML = `<pre>${JSON.stringify(newTrie, null, 2)}</pre>` + "HELLLO";
 		}
-		showTrie();
+
 
 window.addEventListener('load',() => {
 	x = document.getElementById('response');
@@ -65,6 +65,8 @@ window.addEventListener('load',() => {
 		document.getElementById('d7-am'),
 		document.getElementById('d7-pm')
 	];
+	
+			showTrie();
 
 
 // ======= Loadd Defualt Weather ======= //
