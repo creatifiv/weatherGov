@@ -4,7 +4,7 @@ import {TrieNode, Trie} from './trie.js';
 
 var trie = new Trie();  
 
-
+  
 
 
 cityData = [];
