@@ -40,6 +40,7 @@ export class Trie {
         }; // End 
       dfs(node, "");
         return results; 
+        }
 }
     
     
