@@ -30,12 +30,12 @@ export class Trie {
             node = node.children[char];
         }
         const results = [];
-        const dfs = (currentNode, path) => {
-            if(currentNode.isEndOfWord){
+        const dfs = (node, path) => {
+            if(node.isEndOfWord){
                 results.push(prefix + path);
             }
-            for(let character in currentNode.children){
-                dfs(currentNode.children[char], path + char);
+            for(let char in node.children){
+                dfs(node.children[char], path + char);
             }
         }; // End 
       dfs(node, "");
