@@ -34,9 +34,12 @@ export class Trie {
             if(currentNode.isEndOfWord){
                 results.push(prefix + path);
             }
-        }// End DFS
-        
-    }
+            for(let character in currentNode.children){
+                dfs(currentNode.children[char], path + char);
+            }
+        }; // End 
+      dfs(node, "");
+        return results; 
 }
     
     
