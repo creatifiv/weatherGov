@@ -23,7 +23,7 @@ export class Trie {
     
     getWordsWithPrefix(prefix){
         let node = this.root;
-        for(char of prefix){
+        for(let char of prefix){
             if(!node.children[char]){
                 return [];
             }
