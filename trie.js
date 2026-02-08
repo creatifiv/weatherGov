@@ -3,7 +3,7 @@ export class TrieNode {
             this.children = {};
             this.isEndOfWord = false;
 		}
-	}
+	}//End TrieNode
     
 export class Trie {
 	constructor(){
@@ -41,6 +41,6 @@ export class Trie {
       dfs(node, "");
         return results; 
         }
-}
+}// End Trie
     
     
