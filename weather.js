@@ -121,7 +121,7 @@ function loadDefaultWeather(){
 		if(event.key.match(/^[a-zA-z0-9]$/)){
 				var results =	trie.searchPrefix(event.key.value);
 				for(var i = 0; i < results.length; i++){
-						searchOutput.innerHTML = results[i];
+						searchOutput.innerHTML = "a";
 				}
 		}
 	});
