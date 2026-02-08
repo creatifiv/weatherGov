@@ -119,7 +119,10 @@ function loadDefaultWeather(){
 					console.log(" Backspace pressed" + event.key);
 		}
 		if(event.key.match(/^[a-zA-z0-9]$/)){
-				searchOutput.innerHTML =	trie.searchPrefix(event.key.value);
+				var results =	trie.searchPrefix(event.key.value);
+				for(var i = 0; i < results.length; i++){
+						searchOutput.innerHTML = results[i];
+				}
 		}
 	});
 
