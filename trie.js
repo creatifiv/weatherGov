@@ -21,7 +21,7 @@ export class Trie {
          node.isEndOfWord = true;
       }
     
-    getWordsWithPrefix(prefix){
+    seachPrefix(prefix){
         let node = this.root;
         for(let char of prefix){
             if(!node.children[char]){
