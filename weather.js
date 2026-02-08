@@ -121,8 +121,8 @@ function loadDefaultWeather(){
 		}
 		if(event.key.match(/^[a-zA-z0-9]$/)){
 			// searchRes = presfix search results 
-				var searchRes =	trie.searchPrefix(event.key.value);
-				for(var i = 0; i < searchRes.length; i++){
+				var preX =	trie.searchPrefix(event.key.value);
+				for(var i = 0; i < preX.length; i++){
 						searchPreOut.innerHTML = results.length;
 				}
 		}
