@@ -116,11 +116,12 @@ function loadDefaultWeather(){
 	search.addEventListener("keydown", function(event){
 		if(event.key === "Backspace"){
 					searchOutput.innerHTML.slice(0, -1);
-					console.log(" Backspace pressed" + event.key);
+					console.log("Backspace pressed" + event.key);
 		}
 		if(event.key.match(/^[a-zA-z0-9]$/)){
-				var results =	trie.searchPrefix(event.key.value);
-				for(var i = 0; i < results.length; i++){
+			// searchRes = presfix search results 
+				var searchRes =	trie.searchPrefix(event.key.value);
+				for(var i = 0; i < searchRes.length; i++){
 						searchOutput.innerHTML = results.length;
 				}
 		}
