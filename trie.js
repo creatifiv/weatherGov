@@ -38,7 +38,7 @@ export class Trie {
                 dfs(node.children[char], path + char);
             }
         }; // End 
-      dfs(node, "");
+        dfs(node, "");
         return results; 
         }
 }// End Trie
