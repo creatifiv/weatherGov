@@ -89,10 +89,18 @@ function loadDefaultWeather(){
 
 // Get User Input 
 	search.addEventListener("input", function(event){
-		var textNode = document.createTextNode(event.target.value);
+		var v = event.target.value;
+		var textNode = document.createTextNode(v);
 		searchOutput.appendChild(textNode);
-		searchOutput.innerHTML = event.target.value;
+		searchOutput.innerHTML = v;
 		
+		if(/^[a-zA-Z0-9]$/.test(event.data)){
+			// searchRes = presfix search results 
+				var preX =	trie.searchPrefix(v);
+				for(var i = 0; i < preX.length; i++){
+						searchPreOut.innerHTML = results.length + "searchPreOutput";
+				}
+		}
 		
 		
 		/*
@@ -118,14 +126,6 @@ function loadDefaultWeather(){
 		if(event.key === "Backspace"){
 					searchOutput.innerHTML.slice(0, -1);
 					console.log("Backspace pressed" + event.key);
-		}
-								searchPreOut.innerHTML = results.length + "searchPreOutput";
-		if(/^[a-zA-Z0-9]$/.test(event.key)){
-			// searchRes = presfix search results 
-				var preX =	trie.searchPrefix(event.key.value);
-				for(var i = 0; i < preX.length; i++){
-						searchPreOut.innerHTML = results.length + "searchPreOutput";
-				}
 		}
 	});
 
