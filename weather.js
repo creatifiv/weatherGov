@@ -89,14 +89,13 @@ function loadDefaultWeather(){
 
 // Get User Input 
 	search.addEventListener("input", function(event){
-		var v = event.target.value;
-		var textNode = document.createTextNode(v);
+		var textNode = document.createTextNode(event.target.value);
 		searchOutput.appendChild(textNode);
-		searchOutput.innerHTML = v;
+		searchOutput.innerHTML = event.target.value;
 		
 		if(/^[a-zA-Z0-9]$/.test(event.data)){ 
 			// searchRes = presfix search results 
-				var preX =	trie.searchPrefix(v);
+				var preX =	trie.searchPrefix(event.target.value);
 				for(var i = 0; i < preX.length; i++){
 						searchPreOut.innerHTML = results.length + "searchPreOutput";
 				}
