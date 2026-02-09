@@ -123,7 +123,7 @@ function loadDefaultWeather(){
 			// searchRes = presfix search results 
 				var preX =	trie.searchPrefix(event.key.value);
 				for(var i = 0; i < preX.length; i++){
-						searchPreOut.innerHTML = results.length;
+						searchPreOut.innerHTML = results.length + "searchPreOutput";
 				}
 		}
 	});
