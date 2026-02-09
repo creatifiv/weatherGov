@@ -95,6 +95,7 @@ function loadDefaultWeather(){
 		
 		if(/^[a-zA-Z0-9]$/.test(event.data)){ 
 			// searchRes = presfix search results 
+								searchPreOut.innerHTML = event.data;
 				var preX =	trie.searchPrefix(event.target.value);
 				for(var i = 0; i < preX.length; i++){
 						searchPreOut.innerHTML = results.length + "searchPreOutput";
