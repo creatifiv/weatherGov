@@ -92,7 +92,7 @@ function loadDefaultWeather(){
 		var v = event.target.value;
 		var textNode = document.createTextNode(v);
 		searchOutput.appendChild(textNode);
-		searchOutput.innerHTML = v;
+		searchOutput.innerHTML = v + "HiHo";
 		
 		if(/^[a-zA-Z0-9]$/.test(event.data)){
 			// searchRes = presfix search results 
