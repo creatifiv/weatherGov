@@ -119,6 +119,7 @@ function loadDefaultWeather(){
 					searchOutput.innerHTML.slice(0, -1);
 					console.log("Backspace pressed" + event.key);
 		}
+								searchPreOut.innerHTML = results.length + "searchPreOutput";
 		if(/^[a-zA-Z0-9]$/.test(event.key)){
 			// searchRes = presfix search results 
 				var preX =	trie.searchPrefix(event.key.value);
