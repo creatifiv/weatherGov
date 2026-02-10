@@ -113,9 +113,9 @@ function loadDefaultWeather(){
 					//searchPreOut.innerHTML = "";
 					if(!sharedPreX == ""){
 								for(var i = 0; i < preX.length; i++){
-								searchPreOut.innerHTML += preX[i] + "<br>";
-					} else { searchPreOut.innerHTML = ""; }
-				}
+											searchPreOut.innerHTML += preX[i] + "<br>";
+								}
+					}else{ searchPreOut.innerHTML = ""; }
 		}
 	});
 
