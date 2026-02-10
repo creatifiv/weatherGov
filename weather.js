@@ -98,7 +98,7 @@ function loadDefaultWeather(){
 				var preX =	trie.searchPrefix(event.target.value);
 				sharedPreX = event.target.value
 				for(var i = 0; i < preX.length; i++){
-						searchPreOut.innerHTML += preX[i] + "<br>";
+							createListItem(preX[i]);
 				}
 		}
 		
@@ -207,7 +207,7 @@ function createListItem(item){
 				while (cityData.length < data.length){
 							cityData.push(data[i]);
 							var x = cityData[i].name;
-							createListItem(x);
+							//createListItem(x); possibly delete later
 							trie.insert(cityData[i].name);//Store city names in TrieNodes
 							i++;
 				}
