@@ -94,7 +94,7 @@ function loadDefaultWeather(){
 		searchOutput.innerHTML = event.target.value;
 		
 		if(/^[a-zA-Z0-9]$/.test(event.data)){ 
-				searchPreOut.innerHTML = " ";
+				searchPreOut.innerHTML = " eye";
 				var preX =	trie.searchPrefix(event.target.value);
 				sharedPreX = event.target.value
 				for(var i = 0; i < preX.length; i++){
