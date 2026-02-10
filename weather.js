@@ -104,7 +104,7 @@ function loadDefaultWeather(){
 		
 	});
 	
-	
+	// Created for backspace detection
 	search.addEventListener("keydown", function(event){
 		if(event.key === "Backspace"){
 					searchOutput.innerHTML = searchOutput.innerHTML.slice(0, -1);
@@ -136,12 +136,6 @@ searchForm.addEventListener("submit", function(event){
 	
    loadDefaultWeather();
 });//End Windows Event Listener
-
-	// Store Trie Nodes
-	function stoTrieNo(word){ 
-			trie.insert(word);
-		 dataOutput.innerHTML = `<pre>${JSON.stringify(trie, null, 2)}</pre>` + "HELLLO";
-		}
 	
 
 
@@ -199,20 +193,19 @@ function errorCallback(error){
 	}//End getUsCap
 
 
+
+
 // US Capital data output to search drop down box (test)
 	function storeUsCapitals(data){
 		var i = 0;
 				while (cityData.length < data.length){
 							cityData.push(data[i]);
 							searchOutput.innerHTML += cityData[i].name + "<br>";
-							stoTrieNo(cityData[i].name);//Store city names in TrieNodes
+							trie.insert(cityData[i].name);//Store city names in TrieNodes
 							i++;
 				}
 	}
- function printUsCityCapitals(city){
-	 searchOutput.innerHTML = city[0].name;
- }
-
+ 
 
 /*
 function getJsonData(data){
