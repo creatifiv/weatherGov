@@ -195,7 +195,7 @@ function errorCallback(error){
 function createListItem(item){
 			var newItem = document.createElement(li);
 			newItem.className = "dropdown-item";
-			var textNode = document.creatTextNode(item);
+			var textNode = document.creatTextNode(item + "hello");
 			newItem.appendChild(textNode);
 			searchDropCont.appendChild(newItem);
 }
