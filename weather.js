@@ -96,7 +96,7 @@ function loadDefaultWeather(){
 		if(/^[a-zA-Z0-9]$/.test(event.data)){ 
 				searchPreOut.innerHTML = " ";
 				var preX =	trie.searchPrefix(event.target.value);
-				sharedPreX = preX
+				sharedPreX = event.target.value
 				for(var i = 0; i < preX.length; i++){
 						searchPreOut.innerHTML += preX[i] + "<br>";
 				}
@@ -126,8 +126,9 @@ function loadDefaultWeather(){
 		if(event.key === "Backspace"){
 					searchOutput.innerHTML.slice(0, -1);
 					searchPreOut.innerHTML = " ";
-					for(var i = 0; i < sharedPreX.length; i++){
-						searchPreOut.innerHTML += sharedPreX[i] + "<br>";
+					var preX = trie.searchPrefix(sharedPreX)
+					for(var i = 0; i < preX.length; i++){
+						searchPreOut.innerHTML += preX[i] + "<br>";
 				}
 					console.log("Backspace pressed" + event.key);
 		}
