@@ -111,8 +111,10 @@ function loadDefaultWeather(){
 					sharedPreX = sharedPreX.slice(0, -1)
 					var preX =	trie.searchPrefix(sharedPreX);
 					searchPreOut.innerHTML = " ";
-					for(var i = 0; i < preX.length; i++){
-						searchPreOut.innerHTML += preX[i] + "<br>";
+					if(!sharedPreX === " "){
+								for(var i = 0; i < preX.length; i++){
+								searchPreOut.innerHTML += preX[i] + "<br>";
+					}
 				}
 		}
 	});
