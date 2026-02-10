@@ -195,8 +195,8 @@ function errorCallback(error){
 function createListItem(item){
 			var newItem = document.createElement(li);
 			newItem.className = "dropdown-item";
-			var itemNode = document.creatTextNode(item);
-			newItem.appendChild(itemNode);
+			var textNode = document.creatTextNode(item);
+			newItem.appendChild(textNode);
 			searchDropCont.appendChild(newItem);
 }
 
@@ -206,7 +206,7 @@ function createListItem(item){
 		var i = 0;
 				while (cityData.length < data.length){
 							cityData.push(data[i]);
-							var x = cityData[i].name + "<br>";
+							var x = cityData[i].name;
 							createListItem(x);
 							trie.insert(cityData[i].name);//Store city names in TrieNodes
 							i++;
