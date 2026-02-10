@@ -1,4 +1,4 @@
-var x, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, regex, shortForecast, usCapArray,getUserLoBtn, dropDownBox, locationOutput, jsonData, text, searchForm, searchClicked, amPmBoxes, searchOutput, searchSubmit, search, weatherIcon, dayOfWeek, latitude, longitude, api, forecastApi, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7, cityData, dataOutput, searchPreOut;
+var x, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, regex, shortForecast, usCapArray,getUserLoBtn, dropDownBox, locationOutput, jsonData, text, searchForm, searchClicked, amPmBoxes, searchOutput, searchSubmit, search, weatherIcon, dayOfWeek, latitude, longitude, api, forecastApi, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7, cityData, dataOutput, searchPreOut, sharedPreX;
 
 import {TrieNode, Trie} from './trie.js';
 
@@ -94,9 +94,9 @@ function loadDefaultWeather(){
 		searchOutput.innerHTML = event.target.value;
 		
 		if(/^[a-zA-Z0-9]$/.test(event.data)){ 
-			// searchRes = presfix search results 
 				searchPreOut.innerHTML = " ";
 				var preX =	trie.searchPrefix(event.target.value);
+				sharedPreX = preX
 				for(var i = 0; i < preX.length; i++){
 						searchPreOut.innerHTML += preX[i] + "<br>";
 				}
@@ -125,6 +125,10 @@ function loadDefaultWeather(){
 	search.addEventListener("keydown", function(event){
 		if(event.key === "Backspace"){
 					searchOutput.innerHTML.slice(0, -1);
+					searchPreOut.innerHTML = " ";
+					for(var i = 0; i < sharedPreX.length; i++){
+						searchPreOut.innerHTML += sharedPreX[i] + "<br>";
+				}
 					console.log("Backspace pressed" + event.key);
 		}
 	});
@@ -151,7 +155,6 @@ function loadDefaultWeather(){
 		 dataOutput.innerHTML = `<pre>${JSON.stringify(trie, null, 2)}</pre>` + "HELLLO";
 		}
 	
-
 
 
 // ==== GET USER LOCATION  ==== //
