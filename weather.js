@@ -1,4 +1,4 @@
-var x, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, regex, shortForecast, usCapArray,getUserLoBtn, dropDownBox, locationOutput, jsonData, text, searchForm, searchClicked, amPmBoxes, searchOutput, searchSubmit, search, weatherIcon, dayOfWeek, latitude, longitude, api, forecastApi, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7, cityData, dataOutput, searchPreOut, sharedPreX;
+var x, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, regex, shortForecast, usCapArray,getUserLoBtn, locationOutput, jsonData, text, searchForm, searchClicked, amPmBoxes, searchOutput, searchSubmit, search, weatherIcon, dayOfWeek, latitude, longitude, api, forecastApi, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7, cityData, dataOutput, searchPreOut, sharedPreX;
 
 import {TrieNode, Trie} from './trie.js';
 
@@ -36,11 +36,11 @@ window.addEventListener('load',() => {
 	day7 = document.getElementById('day-7');
 	search = document.getElementById("search");
 	searchForm = document.getElementById("weatherSearch");
-	searchOutput = document.getElementById("output-x");
+	searchOutput = document.getElementById("dropDownContainer");
 	searchSubmit = document.getElementById("submit");
 	dayOfWeek = document.getElementsByClassName("day-of-week");
 	weatherIcon = document.getElementsByClassName("weather-icon");
-	dropDownBox = document.getElementsByClassName("dropdown-item");
+	//item = document.getElementsByClassName("dropdown-item"); delete later if not needed
 	locationOutput = document.getElementById("locationOutput");
 	getUserLoBtn = document.getElementById("getUserLocation");
 	dataOutput = document.getElementById("data-output");
