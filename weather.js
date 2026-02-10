@@ -102,32 +102,17 @@ function loadDefaultWeather(){
 				}
 		}
 		
-		
-		/*
-		// TRIE Store
-		text = event.target.value;
-		parseWords(text);
-		console.log("text var:" + " " +  text);
-		newTrie.startsWith(text);
-		//console.log(text.match(regex) ?? "Aw Naur");
-		*/
 	});
 	
 	
-	searchForm.addEventListener("submit", function(event){
-		event.preventDefault(); // Prevent page refresh
-		var inputValue = search.value;
-		newTrie.startsWith(text);
-		console.log("Submit:" + " " + "Form value" + " " + inputValue);
-	});
-
-
 	search.addEventListener("keydown", function(event){
 		if(event.key === "Backspace"){
 					searchOutput.innerHTML.slice(0, -1);
-					searchPreOut.innerHTML = sharedPreX;
-					//var preX = trie.searchPrefix(sharedPreX)
-					
+					var preX = trie.searchPrefix(sharedPreX)
+					searchPreOut.innerHTML = " ";
+					for(var i = 0; i < preX.length; i++){
+						searchPreOut.innerHTML += preX[i] + "<br>";
+				}
 					console.log("Backspace pressed" + event.key);
 		}
 	});
@@ -138,13 +123,15 @@ function loadDefaultWeather(){
 		}
 		searchClicked = true;
 		}); //End seach eventListener
-/*
-	searchBtn.addEventListener("click", function(event){
-			newTrie.search(text);
-	});//End searchBTn
 
-*/
-
+searchForm.addEventListener("submit", function(event){
+		event.preventDefault(); // Prevent page refresh
+		var inputValue = search.value;
+		newTrie.startsWith(text);
+		console.log("Submit:" + " " + "Form value" + " " + inputValue);
+	});
+	
+	
    loadDefaultWeather();
 });//End Windows Event Listener
 
