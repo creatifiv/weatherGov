@@ -126,10 +126,8 @@ function loadDefaultWeather(){
 		if(event.key === "Backspace"){
 					searchOutput.innerHTML.slice(0, -1);
 					searchPreOut.innerHTML = sharedPreX;
-					var preX = trie.searchPrefix(sharedPreX)
-					for(var i = 0; i < preX.length; i++){
-						searchPreOut.innerHTML += preX[i] + "<br>";
-				}
+					//var preX = trie.searchPrefix(sharedPreX)
+					
 					console.log("Backspace pressed" + event.key);
 		}
 	});
