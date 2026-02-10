@@ -1,4 +1,4 @@
-var x, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, regex, shortForecast, usCapArray,getUserLoBtn, locationOutput, jsonData, text, searchForm, searchClicked, amPmBoxes, searchOutput, searchSubmit, search, weatherIcon, dayOfWeek, latitude, longitude, api, forecastApi, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7, cityData, dataOutput, searchPreOut, sharedPreX;
+var x, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, regex, shortForecast, usCapArray,getUserLoBtn, locationOutput, jsonData, text, searchForm, searchClicked, amPmBoxes, searchOutput, searchSubmit, search, weatherIcon, dayOfWeek, latitude, longitude, api, forecastApi, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7, cityData, dataOutput, searchPreOut, sharedPreX, searchDropCont;
 
 import {TrieNode, Trie} from './trie.js';
 
@@ -36,7 +36,7 @@ window.addEventListener('load',() => {
 	day7 = document.getElementById('day-7');
 	search = document.getElementById("search");
 	searchForm = document.getElementById("weatherSearch");
-	searchOutput = document.getElementById("dropDownContainer");
+	searchDropCont = document.getElementById("dropDownContainer");
 	searchSubmit = document.getElementById("submit");
 	dayOfWeek = document.getElementsByClassName("day-of-week");
 	weatherIcon = document.getElementsByClassName("weather-icon");
@@ -190,9 +190,15 @@ function errorCallback(error){
 	.catch(error=>{
 			console.log('Geo Location Error'+  " " + error.message);
 		});
-	}//End getUsCap
+	}//End getUsCapitals
 
-
+function createListItem(item){
+			var newItem = document.createElement(li);
+			newItem.className = "";
+			var itemNode = document.creatTextNode(item);
+			newItem.appendChild(itemNode);
+			searchDropCont.appendChild(newItem);
+}
 
 
 // US Capital data output to search drop down box (test)
@@ -200,7 +206,8 @@ function errorCallback(error){
 		var i = 0;
 				while (cityData.length < data.length){
 							cityData.push(data[i]);
-							searchOutput.innerHTML += cityData[i].name + "<br>";
+							var x = cityData[i].name + "<br>";
+							createListItem(x);
 							trie.insert(cityData[i].name);//Store city names in TrieNodes
 							i++;
 				}
