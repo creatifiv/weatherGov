@@ -110,8 +110,8 @@ function loadDefaultWeather(){
 					searchOutput.innerHTML = searchOutput.innerHTML.slice(0, -1);
 					sharedPreX = sharedPreX.slice(0, -1)
 					var preX =	trie.searchPrefix(sharedPreX);
-					searchPreOut.innerHTML = " ";
-					if(!sharedPreX === " "){
+					searchPreOut.innerHTML = "";
+					if(!sharedPreX === ""){
 								for(var i = 0; i < preX.length; i++){
 								searchPreOut.innerHTML += preX[i] + "<br>";
 					}
