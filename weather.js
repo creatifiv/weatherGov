@@ -87,7 +87,7 @@ function loadDefaultWeather(){
 /* ====== SEARCH Events ==== */
 
 function action(){
-			document.querySelectorAll('.dropdown-item').foreach(el => el.remove());
+			document.querySelectorAll('.dropdown-item').forEach(el => el.remove());
 }
 
 
@@ -147,7 +147,7 @@ function createListItem(item){
 			newItem.className = "dropdown-item";
 			var textNode = document.creatTextNode(item);
 			newItem.appendChild(textNode);
-			searchDdm.appendChild(newItem);
+			searchMenu.appendChild(newItem);
 }
 
 	
