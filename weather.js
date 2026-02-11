@@ -192,6 +192,8 @@ function errorCallback(error){
 		});
 	}//End getUsCapitals
 
+
+// Creat li items for drop down
 function createListItem(item){
 			var newItem = document.createElement(li);
 			newItem.className = "dropdown-item";
