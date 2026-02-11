@@ -90,6 +90,9 @@ function loadDefaultWeather(){
 function action(){
 			document.querySelectorAll('.dropdown-item').forEach(el => el.remove());
 }
+function addListItems(){
+	
+}
 
 
 // Get User Input 
@@ -112,12 +115,12 @@ function action(){
 	// Created for backspace detection
 	search.addEventListener("keydown", function(event){
 		if(event.key === "Backspace"){
-					//searchOutput.innerHTML = searchOutput.innerHTML.slice(0, -1);
+					action();
 					if(!sharedPreX == ""){sharedPreX = sharedPreX.slice(0, -1);}
 					var preX =	trie.searchPrefix(sharedPreX);
 					if(!sharedPreX == ""){
 								for(var i = 0; i < preX.length; i++){
-											searchPreOut.innerHTML += preX[i] + "<br>";
+													createListItem(preX[i]);
 								}
 					}else{ searchPreOut.innerHTML = ""; }
 		}
