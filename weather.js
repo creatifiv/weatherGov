@@ -9,6 +9,7 @@ var trie = new Trie();
 
 cityData = [];
 searchClicked = false;
+sharedPreX = "";
 
 
 
@@ -112,7 +113,7 @@ function action(){
 	search.addEventListener("keydown", function(event){
 		if(event.key === "Backspace"){
 					//searchOutput.innerHTML = searchOutput.innerHTML.slice(0, -1);
-					sharedPreX = sharedPreX.slice(0, -1)
+					if(!sharedPreX == ""){sharedPreX = sharedPreX.slice(0, -1);}
 					var preX =	trie.searchPrefix(sharedPreX);
 					if(!sharedPreX == ""){
 								for(var i = 0; i < preX.length; i++){
