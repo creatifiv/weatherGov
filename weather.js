@@ -202,7 +202,7 @@ function createListItem(item){
 			newItem.className = "dropdown-item";
 			var textNode = document.creatTextNode(item + "hello");
 			newItem.appendChild(textNode);
-			searchDropCont.appendChild(newItem);
+			searchDdm.appendChild(newItem);
 }
 
 
