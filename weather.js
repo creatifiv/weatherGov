@@ -213,7 +213,7 @@ function createListItem(item){
 							cityData.push(data[i]);
 							var x = cityData[i].name;
 							//createListItem(x); possibly delete later
-							searchPreOut.innerHTML = cityData[i] + "<br>"
+							searchPreOut.innerHTML = cityData[i].name + "<br>"
 							trie.insert(cityData[i].name);//Store city names in TrieNodes
 							i++;
 				}
