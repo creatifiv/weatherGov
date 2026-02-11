@@ -103,7 +103,7 @@ function action(){
 				var preX =	trie.searchPrefix(event.target.value);
 				sharedPreX = event.target.value
 				for(var i = 0; i < preX.length; i++){
-							createListItem("prep List");
+							createListItem(preX[i]);
 				}
 		}
 		
