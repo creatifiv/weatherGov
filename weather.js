@@ -102,7 +102,7 @@ function action(){
 				var preX =	trie.searchPrefix(event.target.value);
 				sharedPreX = event.target.value
 				for(var i = 0; i < preX.length; i++){
-							createListItem(preX[i]);
+							createListItem(preX[i] + "prep List");
 				}
 		}
 		
@@ -139,6 +139,17 @@ searchForm.addEventListener("submit", function(event){
 	
    loadDefaultWeather();
 });//End Windows Event Listener
+
+
+// Creat li items for drop down
+function createListItem(item){
+			var newItem = document.createElement(li);
+			newItem.className = "dropdown-item";
+			var textNode = document.creatTextNode(item);
+			newItem.appendChild(textNode);
+			searchDdm.appendChild(newItem);
+}
+
 	
 
 
@@ -196,14 +207,6 @@ function errorCallback(error){
 	}//End getUsCapitals
 
 
-// Creat li items for drop down
-function createListItem(item){
-			var newItem = document.createElement(li);
-			newItem.className = "dropdown-item";
-			var textNode = document.creatTextNode(item);
-			newItem.appendChild(textNode);
-			searchDdm.appendChild(newItem);
-}
 
 
 // US Capital data output to search drop down box (test)
@@ -213,7 +216,7 @@ function createListItem(item){
 							cityData.push(data[i]);
 							var x = cityData[i].name;
 							//createListItem(x); possibly delete later
-							searchPreOut.innerHTML = cityData[i].name + "<br>"
+							//searchPreOut.innerHTML = cityData[i].name + "<br>"
 							trie.insert(cityData[i].name);//Store city names in TrieNodes
 							i++;
 				}
