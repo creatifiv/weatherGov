@@ -145,7 +145,7 @@ searchForm.addEventListener("submit", function(event){
 function createListItem(item){
 			var newItem = document.createElement('li');
 			newItem.className = "dropdown-item";
-			var textNode = document.creatTextNode(item);
+			var textNode = document.createTextNode(item);
 			newItem.appendChild(textNode);
 			searchMenu.appendChild(newItem);
 }
