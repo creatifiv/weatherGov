@@ -111,7 +111,7 @@ function action(){
 	// Created for backspace detection
 	search.addEventListener("keydown", function(event){
 		if(event.key === "Backspace"){
-					searchOutput.innerHTML = searchOutput.innerHTML.slice(0, -1);
+					//searchOutput.innerHTML = searchOutput.innerHTML.slice(0, -1);
 					sharedPreX = sharedPreX.slice(0, -1)
 					var preX =	trie.searchPrefix(sharedPreX);
 					if(!sharedPreX == ""){
