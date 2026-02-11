@@ -1,4 +1,4 @@
-var x, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, regex, shortForecast, usCapArray,getUserLoBtn, locationOutput, jsonData, text, searchForm, searchClicked, amPmBoxes, searchOutput, searchSubmit, search, weatherIcon, dayOfWeek, latitude, longitude, api, forecastApi, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7, cityData, dataOutput, searchPreOut, sharedPreX, searchDropCont;
+var x, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, regex, shortForecast, usCapArray,getUserLoBtn, locationOutput, jsonData, text, searchForm, searchClicked, amPmBoxes, searchOutput, searchSubmit, search, weatherIcon, dayOfWeek, latitude, longitude, api, forecastApi, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7, cityData, dataOutput, searchPreOut, sharedPreX, searchDdm;
 
 import {TrieNode, Trie} from './trie.js';
 
@@ -36,7 +36,7 @@ window.addEventListener('load',() => {
 	day7 = document.getElementById('day-7');
 	search = document.getElementById("search");
 	searchForm = document.getElementById("weatherSearch");
-	searchDropCont = document.getElementById("dropDownContainer");
+	searchDdm = document.getElementById("dropdown-container");
 	searchSubmit = document.getElementById("submit");
 	dayOfWeek = document.getElementsByClassName("day-of-week");
 	weatherIcon = document.getElementsByClassName("weather-icon");
@@ -86,6 +86,10 @@ function loadDefaultWeather(){
 
 /* ====== SEARCH Events ==== */
 
+function action(){
+			document.querySelectorAll('.dropdown-item').foreach(el => el.remove());
+}
+
 
 // Get User Input 
 	search.addEventListener("input", function(event){
@@ -94,7 +98,7 @@ function loadDefaultWeather(){
 		searchOutput.innerHTML = event.target.value;
 		
 		if(/^[a-zA-Z0-9]$/.test(event.data)){ 
-				searchPreOut.innerHTML = " ";
+				action();
 				var preX =	trie.searchPrefix(event.target.value);
 				sharedPreX = event.target.value
 				for(var i = 0; i < preX.length; i++){
@@ -110,7 +114,6 @@ function loadDefaultWeather(){
 					searchOutput.innerHTML = searchOutput.innerHTML.slice(0, -1);
 					sharedPreX = sharedPreX.slice(0, -1)
 					var preX =	trie.searchPrefix(sharedPreX);
-					//searchPreOut.innerHTML = "";
 					if(!sharedPreX == ""){
 								for(var i = 0; i < preX.length; i++){
 											searchPreOut.innerHTML += preX[i] + "<br>";
