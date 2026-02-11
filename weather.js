@@ -143,7 +143,7 @@ searchForm.addEventListener("submit", function(event){
 
 // Creat li items for drop down
 function createListItem(item){
-			var newItem = document.createElement(li);
+			var newItem = document.createElement('li');
 			newItem.className = "dropdown-item";
 			var textNode = document.creatTextNode(item);
 			newItem.appendChild(textNode);
