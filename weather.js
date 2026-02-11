@@ -1,4 +1,4 @@
-var x, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, regex, shortForecast, usCapArray,getUserLoBtn, locationOutput, jsonData, text, searchForm, searchClicked, amPmBoxes, searchOutput, searchSubmit, search, weatherIcon, dayOfWeek, latitude, longitude, api, forecastApi, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7, cityData, dataOutput, searchPreOut, sharedPreX, searchMenu;
+var x, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, regex, shortForecast, usCapArray,getUserLoBtn, locationOutput, jsonData, text, searchForm, searchClicked, amPmBoxes, searchOutput, searchSubmit, search, weatherIcon, dayOfWeek, latitude, longitude, api, forecastApi, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7, cityData, dataOutput, searchPreOut, sharedPreX, searchMenu, preX;
 
 import {TrieNode, Trie} from './trie.js';
 
@@ -103,7 +103,7 @@ function addListItems(){
 		
 		if(/^[a-zA-Z0-9]$/.test(event.data)){ 
 				action();
-				var preX =	trie.searchPrefix(event.target.value);
+				preX =	trie.searchPrefix(event.target.value);
 				sharedPreX = event.target.value
 				for(var i = 0; i < preX.length; i++){
 							createListItem(preX[i]);
@@ -117,7 +117,7 @@ function addListItems(){
 		if(event.key === "Backspace"){
 					action();
 					if(!sharedPreX == ""){sharedPreX = sharedPreX.slice(0, -1);}
-					var preX =	trie.searchPrefix(sharedPreX);
+					preX =	trie.searchPrefix(sharedPreX);
 					if(!sharedPreX == ""){
 								for(var i = 0; i < preX.length; i++){
 													createListItem(preX[i]);
