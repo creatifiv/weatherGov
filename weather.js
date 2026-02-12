@@ -1,12 +1,10 @@
-var x, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, regex, shortForecast, usCapArray,getUserLoBtn, locationOutput, jsonData, text, searchForm, searchClicked, amPmBoxes, searchOutput, searchSubmit, search, weatherIcon, dayOfWeek, latitude, longitude, api, forecastApi, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7, cityData, dataOutput, searchPreOut, sharedPreX, searchMenu, preX;
+var x, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, regex, shortForecast, usCapArray,getUserLoBtn, locationOutput, jsonData, text, searchForm, searchClicked, amPmBoxes, searchOutput, searchSubmit, search, weatherIcon, dayOfWeek, latitude, longitude, api, forecastApi, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7, cityData, dataOutput, searchPreOut, sharedPreX, searchMenu, preX, userApi;
 
 import {TrieNode, Trie} from './trie.js';
 
 var trie = new Trie();  
 
   
-
-
 cityData = [];
 searchClicked = false;
 sharedPreX = "";
@@ -64,18 +62,6 @@ window.addEventListener('load',() => {
 		document.getElementById('d7-pm')
 	];
 	
-
-	
-// ======= Loadd Defualt Weather ======= //
-
-function loadDefaultWeather(){
-		latitude = 40.730610;
-		longitude = -73.9352425;
-		api = "https://api.weather.gov/points/" + latitude + "," + longitude;
-		getWeather();
-}
-
-
 
 // ====== Get User Location Btn ====== //
 
@@ -140,8 +126,8 @@ searchForm.addEventListener("submit", function(event){
 		console.log("Submit:" + " " + "Form value" + " " + inputValue);
 	});
 	
-	
-   loadDefaultWeather();
+ // Newyork, NewYork lat & long 40.730610, 73.9352425
+ getWeather("https://api.weather.gov/points/", 40.730610, 73.9352425);
 });//End Windows Event Listener
 
 
@@ -172,12 +158,10 @@ function getUserLocation(){
 
 // getUsrLocaion callback
 function successCallback(position){
+	userApi = "https://api.weather.gov/points/";
 	latitude = position.coords.latitude;
 	longitude = position.coords.longitude;
-	api = "https://api.weather.gov/points/" + latitude + "," + longitude;
-	getWeather();
-	console.log("Latitude" + " " + latitude);
-	console.log("Longitude" + " " + longitude);
+	getWeather(userApi, latitude, longitude);
 }
 
 // getUsrLocation Callback Error
@@ -369,12 +353,13 @@ function createElement(data, days){
 
 
 
-
+	
 
 
 // ===== WEATHER API ===== //
 
-function getWeather(){
+function getWeather(setApi, lat, long){
+	api = setApi + lat + "," + long;
 	fetch(api, {
 		method:'GET',
 		headers: {
