@@ -76,14 +76,12 @@ window.addEventListener('load',() => {
 function action(){
 			document.querySelectorAll('.dropdown-item').forEach(el => el.remove());
 }
-function addListItems(){
-	
-}
 
 
 // Get User Input 
 	search.addEventListener("input", function(event){
 		var textNode = document.createTextNode(event.target.value);
+		var cityDataId;
 		//searchOutput.appendChild(textNode);
 		//searchOutput.innerHTML = event.target.value;
 		
@@ -92,7 +90,8 @@ function addListItems(){
 				preX =	trie.searchPrefix(event.target.value);
 				sharedPreX = event.target.value
 				for(var i = 0; i < preX.length; i++){
-							createListItem(preX[i]);
+							cityDataId = "city-" + i;
+							createListItem(preX[i], cityDataId);
 				}
 		}
 		
@@ -126,16 +125,18 @@ searchForm.addEventListener("submit", function(event){
 		console.log("Submit:" + " " + "Form value" + " " + inputValue);
 	});
 	
- // Newyork, NewYork lat & long 40.730610, 73.9352425
+ // Newyork, NewYork lat & long 40.730610, -73.9352425
  getWeather("https://api.weather.gov/points/", 40.730610, -73.9352425);
 });//End Windows Event Listener
 
 
 // Creat li items for drop down
-function createListItem(item){
+function createListItem(item, linkId){
 			var listItem = document.createElement('li');
 			var aLink = document.createElement('a');
 			var textNode = document.createTextNode(item);
+			aLink.id = linkId;
+			searchPreOut.innerHTML = linkId;
 			aLink.className = "dropdown-item";
 			aLink.appendChild(textNode);
 			listItem.appendChild(aLink);
