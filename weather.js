@@ -147,11 +147,13 @@ searchForm.addEventListener("submit", function(event){
 
 // Creat li items for drop down
 function createListItem(item){
-			var newItem = document.createElement('li');
-			newItem.className = "dropdown-item";
+			var listItem = document.createElement('li');
+			var aLink = document.createElement('a');
 			var textNode = document.createTextNode(item);
-			newItem.appendChild(textNode);
-			searchMenu.appendChild(newItem);
+			aLink.className = "dropdown-item";
+			aLink.appendChild(textNode);
+			listItem.appendChild(aLink);
+			searchMenu.appendChild(listItem);
 }
 
 	
