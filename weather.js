@@ -218,10 +218,12 @@ function errorCallback(error){
 		var i = 0;
 				while (cityData.length < data.length){
 							cityData.push(data[i]);
-							var x = cityData[i].name;
+							var cityName = cityData[i].name;
+							var zip = cityData[i].zip;
 							//createListItem(x); possibly delete later
 							//searchPreOut.innerHTML = cityData[i].name + "<br>"
-							trie.insert(cityData[i].name);//Store city names in TrieNodes
+							trie.insert(cityName);//Store city names in TrieNodes
+							trie.insert(zip);
 							i++;
 				}
 	}
