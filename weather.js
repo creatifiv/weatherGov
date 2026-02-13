@@ -71,12 +71,17 @@ window.addEventListener('load',() => {
 
 
 
-/* ====== SEARCH Events ==== */
+/* ====== EVENTS ==== */
 
 function action(){
 			document.querySelectorAll('.dropdown-item').forEach(el => el.remove());
 }
 
+searchMenu.addEventListener("click", function(event){
+	
+		searchPreOut.innerHTML += event.target.textContent;
+				event.stopPropagation();
+});
 
 // Get User Input 
 	search.addEventListener("input", function(event){
@@ -93,7 +98,7 @@ function action(){
 							createListItem(preX[i], cityDataId);
 				}
 		}
-		
+						event.stopPropagation();
 	});
 	
 	// Created for backspace detection
@@ -108,6 +113,7 @@ function action(){
 								}
 					}else{ searchPreOut.innerHTML = ""; }
 		}
+						event.stopPropagation();
 	});
 
 	search.addEventListener("click", function(){
@@ -115,6 +121,7 @@ function action(){
 			getUsCapitals();
 		}
 		searchClicked = true;
+						event.stopPropagation();
 		}); //End seach eventListener
 
 searchForm.addEventListener("submit", function(event){
@@ -122,6 +129,7 @@ searchForm.addEventListener("submit", function(event){
 		var inputValue = search.value;
 		newTrie.startsWith(text);
 		console.log("Submit:" + " " + "Form value" + " " + inputValue);
+						event.stopPropagation();
 	});
 	
  // Newyork, NewYork lat & long 40.730610, -73.9352425
