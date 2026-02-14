@@ -83,7 +83,7 @@ searchMenu.addEventListener("click", function(event){
 	temporaryDataOutput += cityData.length;
 	for(var i = 0; i < cityData.length; i++){
 				if(textContent == cityData[i].name){
-					temporaryDataOutput = textContent + ":" + cityData[i].name + "" + cityData.length;
+					temporaryDataOutput += textContent + ":" + cityData[i].name + "" + cityData.length;
 				}
 	}
 
