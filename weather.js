@@ -1,5 +1,5 @@
 // unused variables: temporaryDataOutput 
-var x, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, regex, shortForecast, usCapArray,getUserLoBtn, locationOutput, jsonData, text, searchForm, searchClicked, amPmBoxes, searchOutput, searchSubmit, search, weatherIcon, dayOfWeek, latitude, longitude, api, forecastApi, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7, cityData, dataOutput, searchPreOut, sharedPreX, searchMenu, preX, userApi, cityDataId, temporaryDataOutput;
+var x, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, regex, shortForecast, usCapArray,getUserLoBtn, locationOutput, jsonData, text, searchForm, searchClicked, amPmBoxes, searchOutput, searchSubmit, search, weatherIcon, dayOfWeek, latitude, longitude, api, forecastApi, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7, cityData, dataOutput, searchPreOut, sharedPreX, searchMenu, preX, userApi, temporaryDataOutput;
 
 import {TrieNode, Trie} from './trie.js';
 
@@ -80,12 +80,12 @@ function action(){
 
 searchMenu.addEventListener("click", function(event){
 	var textContent = event.target.textContent;
-//	temporaryDataOutput += cityData.length;
-	/*
+ temporaryDataOutput += cityData.length;
+	
 	for(var i = 0; i < cityData.length; i++){
 				if(textContent == cityData[i].name){
 					temporaryDataOutput += textContent + ":" + cityData[i].name + "" + cityData.length;
-				}*/
+				}
 	}
 
 				event.stopPropagation();
@@ -102,8 +102,7 @@ searchMenu.addEventListener("click", function(event){
 				preX =	trie.searchPrefix(event.target.value);
 				sharedPreX = event.target.value
 				for(var i = 0; i < preX.length; i++){
-							cityDataId = city;
-							createListItem(preX[i], cityDataId);
+							createListItem(preX[i]);
 				}
 		}
 						event.stopPropagation();
@@ -146,14 +145,12 @@ searchForm.addEventListener("submit", function(event){
 
 
 // Creat li items for drop down
-function createListItem(item, linkId){
+function createListItem(item){
 			var listItem = document.createElement('li');
 			var aLink = document.createElement('a');
 			var textNode = document.createTextNode(item);
 			var i = 0;
 			// WORKIMG ON ADDING ID PLIS NUMBER 
-			aLink.id = linkId + (i++);
-			searchPreOut.innerHTML = linkId;
 			aLink.className = "dropdown-item";
 			aLink.appendChild(textNode);
 			listItem.appendChild(aLink);
