@@ -85,6 +85,7 @@ searchMenu.addEventListener("click", function(event){
 				if(textContent == cityData[i].name){
 							getWeather(weatherLongLatApi, cityData[i].lat, cityData[i].lng);
 							removeDropDownItem();
+							search.placeholder = "":
 				}
 	}
 
