@@ -83,7 +83,7 @@ searchMenu.addEventListener("click", function(event){
 	
   for(var i = 0; i < cityData.length; i++){
 				if(textContent == cityData[i].name){
-							getWeather(weatherLongLatApi, cityDataI[i].lat, cityDataI[i].lng);
+							getWeather(weatherLongLatApi, cityData[i].lat, cityData[i].lng);
 				}
 	}
 
