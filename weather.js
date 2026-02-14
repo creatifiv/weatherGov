@@ -132,10 +132,7 @@ searchMenu.addEventListener("click", function(event){
 
 searchForm.addEventListener("submit", function(event){
 		event.preventDefault(); // Prevent page refresh
-		var inputValue = search.value;
-		newTrie.startsWith(text);
-		console.log("Submit:" + " " + "Form value" + " " + inputValue);
-						event.stopPropagation();
+		event.stopPropagation();
 	});
 	
  // Newyork, NewYork lat & long 40.730610, -73.9352425
