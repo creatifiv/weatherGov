@@ -80,7 +80,7 @@ function action(){
 
 searchMenu.addEventListener("click", function(event){
 	var textContent = event.target.textContent;
- temporaryDataOutput += cityData.length;
+ temporaryDataOutput += cityData.length + "city data";
 	
 	for(var i = 0; i < cityData.length; i++){
 				if(textContent == cityData[i].name){
@@ -149,12 +149,11 @@ function createListItem(item){
 			var listItem = document.createElement('li');
 			var aLink = document.createElement('a');
 			var textNode = document.createTextNode(item);
-			var i = 0;
 			// WORKIMG ON ADDING ID PLIS NUMBER 
-			aLink.className = "dropdown-item";
-			aLink.appendChild(textNode);
-			listItem.appendChild(aLink);
 			searchMenu.appendChild(listItem);
+			listItem.appendChild(aLink);
+			aLink.appendChild(textNode);
+			aLink.className = "dropdown-item";
 }
 
 	
