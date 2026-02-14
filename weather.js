@@ -80,12 +80,12 @@ function action(){
 
 searchMenu.addEventListener("click", function(event){
 	var textContent = event.target.textContent;
- temporaryDataOutput += "hey"; //cityData.length + "city data";
+ //temporaryDataOutput.innerHTML += cityData.length + "city data";
 	
-/*	for(var i = 0; i < cityData.length; i++){
+  for(var i = 0; i < cityData.length; i++){
 				if(textContent == cityData[i].name){
-					temporaryDataOutput = "hey"; //+= textContent + ":" + cityData[i].name + "" + cityData.length;
-				}*/
+					temporaryDataOutput += textContent + ":" + cityData[i].name + "" + cityData.length;
+				}
 	}
 
 				event.stopPropagation();
