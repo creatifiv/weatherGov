@@ -74,7 +74,7 @@ window.addEventListener('load',() => {
 
 /* ====== EVENTS ==== */
 
-function action(){
+function removeDropDownItem(){
 			document.querySelectorAll('.dropdown-item').forEach(el => el.remove());
 }
 
@@ -97,7 +97,7 @@ searchMenu.addEventListener("click", function(event){
 		//searchOutput.innerHTML = event.target.value;
 		
 		if(/^[a-zA-Z0-9]$/.test(event.data)){ 
-				action();
+				removeDropDownItem();
 				preX =	trie.searchPrefix(event.target.value);
 				sharedPreX = event.target.value
 				for(var i = 0; i < preX.length; i++){
@@ -110,7 +110,7 @@ searchMenu.addEventListener("click", function(event){
 	// Created for backspace detection
 	search.addEventListener("keydown", function(event){
 		if(event.key === "Backspace"){
-					action();
+					removeDropDownItem();
 					if(!sharedPreX == ""){sharedPreX = sharedPreX.slice(0, -1);}
 					preX =	trie.searchPrefix(sharedPreX);
 					if(!sharedPreX == ""){
