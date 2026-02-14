@@ -139,7 +139,7 @@ searchForm.addEventListener("submit", function(event){
 	});
 	
  // Newyork, NewYork lat & long 40.730610, -73.9352425
- getWeather(weatherLongAndLatApi, 40.730610, -73.9352425);
+ getWeather(weatherLongLatApi, 40.730610, -73.9352425);
 });//End Windows Event Listener
 
 
