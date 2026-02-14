@@ -401,7 +401,7 @@ function getWeather(setApi, lat, long){
 	.then(data => {
 		var newData = data.properties.periods;
 		createElement(newData, newData.length);
- 	x.innerHTML += JSON.stringify(newData, null, 2);
+ 	x8.innerHTML += JSON.stringify(newData, null, 2);
 		x8.innerHTML += `<pre>${JSON.stringify(newData, null, 2)}</pre>` + "API 2t";
   x11.innerHTML += `<pre>${JSON.stringify(data.properties.periods[3].shortForecast, null, 2)}</pre>` + " " +  "number";
 		
