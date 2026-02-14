@@ -8,7 +8,7 @@ var trie = new Trie();
 cityData = [];
 searchClicked = false;
 sharedPreX = "";
-
+const weatherLongLatApi = "https://api.weather.gov/points/";
 
 
 
@@ -80,11 +80,10 @@ function action(){
 
 searchMenu.addEventListener("click", function(event){
 	var textContent = event.target.textContent;
- temporaryDataOutput.innerHTML += cityData.length + "city data";
 	
   for(var i = 0; i < cityData.length; i++){
 				if(textContent == cityData[i].name){
-					temporaryDataOutput.innerHTML += textContent + ":" + cityData[i].name + "" + cityData.length;
+							getWeather(weatherLongLatApi, cityDataI[i].latitude, cityDataI[i].longitude);
 				}
 	}
 
@@ -140,7 +139,7 @@ searchForm.addEventListener("submit", function(event){
 	});
 	
  // Newyork, NewYork lat & long 40.730610, -73.9352425
- getWeather("https://api.weather.gov/points/", 40.730610, -73.9352425);
+ getWeather(weatherLongAndLatApi, 40.730610, -73.9352425);
 });//End Windows Event Listener
 
 
