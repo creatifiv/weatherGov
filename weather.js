@@ -80,7 +80,7 @@ function action(){
 
 searchMenu.addEventListener("click", function(event){
 	var textContent = event.target.textContent;
-	temporaryDataOutput += cityData.length;
+//	temporaryDataOutput += cityData.length;
 	/*
 	for(var i = 0; i < cityData.length; i++){
 				if(textContent == cityData[i].name){
