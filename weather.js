@@ -1,5 +1,5 @@
 // unused variables: temporaryDataOutput 
-var x, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, regex, shortForecast, usCapArray,getUserLoBtn, locationOutput, jsonData, text, searchForm, searchClicked, amPmBoxes, searchOutput, searchSubmit, search, weatherIcon, dayOfWeek, latitude, longitude, api, forecastApi, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7, cityData, dataOutput, searchPreOut, sharedPreX, searchMenu, preX, userApi, temporaryDataOutput;
+var x, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, regex, shortForecast, usCapArray,getUserLoBtn, locationOutput, jsonData, text, searchForm, searchClicked, amPmBoxes, searchOutput, searchSubmit, search, weatherIcon, dayOfWeek, latitude, longitude, api, forecastApi, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7, cityData, dataOutput, searchPreOut, sharedPreX, searchMenu, preX, userApi, temporaryDataOutput, bootStrapDropdown;
 
 import {TrieNode, Trie} from './trie.js';
 
@@ -45,6 +45,7 @@ window.addEventListener('load',() => {
 	dataOutput = document.getElementById("data-output");
 	searchPreOut = document.getElementById("searchPreOut");
 	temporaryDataOutput = document.getElementById("temporary-data-output");
+	bootStrapDropdown = bootstrap.Dropdown.getOrCreateInstance(searchMenu);
 
 	amPmBoxes = [
 		document.getElementById('d1-am'),
@@ -139,6 +140,7 @@ searchForm.addEventListener("submit", function(event){
 	
  // Newyork, NewYork lat & long 40.730610, -73.9352425
  getWeather(weatherLongLatApi, 40.730610, -73.9352425);
+	bootStrapDropdown.hide();
 });//End Windows Event Listener
 
 
