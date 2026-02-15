@@ -2,6 +2,7 @@
 var x, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, regex, shortForecast, usCapArray,getUserLoBtn, locationOutput, jsonData, text, searchForm, searchClicked, amPmBoxes, searchOutput, searchSubmit, search, weatherIcon, dayOfWeek, latitude, longitude, api, forecastApi, createUlC, capBtns, box2, city, state, dayCount, mkLi, day1, day2, day3, day4, day5, day6, day7, cityData, dataOutput, searchPreOut, sharedPreX, searchMenu, preX, userApi, temporaryDataOutput, bootStrapDropdown;
 
 import {TrieNode, Trie} from './trie.js';
+import { createPopper } from '@popperjs/core';
 
 var trie = new Trie();  
 
@@ -9,6 +10,8 @@ cityData = [];
 searchClicked = false;
 sharedPreX = "";
 const weatherLongLatApi = "https://api.weather.gov/points/";
+
+
 
 
 
@@ -142,6 +145,12 @@ searchForm.addEventListener("submit", function(event){
  getWeather(weatherLongLatApi, 40.730610, -73.9352425);
 	bootStrapDropdown.hide();
 });//End Windows Event Listener
+
+const button = document.querySelector('#search');
+
+createPopper(button {
+  placement: 'left',
+});
 
 
 // Creat li items for drop down
