@@ -148,7 +148,7 @@ searchForm.addEventListener("submit", function(event){
 
 const button = document.querySelector('#search');
 
-createPopper(button {
+Popper.createPopper(button {
   placement: 'left',
 });
 
