@@ -146,11 +146,11 @@ searchForm.addEventListener("submit", function(event){
 	bootStrapDropdown.hide();
 });//End Windows Event Listener
 
-const button = document.querySelector('#search');
+/*const button = document.querySelector('#search');
 
 createPopper(button {
   placement: 'left',
-});
+});*/
 
 
 // Creat li items for drop down
